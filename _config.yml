@@ -1,12 +1,18 @@
 # Site settings
 title: Rotati
 email: info@rotati.com
+website: www.rotati.com
+mobile: +855 12 22 33 48
 description: > # this means to ignore newlines until "baseurl:"
   Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://rotati.com" # the base hostname & protocol for your site
 twitter_username: rotati
 github_username:  rotati
+
+# Address
+address_line1: DI Building, House 296, Street 271
+address_line2: Phnom Penh, Cambodia
 
 # Build settings
 markdown: kramdown
