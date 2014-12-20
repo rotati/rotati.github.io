@@ -34,7 +34,7 @@
                 <h4>MENU</h4>
                 <div>
                     <ul class="arrow">
-                      {% include navigation.html %}
+                      {% include navigation.html dropdown=false %}
                     </ul>
                 </div>
             </div>
@@ -141,7 +141,7 @@ $(function() {
 
         var $navArrows = $( '#nav-arrows' ),
         slitslider = $( '#slider' ).slitslider( {
-            autoplay : true
+            autoplay : false
         } ),
 
         init = function() {
