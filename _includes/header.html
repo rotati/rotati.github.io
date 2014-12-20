@@ -9,35 +9,7 @@
             <a id="logo" class="pull-left" href="index.html"></a>
             <div class="nav-collapse collapse pull-right">
                 <ul class="nav">
-
-                  {% assign pages = site.pages | sort:"weight"  %}
-                  {% for p in pages %}
-                    {% if page.title %}
-                        <li {% if p.url == page.url %}class="active"{% endif %}>
-                            <a class="page-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-                        </li>
-                    {% endif %}
-                  {% endfor %}
-
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="career.html">Career</a></li>
-                            <li><a href="blog-item.html">Blog Single</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="registration.html">Registration</a></li>
-                            <li class="divider"></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="terms.html">Terms of Use</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
+                    {% include navigation.html %}
                   </nav>
                 </ul>
             </div><!--/.nav-collapse -->

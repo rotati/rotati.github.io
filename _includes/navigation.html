@@ -1,0 +1,23 @@
+{% assign pages = site.pages | sort:"weight"  %}
+
+
+{% for p in pages %}
+  {% if p.title and p.group == null %}
+    <li {% if p.url == page.url %}class="active"{% endif %}>
+        <a class="page-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+    </li>
+  {% endif %}
+{% endfor %}
+
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="icon-angle-down"></i></a>
+  <ul class="dropdown-menu">
+    {% for p in pages %}
+      {% if p.title and p.group == "services" %}
+        <li>
+            <a class="page-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</li>
