@@ -16,3 +16,5 @@ address_line2: Phnom Penh, Cambodia
 
 # Build settings
 markdown: kramdown
+
+permalink: pretty
