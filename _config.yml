@@ -10,6 +10,14 @@ url: "http://rotati.com" # the base hostname & protocol for your site
 twitter_username: rotati
 github_username:  rotati
 
+author:
+  name: Darren
+  bio: Interested in software startups, mountain biking and playing piano!
+  twitter_username: jensendarren
+  facebook_username: jensendarren
+  linkedin_username: jensendarren1
+  github_username: jensendarren
+
 # Address
 address_line1: DI Building, House 296, Street 271
 address_line2: Phnom Penh, Cambodia

@@ -1,15 +1,67 @@
 ---
 layout: default
 ---
-<div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
+<section class="title">
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span6">
+                <h1>{{ page.title }}</h1>
+            </div>
+            <div class="span6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="/">Home</a> <span class="divider">/</span></li>
+                    <li><a href="/blog/">Blog <span class="divider">/</span></li>
+                    <li class="active">{{page.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+<section id="blog" class="container">
+    <div class="row-fluid">
+        <div class="span8">
+            <div class="blog">
+                <div class="blog-item well">
+                    <a href="#"><h3>{{ page.title }}</h3></a>
+                    <div class="blog-meta clearfix">
+                      <p class="pull-left">
+                        {% if page.author %}<i class="icon-user"></i> by {{ page.author }}{% endif %}
+                        | <i class="icon-folder-close"></i> Category <a href="#">{{ page.categories[0] }}</a> | <i class="icon-calendar"></i> {{ page.date | date: "%b %-d, %Y" }}
+                      </p>
+                    </div>
+                    <article>
+                        {{ content }}
+                    </article>
+                  <div class="tag">
+                    Tags :
+                    {% for tag in page.tags %}
+                      <a href="#"><span class="label label-success">{{ tag }}</span></a>
+                    {% endfor %}
+                </div>
 
-</div>
+                <div class="user-info media box">
+                    <div class="pull-left">
+                        <img src="/images/darren.jpg" alt="" />
+                    </div>
+                    <div class="media-body">
+                        <h5 style="margin-top: 0">{{ page.author }}</h5>
+                        <p>{{ site.author.bio }}</p>
+                        <div class="author-meta">
+                            <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/{{site.author.facebook_username}}"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/{{site.author.twitter_username}}"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/{{site.author.linkedin_username}}"><i class="icon-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <p>&nbsp;</p>
+
+            </div>
+            <!-- End Blog Item -->
+
+        </div>
+    </div>
+    {% include blog-aside.html %}
+  </div>
+
+</section>
