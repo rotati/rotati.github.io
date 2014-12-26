@@ -48,8 +48,10 @@ body {
   padding-left: 15px;
 }
 
-.pull-left {
-  margin-left: 10px;
+.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom:0;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
