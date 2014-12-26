@@ -39,12 +39,21 @@ $on-laptop:        800px;
     }
 }
 
+body {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.pull-left {
+  margin-left: 10px;
+}
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout",
-        "nova-theme",
-        "syntax-highlighting"
+  "nova-theme"
 ;
