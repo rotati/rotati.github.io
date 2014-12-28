@@ -6,19 +6,7 @@
         <!--row-fluids-->
         <div class="row-fluid">
 
-             <!--Footer Menu-->
-            <div id="menu" class="span4">
-                <h4>MENU</h4>
-                <div>
-                    <ul class="arrow">
-                      {% include navigation.html dropdown=false %}
-                    </ul>
-                </div>
-            </div>
-            <!--Footer Menu-->
-
-            <!--Contact Form-->
-            <div class="span4">
+            <div class="span3">
                 <h4>ADDRESS</h4>
                 <ul class="unstyled address">
                     <li>
@@ -38,27 +26,31 @@
                     </li>
                 </ul>
             </div>
-            <!--End Contact Form-->
 
-
-            <!--Archives-->
-            <!-- <div id="archives" class="span4">
-                <h4>ARCHIVES</h4>
+            <div id="menu" class="span3">
+                <h4>MENU</h4>
                 <div>
                     <ul class="arrow">
-                        <li><a href="#">December 2012 (1)</a></li>
-                        <li><a href="#">November 2012 (5)</a></li>
-                        <li><a href="#">October 2012 (8)</a></li>
-                        <li><a href="#">September 2012 (10)</a></li>
-                        <li><a href="#">August 2012 (29)</a></li>
-                        <li><a href="#">July 2012 (1)</a></li>
-                        <li><a href="#">June 2012 (31)</a></li>
+                      {% include navigation.html dropdown=false %}
                     </ul>
                 </div>
-            </div> -->
+            </div>
+
+            <!--Services -->
+            <div id="services" class="span3">
+                <h4>SERVICES</h4>
+                <div>
+                    <ul class="arrow">
+                        <li>Web Apps</li>
+                        <li>Mobile Apps (HTML5 & Hybrid)</li>
+                        <li>Data Visualization</li>
+                        <li>GIS Apps</li>
+                    </ul>
+                </div>
+            </div>
             <!--End Archives-->
 
-            <div class="span4">
+            <div class="span3">
                 <h4>ABOUT {{site.title | upcase}}</h4>
                 <p>{{ site.description }}</p>
             </div>
@@ -82,17 +74,11 @@
 
             <div class="span6">
                 <ul class="social pull-right">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-rss"></i></a></li>
-                    <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>
+<!--                     <li><a href="http://fb.com/rotati" target="_blank"><i class="icon-facebook"></i></a></li>
+                    <li><a href="http://twitter.com/rotati" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://linkedin.com/in/rotati" target="_blank"><i class="icon-linkedin"></i></a></li> -->
+                    <li><a href="http://github.com/rotati" target="_blank"><i class="icon-github-alt"></i></a></li>
+                    <li><a href="/feed.xml" target="_blank"><i class="icon-rss"></i></a></li>
                 </ul>
             </div>
 
@@ -104,28 +90,6 @@
     </div>
 </footer>
 <!--/Footer-->
-
-<!--  Login form -->
-<div class="modal hide fade in" id="loginForm" aria-hidden="false">
-    <div class="modal-header">
-        <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
-        <h4>Login Form</h4>
-    </div>
-    <!--Modal Body-->
-    <div class="modal-body">
-        <form class="form-inline" action="index.html" method="post" id="form-login">
-            <input type="text" class="input-small" placeholder="Email">
-            <input type="password" class="input-small" placeholder="Password">
-            <label class="checkbox">
-                <input type="checkbox"> Remember me
-            </label>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
-        <a href="#">Forgot your password?</a>
-    </div>
-    <!--/Modal Body-->
-</div>
-<!--  /Login form -->
 
 <script src="/js/vendor/jquery-1.9.1.min.js"></script>
 <script src="/js/vendor/bootstrap.min.js"></script>
