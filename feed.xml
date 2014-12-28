@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rotati</title>
+    <description>Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+</description>
+    <link>http://rotati.com/</link>
+    <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 28 Dec 2014 12:05:25 +0700</pubDate>
+    <lastBuildDate>Sun, 28 Dec 2014 12:05:25 +0700</lastBuildDate>
+    <generator>Jekyll v2.3.0</generator>
+    
+      <item>
+        <title>Rotati a modern web mobile cloud consultancy</title>
+        <description>&lt;p&gt;Welcome to Rotati&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Dec 2014 00:00:00 +0700</pubDate>
+        <link>http://rotati.com/2014/12/rotati-a-modern-web-mobile-cloud-consultancy</link>
+        <guid isPermaLink="true">http://rotati.com/2014/12/rotati-a-modern-web-mobile-cloud-consultancy</guid>
+        
+        <category>rotati</category>
+        
+        <category>consulting</category>
+        
+        <category>webdevelopment</category>
+        
+        <category>mobiledevelopment</category>
+        
+        <category>clouddevelopment</category>
+        
+        <category>web</category>
+        
+        <category>mobile</category>
+        
+        <category>cloud</category>
+        
+        
+        <category>web development</category>
+        
+        <category>mobile development</category>
+        
+        <category>html5</category>
+        
+        <category>hybrid mobile</category>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>angularjs</category>
+        
+        <category>consulting</category>
+        
+      </item>
+    
+      <item>
+        <title>A new post</title>
+        <description>
+</description>
+        <pubDate>Sun, 21 Dec 2014 00:00:00 +0700</pubDate>
+        <link>http://rotati.com/2014/12/a-new-post</link>
+        <guid isPermaLink="true">http://rotati.com/2014/12/a-new-post</guid>
+        
+        <category>DADOU</category>
+        
+        
+        <category>dadouland</category>
+        
+      </item>
+    
+  </channel>
+</rss>
