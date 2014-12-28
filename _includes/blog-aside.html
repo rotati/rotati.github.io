@@ -1,21 +1,4 @@
 <aside class="span4">
-  <!-- div class="widget widget-popular">
-      <h3>Popular Posts</h3>
-      <div class="widget-blog-items">
-          <div class="widget-blog-item media">
-              <div class="pull-left">
-                  <div class="date">
-                      <span class="month">Jun</span>
-                      <span class="day">24</span>
-                  </div>
-              </div>
-              <div class="media-body">
-                  <a href="#"><h5>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris</h5></a>
-              </div>
-          </div>
-      </div>
-  </div> -->
-  <!-- End Popular Posts -->
 
   <div class="widget">
       <h3>Blog Categories</h3>
@@ -25,7 +8,7 @@
               <div class="span6">
                   <ul class="unstyled">
                   {% for category in site.categories %}
-                    <li><a href="#" name="{{ category | first | capitalize }}">{{ category | first | capitalize }}</a></li>
+                    <li><a href="/categories/{{ category | first }}" name="{{ category | first | capitalize }}">{{ category | first | capitalize }}</a></li>
                   {% endfor %}
                   </ul>
               </div>

@@ -1,7 +1,12 @@
 <a href="{{ include.post.permalink }}"><h2>{{ include.post.title }}</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
-      <i class="icon-user"></i> by <a href="#">{{ include.post.author }}</a> | <i class="icon-folder-close"></i> Category <a href="#">{{ include.post.categories[0] }}</a> | <i class="icon-calendar"></i> {{ include.post.date | date: '%B %Y' }}
+      <i class="icon-user"></i> by <a href="#">{{ include.post.author }}</a> |
+      <i class="icon-folder-open"></i>Category:
+      {% for category in include.post.categories %}
+        <a href="/categories/{{category}}">{{ category | capitalize }}</a> |
+      {% endfor %}
+      <i class="icon-calendar"></i> {{ include.post.date | date: '%B %Y' }}
     </p>
 </div>
 <article>{{ include.post.content }}</article>

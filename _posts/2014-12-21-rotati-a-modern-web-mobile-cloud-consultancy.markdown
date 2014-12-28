@@ -4,14 +4,8 @@ author: Darren
 layout: post
 # Categories
 categories:
-  - Web Development
-  - Mobile Development
-  - HTML5
-  - Hybrid Mobile
-  - Ruby
-  - Rails
-  - AngularJS
-  - Consulting
+  - Business
+  - Programming
 permalink: /2014/12/rotati-a-modern-web-mobile-cloud-consultancy
 tags:
   - rotati
