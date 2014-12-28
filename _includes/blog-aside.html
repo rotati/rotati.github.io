@@ -40,7 +40,7 @@
       <h3>Tag Cloud</h3>
       <ul class="tag-cloud unstyled">
         {% for tag in site.tags %}
-          <li><a name="{{ tag | first }}" class="btn btn-mini btn-primary">{{ tag | first }}</a></li>
+          <li><a href="/tags/{{ tag | first }}"><span class="label label-success">{{ tag | first }}</span></a></li>
         {% endfor %}
       </ul>
   </div>

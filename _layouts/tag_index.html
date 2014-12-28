@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Blog
-weight: 3
 ---
 
 <section class="title">
@@ -13,7 +11,9 @@ weight: 3
             <div class="span6">
                 <ul class="breadcrumb pull-right">
                     <li><a href="/">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Blog</li>
+                    <li>Blog <span class="divider">/</span></li>
+                    <li>Tags <span class="divider">/</span></li>
+                    <li>{{page.tag}}</li>
                 </ul>
             </div>
         </div>
@@ -26,27 +26,17 @@ weight: 3
             <div class="blog">
 
                 {% for post in site.posts %}
+                {% for tag in post.tags %}
+                {% if tag == page.tag %}
                 <div class="blog-item well">
                     {% include blog-post.html post=post %}
                 </div>
+                {% endif %}
+                {% endfor %}
                 {% endfor %}
             </div> <!-- blog -->
 
           <div class="gap"></div>
-
-          <!-- Paginationan
-          <div class="pagination">
-            <ul>
-                <li><a href="#"><i class="icon-angle-left"></i></a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#"><i class="icon-angle-right"></i></a></li>
-            </ul>
-        </div>-->
-
 
      </div> <!-- span8 -->
 
