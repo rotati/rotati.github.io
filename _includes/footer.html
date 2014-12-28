@@ -6,31 +6,8 @@
         <!--row-fluids-->
         <div class="row-fluid">
 
-            <!--Contact Form-->
-            <div class="span3">
-                <h4>ADDRESS</h4>
-                <ul class="unstyled address">
-                    <li>
-                        <i class="icon-home"></i><strong>Address:</strong> {{site.address_line1}}<br> {{site.address_line2}}
-                    </li>
-                    <li>
-                        <i class="icon-envelope"></i>
-                        <strong>Email: </strong> {{site.email}}
-                    </li>
-                    <li>
-                        <i class="icon-globe"></i>
-                        <strong>Website:</strong> {{site.website}}
-                    </li>
-                    <li>
-                        <i class="icon-phone"></i>
-                        <strong>Mobile:</strong> {{site.mobile}}
-                    </li>
-                </ul>
-            </div>
-            <!--End Contact Form-->
-
-            <!--Footer Menu-->
-            <div id="menu" class="span3">
+             <!--Footer Menu-->
+            <div id="menu" class="span4">
                 <h4>MENU</h4>
                 <div>
                     <ul class="arrow">
@@ -40,8 +17,32 @@
             </div>
             <!--Footer Menu-->
 
+            <!--Contact Form-->
+            <div class="span4">
+                <h4>ADDRESS</h4>
+                <ul class="unstyled address">
+                    <li>
+                        <i class="icon-home"></i><strong>a:</strong> {{site.address_line1}}<br> {{site.address_line2}}
+                    </li>
+                    <li>
+                        <i class="icon-envelope"></i>
+                        <strong>e: </strong> {{site.email}}
+                    </li>
+                    <li>
+                        <i class="icon-globe"></i>
+                        <strong>w: </strong> {{site.website}}
+                    </li>
+                    <li>
+                        <i class="icon-phone"></i>
+                        <strong>m: </strong> {{site.mobile}}
+                    </li>
+                </ul>
+            </div>
+            <!--End Contact Form-->
+
+
             <!--Archives-->
-            <div id="archives" class="span3">
+            <!-- <div id="archives" class="span4">
                 <h4>ARCHIVES</h4>
                 <div>
                     <ul class="arrow">
@@ -54,10 +55,10 @@
                         <li><a href="#">June 2012 (31)</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <!--End Archives-->
 
-            <div class="span3">
+            <div class="span4">
                 <h4>ABOUT {{site.title | upcase}}</h4>
                 <p>{{ site.description }}</p>
             </div>

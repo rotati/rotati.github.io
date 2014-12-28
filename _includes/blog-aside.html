@@ -1,64 +1,64 @@
 <aside class="span4">
-<!-- div class="widget widget-popular">
-    <h3>Popular Posts</h3>
-    <div class="widget-blog-items">
-        <div class="widget-blog-item media">
-            <div class="pull-left">
-                <div class="date">
-                    <span class="month">Jun</span>
-                    <span class="day">24</span>
-                </div>
-            </div>
-            <div class="media-body">
-                <a href="#"><h5>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris</h5></a>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- End Popular Posts -->
+  <!-- div class="widget widget-popular">
+      <h3>Popular Posts</h3>
+      <div class="widget-blog-items">
+          <div class="widget-blog-item media">
+              <div class="pull-left">
+                  <div class="date">
+                      <span class="month">Jun</span>
+                      <span class="day">24</span>
+                  </div>
+              </div>
+              <div class="media-body">
+                  <a href="#"><h5>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris</h5></a>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  <!-- End Popular Posts -->
 
-<div class="widget">
-    <h3>Blog Categories</h3>
-    <div>
-        <div class="row-fluid">
+  <div class="widget">
+      <h3>Blog Categories</h3>
+      <div>
+          <div class="row-fluid">
 
-            <div class="span6">
-                <ul class="unstyled">
-                {% for category in site.categories %}
-                  <li><a href="#" name="{{ category | first | capitalize }}">{{ category | first | capitalize }}</a></li>
-                {% endfor %}
-                </ul>
-            </div>
+              <div class="span6">
+                  <ul class="unstyled">
+                  {% for category in site.categories %}
+                    <li><a href="#" name="{{ category | first | capitalize }}">{{ category | first | capitalize }}</a></li>
+                  {% endfor %}
+                  </ul>
+              </div>
 
-        </div>
+          </div>
 
-    </div>
-</div>
-<!-- End Category Widget -->
+      </div>
+  </div>
+  <!-- End Category Widget -->
 
-<div class="widget">
-    <h3>Tag Cloud</h3>
-    <ul class="tag-cloud unstyled">
-      {% for tag in site.tags %}
-        <li><a name="{{ tag | first }}" class="btn btn-mini btn-primary">{{ tag | first }}</a></li>
-      {% endfor %}
-    </ul>
-</div>
-<!-- End Tag Cloud Widget -->
+  <div class="widget">
+      <h3>Tag Cloud</h3>
+      <ul class="tag-cloud unstyled">
+        {% for tag in site.tags %}
+          <li><a name="{{ tag | first }}" class="btn btn-mini btn-primary">{{ tag | first }}</a></li>
+        {% endfor %}
+      </ul>
+  </div>
+  <!-- End Tag Cloud Widget -->
 
-<div class="widget">
-    <h3>Archive</h3>
-    <ul class="archive arrow">
-      {% for post in site.posts %}
-      {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
-      {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
-        {% if month != nmonth %}
-          {% if forloop.index != 1 %}</ul>{% endif %}
-          <li><a href="#">{{ post.date | date: '%B %Y' }}</a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-</div>
-<!-- End Archive Widget -->
+  <div class="widget">
+      <h3>Archive</h3>
+      <ul class="archive arrow">
+        {% for post in site.posts %}
+        {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
+        {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
+          {% if month != nmonth %}
+            {% if forloop.index != 1 %}</ul>{% endif %}
+            <li><a href="#">{{ post.date | date: '%B %Y' }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+  </div>
+  <!-- End Archive Widget -->
 
 </aside>

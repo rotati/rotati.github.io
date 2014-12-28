@@ -20,7 +20,7 @@ weight: 3
     </div>
 </section>
 
-<section id="about-us" class="container main">
+<section id="blog" class="container main">
     <div class="row-fluid">
         <div class="span8">
             <div class="blog">
@@ -35,6 +35,12 @@ weight: 3
                     </div>
                   <article>{{ post.content }}</article>
                   <a class="btn btn-link" href="{{ post.permalink }}">Read More <i class="icon-angle-right"></i></a>
+                  <div class="tag">
+                    Tags :
+                    {% for tag in post.tags %}
+                      <a href="#"><span class="label label-success">{{ tag }}</span></a>
+                    {% endfor %}
+                  </div>
               </div>
               {% endfor %}
             </div> <!-- blog -->
