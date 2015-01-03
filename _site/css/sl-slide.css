@@ -13,7 +13,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-} 
+}
 
 .sl-slide {
 	z-index: 1;
@@ -158,7 +158,7 @@
 	transition: 300ms;
 }
 .nav-arrows span:hover {
-	color: #fff;	
+	color: #fff;
 }
 .nav-arrows span.nav-arrow-prev {
 	left: 0;

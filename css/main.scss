@@ -20,6 +20,12 @@
   }
 }
 
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "nova-theme"
