@@ -29,7 +29,7 @@ layout: default
                         {% if category == page.category %}
                             <div class="blog-item well">
                                 {% include post-top.html post=post %}
-                                  <article>{{ post.content }}</article>
+                                  <article>{{ post.content | markdownify }}</article>
                                 {% include post-bottom.html post=post showall=true %}
                             </div>
                         {% endif %}

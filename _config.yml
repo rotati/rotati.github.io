@@ -27,3 +27,5 @@ address_line2: Phnom Penh, Cambodia
 markdown: kramdown
 
 permalink: pretty
+
+# gems: [pry]
