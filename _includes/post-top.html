@@ -9,13 +9,3 @@
       <i class="icon-calendar"></i> {{ include.post.date | date: '%B %Y' }}
     </p>
 </div>
-<article>{{ include.post.content }}</article>
-{% unless include.showall %}
-  <a class="btn btn-link" href="{{ include.post.permalink }}">Read More <i class="icon-angle-right"></i></a>
-{% endunless %}
-<div class="tag">
-  Tags :
-  {% for tag in include.post.tags %}
-    <a href="/tags/{{tag}}"><span class="label label-success">{{ tag }}</span></a>
-  {% endfor %}
-</div>

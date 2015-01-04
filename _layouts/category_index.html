@@ -28,7 +28,9 @@ layout: default
                     {% for category in post.categories %}
                         {% if category == page.category %}
                             <div class="blog-item well">
-                                {% include blog-post.html post=post %}
+                                {% include post-top.html post=post %}
+                                  <article>{{ post.content }}</article>
+                                {% include post-bottom.html post=post showall=true %}
                             </div>
                         {% endif %}
                     {% endfor %}

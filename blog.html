@@ -28,9 +28,12 @@ weight: 3
 
                 {% for post in site.posts %}
                 <div class="blog-item well">
-                    {% include blog-post.html post=post %}
+                    {% include post-top.html post=post %}
+                      <article>{{ post.content }}</article>
+                    {% include post-bottom.html post=post showall=true %}
                 </div>
                 {% endfor %}
+
             </div> <!-- blog -->
 
           <div class="gap"></div>

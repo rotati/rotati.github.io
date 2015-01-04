@@ -22,7 +22,9 @@ layout: default
   <div class="row">
     <div class="span8">
         <div class="well">
-            {% include blog-post.html post=page showall=true %}
+            {% include post-top.html post=page %}
+              <article>{{ content }}</article>
+            {% include post-bottom.html post=page showall=true %}
             <div class="user-info media box">
               <div class="pull-left">
                   <img src="/images/darren.jpg" alt="Darren" />
