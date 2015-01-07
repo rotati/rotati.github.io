@@ -6,8 +6,8 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 07 Jan 2015 18:55:59 +0700</pubDate>
-    <lastBuildDate>Wed, 07 Jan 2015 18:55:59 +0700</lastBuildDate>
+    <pubDate>Wed, 07 Jan 2015 19:38:54 +0700</pubDate>
+    <lastBuildDate>Wed, 07 Jan 2015 19:38:54 +0700</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
@@ -45,7 +45,7 @@
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;my_favorite_coffee&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;laos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;angkor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nescafe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;my_favorite_coffee&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;This will blow up with the error &lt;code&gt;in `sort&#39;: comparison of Coffee with Coffee failed&lt;/code&gt;. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the &lt;em&gt;spaceship operator&lt;/em&gt; method on the Coffee class.&lt;/p&gt;
+&lt;p&gt;This will blow up with the error in &lt;strong&gt;‘sort’: comparison of Coffee with Coffee failed&lt;/strong&gt;. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the &lt;em&gt;spaceship operator&lt;/em&gt; method on the Coffee class.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-ruby-spaceship-operator&quot;&gt;The Ruby Spaceship Operator&lt;/h3&gt;
 
@@ -65,7 +65,7 @@
   &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strength&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;other_coffee&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strength&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: &lt;code&gt;#&amp;lt;Coffee:0x007f9ada820f10&amp;gt;&lt;/code&gt;. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the &lt;code&gt;to_s&lt;/code&gt; method on the Coffee class.&lt;/p&gt;
+&lt;p&gt;Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: &lt;code&gt;&amp;lt;Coffee:0x007f9ada820f10&amp;gt;&lt;/code&gt;. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the &lt;code&gt;to_s&lt;/code&gt; method on the Coffee class.&lt;/p&gt;
 
 &lt;p&gt;Once we override the &lt;code&gt;to_s&lt;/code&gt; method like so&lt;/p&gt;
 

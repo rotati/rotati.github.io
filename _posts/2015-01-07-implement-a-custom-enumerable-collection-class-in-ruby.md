@@ -52,7 +52,7 @@ my_favorite_coffee = [laos, angkor, nescafe]
 puts my_favorite_coffee.sort
 {% endhighlight %}
 
-This will blow up with the error <code>in `sort': comparison of Coffee with Coffee failed</code>. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the _spaceship operator_ method on the Coffee class.
+This will blow up with the error in __'sort': comparison of Coffee with Coffee failed__. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the _spaceship operator_ method on the Coffee class.
 
 ### The Ruby Spaceship Operator
 
@@ -72,9 +72,9 @@ def <=>(other_coffee)
 end
 {% endhighlight %}
 
-Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: <code>#&lt;Coffee:0x007f9ada820f10&gt;</code>. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the <code>to_s</code> method on the Coffee class.
+Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: `<Coffee:0x007f9ada820f10>`. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the `to_s` method on the Coffee class.
 
-Once we override the <code>to_s</code> method like so
+Once we override the `to_s` method like so
 
 {% highlight ruby %}
 def to_s
@@ -95,7 +95,7 @@ Then our output is now as follows, which is much better!
 So now that we know we have provided enough detail to sort our Coffee objects by strength within a generic Array, we need to be able to do the same within our CoffeeShop class too. This is achieved by implementing the Enumerable module in the CoffeeShop class. There are two things we need to do in our CoffeeShop class to achive this:
 
 1. Include the Enumerable module
-2. Implement an <code>each</code> method that yields each Coffee instance to the caller
+2. Implement an `each` method that yields each Coffee instance to the caller
 
 Here is our completed CoffeeShop class:
 
