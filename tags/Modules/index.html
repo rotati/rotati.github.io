@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>The Rotati Blog - Crafting Beautiful Applications</title>
+    <title>Posts Tagged &ldquo;Modules&rdquo; - Crafting Beautiful Applications</title>
     <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://rotati.com/blog/">
+    <link rel="canonical" href="http://rotati.com/tags/Modules/">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
@@ -114,7 +114,7 @@
   
 
   
-    <li class="active">
+    <li >
         <a class="page-link" href="/blog/">Blog</a>
     </li>
   
@@ -206,12 +206,13 @@
     <div class="container">
         <div class="row-fluid">
             <div class="span6">
-                <h1>The Rotati Blog</h1>
+                <h1>Tags: Modules</h1>
             </div>
             <div class="span6">
                 <ul class="breadcrumb pull-right">
                     <li><a href="/">Home</a> <span class="divider">/</span></li>
-                    <li class="active">Blog</li>
+                    <li><a href="/blog/">Blog</a><span class="divider">/</span></li>
+                    <li>Tags <span class="divider">/</span></li>
                 </ul>
             </div>
         </div>
@@ -225,7 +226,17 @@
 
                 
                 <div class="blog-item well">
-                    <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h2>Implement a custom enumerable collection class in ruby</h2></a>
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h2>Implement a custom enumerable collection class in ruby</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
       <i class="icon-user"></i> by <a href="#">darren</a> |
@@ -237,7 +248,8 @@
     </p>
 </div>
 
-                      <article><h3 id="background">Background</h3>
+                                <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h4>Read Full Blog Post...</h4></a>
+                              <!-- <article><h3 id="background">Background</h3>
 
 <p>The <a href="http://www.ruby-doc.org/core-2.1.4/Enumerable.html">Enumerable</a> module in Ruby Core is very powerful. It provides methods such as sort, min, max and others for working specifically with collections. Its implemented by collection classes such as Array out of the box but what if you need to make your own custom collection class? In this case you will need to include the Enumerable module. Here’s how.</p>
 
@@ -249,26 +261,26 @@
 
 <p>First of all, lets get some coffee brewed by implementing our Coffee class!</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Coffee</span>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Coffee</span>
   <span class="kp">attr_accessor</span> <span class="ss">:name</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:strength</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:strength</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">strength</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="vi">@strength</span> <span class="o">=</span> <span class="n">strength</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
+<span class="sr">&lt;p&gt;def initialize(name, strength)</span>
+<span class="sr">    @name = name</span>
+<span class="sr">    @strength = strength</span>
+<span class="sr">  end</span>
+<span class="sr">end</span></code></pre></div></p>
 
 <p>Lets make the coffee!</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Laos&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Angkor&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Nescafe&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></div>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Laos</span><span class="err">”</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Angkor</span><span class="err">”</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Nescafe</span><span class="err">”</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></div></p>
 
 <p>Now, for starters, lets just add this to an array and try and sort it.#</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_favorite_coffee</span> <span class="o">=</span> <span class="o">[</span><span class="n">laos</span><span class="p">,</span> <span class="n">angkor</span><span class="p">,</span> <span class="n">nescafe</span><span class="o">]</span>
-<span class="nb">puts</span> <span class="n">my_favorite_coffee</span><span class="o">.</span><span class="n">sort</span></code></pre></div>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_favorite_coffee</span> <span class="o">=</span> <span class="o">[</span><span class="n">laos</span><span class="p">,</span> <span class="n">angkor</span><span class="p">,</span> <span class="n">nescafe</span><span class="o">]</span>
+<span class="nb">puts</span> <span class="n">my_favorite_coffee</span><span class="o">.</span><span class="n">sort</span></code></pre></div></p>
 
 <p>This will blow up with the error <code>in `sort': comparison of Coffee with Coffee failed</code>. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the <em>spaceship operator</em> method on the Coffee class.</p>
 
@@ -286,23 +298,23 @@
 
 <p>So without further ado lets implement our own spaceship operator method for our Coffee class. In our specific case we need to sort on the <em>strength</em> attribute.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">other_coffee</span><span class="p">)</span>
-  <span class="nb">self</span><span class="o">.</span><span class="n">strength</span> <span class="o">&lt;=&gt;</span> <span class="n">other_coffee</span><span class="o">.</span><span class="n">strength</span>
-<span class="k">end</span></code></pre></div>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;(</span><span class="n">other_coffee</span><span class="p">)</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">strength</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">other_coffee</span><span class="o">.</span><span class="n">strength</span>
+<span class="k">end</span></code></pre></div></p>
 
 <p>Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: <code>#&lt;Coffee:0x007f9ada820f10&gt;</code>. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the <code>to_s</code> method on the Coffee class.</p>
 
 <p>Once we override the <code>to_s</code> method like so</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">to_s</span>
-  <span class="s2">&quot;&lt;name: </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">, strength: </span><span class="si">#{</span><span class="n">strength</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
-<span class="k">end</span></code></pre></div>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">to_s</span>
+  <span class="err">“</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="c1">#{name}, strength: #{strength}&amp;gt;”</span>
+<span class="k">end</span></code></pre></div></p>
 
 <p>Then our output is now as follows, which is much better!</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Nescafe</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">1</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Angkor</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">7</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Laos</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">10</span><span class="o">&gt;</span></code></pre></div>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Nescafe</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">1</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Angkor</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">7</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
+<span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Laos</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">10</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span></code></pre></div></p>
 
 <h3 id="enter-the-coffee-shop">Enter the Coffee Shop!</h3>
 
@@ -315,33 +327,35 @@
 
 <p>Here is our completed CoffeeShop class:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShop</span>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShop</span>
   <span class="kp">include</span> <span class="no">Enumerable</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:coffees</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:coffees</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">coffees</span><span class="p">)</span>
-    <span class="vi">@coffees</span> <span class="o">=</span> <span class="n">coffees</span>
-  <span class="k">end</span>
+<span class="sr">&lt;p&gt;def initialize(*coffees)</span>
+<span class="sr">    @coffees = coffees</span>
+<span class="sr">  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 
-  <span class="k">def</span> <span class="nf">each</span>
+<span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">each</span>
     <span class="vi">@coffees</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">coffee</span><span class="o">|</span> <span class="k">yield</span> <span class="n">coffee</span><span class="p">}</span>
   <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
+<span class="k">end</span></code></pre></div></p>
 
 <p>We can use it as follows and we get the same result as we do with calling sort on the Array.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Laos&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Angkor&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Nescafe&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Laos</span><span class="err">”</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Angkor</span><span class="err">”</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Nescafe</span><span class="err">”</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 
-<span class="n">cs</span> <span class="o">=</span> <span class="no">CoffeeShop</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">nescafe</span><span class="p">,</span> <span class="n">laos</span><span class="p">,</span> <span class="n">angkor</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">cs</span><span class="o">.</span><span class="n">sort</span></code></pre></div>
+<span class="sr">&lt;p&gt;cs = CoffeeShop.new(nescafe, laos, angkor)</span>
+<span class="sr">puts cs.sort</span></code></pre></div></p>
 
 <h3 id="conculusion">Conculusion</h3>
 
 <p>So that is the basics of implementing Enumerable in Ruby. Here is a <a href="https://gist.github.com/jensendarren/ee1136dd046a916c7da4">Gist</a> that contains the full source code.</p>
-</article>
-                    
+</article> -->
+                            
+  <a class="btn btn-link" href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby">Read More <i class="icon-angle-right"></i></a>
+
 <div class="tag">
   Tags :
   
@@ -357,65 +371,36 @@
   
 </div>
 
+                        
+                    
                 </div>
                 
                 <div class="blog-item well">
-                    <a href="/2015/01/rotati-a-modern-web-mobile-cloud-consultancy"><h2>Rotati a modern web mobile cloud consultancy</h2></a>
-<div class="blog-meta clearfix">
-    <p class="pull-left">
-      <i class="icon-user"></i> by <a href="#">Darren</a> |
-      <i class="icon-folder-open"></i>Category:
-      
-        <a href="/categories/business">Business</a> |
-      
-        <a href="/categories/consulting">Consulting</a> |
-      
-      <i class="icon-calendar"></i> January 2015
-    </p>
-</div>
-
-                      <article><h3 id="welcome-to-rotati">Welcome To Rotati</h3>
-
-<p>Happy New Year 2015 and Welcome to Rotati!</p>
-
-<p>We here at Rotati and super excited about the New Year! We have a new website, new office and a bunch of trainees going through <a href="http://devbootstrap.com">DevBootstrap</a> right now.</p>
-
-<p>We are also excited to start using the latest versions of <a href="http://rubyonrails.org">Ruby on Rails</a> (version 4.1) and <a href="https://angularjs.org/">AngularJS</a> (version 1.3.8) in all our projects. Both of these frameworks just get better and better and we expect the pace to continue in 2015.</p>
-
-<p>Rotati are also super excited to announce partnerships with lots of local consultancies to ensure we provide the best services to all our clients.</p>
-
-<p>So, once again, lets raise a glass and Happy New Year! We’ll see you again very soon.</p>
-</article>
                     
-<div class="tag">
-  Tags :
-  
-    <a href="/tags/rotati"><span class="label label-success">rotati</span></a>
-  
-    <a href="/tags/consulting"><span class="label label-success">consulting</span></a>
-  
-    <a href="/tags/webdevelopment"><span class="label label-success">webdevelopment</span></a>
-  
-    <a href="/tags/mobiledevelopment"><span class="label label-success">mobiledevelopment</span></a>
-  
-    <a href="/tags/clouddevelopment"><span class="label label-success">clouddevelopment</span></a>
-  
-    <a href="/tags/web"><span class="label label-success">web</span></a>
-  
-    <a href="/tags/mobile"><span class="label label-success">mobile</span></a>
-  
-    <a href="/tags/cloud"><span class="label label-success">cloud</span></a>
-  
-    <a href="/tags/ruby"><span class="label label-success">ruby</span></a>
-  
-    <a href="/tags/javascript"><span class="label label-success">javascript</span></a>
-  
-    <a href="/tags/rails"><span class="label label-success">rails</span></a>
-  
-    <a href="/tags/angularjs"><span class="label label-success">angularjs</span></a>
-  
-</div>
-
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
                 </div>
                 
 
@@ -423,22 +408,7 @@
 
           <div class="gap"></div>
 
-          <!-- Paginationan
-          <div class="pagination">
-            <ul>
-                <li><a href="#"><i class="icon-angle-left"></i></a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#"><i class="icon-angle-right"></i></a></li>
-            </ul>
-        </div>-->
-
-
      </div> <!-- span8 -->
-
      <aside class="span4">
 
   <div class="widget">
@@ -525,9 +495,7 @@
 
 </aside>
 
-
     </div> <!-- row -->
-
 </section>
 
 
@@ -630,7 +598,7 @@
   
 
   
-    <li class="active">
+    <li >
         <a class="page-link" href="/blog/">Blog</a>
     </li>
   
