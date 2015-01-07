@@ -280,7 +280,7 @@
 <p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_favorite_coffee</span> <span class="o">=</span> <span class="o">[</span><span class="n">laos</span><span class="p">,</span> <span class="n">angkor</span><span class="p">,</span> <span class="n">nescafe</span><span class="o">]</span>
 <span class="nb">puts</span> <span class="n">my_favorite_coffee</span><span class="o">.</span><span class="n">sort</span></code></pre></div></p>
 
-<p>This will blow up with the error <code>in `sort': comparison of Coffee with Coffee failed</code>. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the <em>spaceship operator</em> method on the Coffee class.</p>
+<p>This will blow up with the error in <strong>‘sort’: comparison of Coffee with Coffee failed</strong>. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the <em>spaceship operator</em> method on the Coffee class.</p>
 
 <h3 id="the-ruby-spaceship-operator">The Ruby Spaceship Operator</h3>
 
@@ -300,7 +300,7 @@
   <span class="nb">self</span><span class="o">.</span><span class="n">strength</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">other_coffee</span><span class="o">.</span><span class="n">strength</span>
 <span class="k">end</span></code></pre></div></p>
 
-<p>Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: <code>#&lt;Coffee:0x007f9ada820f10&gt;</code>. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the <code>to_s</code> method on the Coffee class.</p>
+<p>Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: <code>&lt;Coffee:0x007f9ada820f10&gt;</code>. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the <code>to_s</code> method on the Coffee class.</p>
 
 <p>Once we override the <code>to_s</code> method like so</p>
 
