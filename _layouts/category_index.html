@@ -29,7 +29,8 @@ layout: default
                         {% if category == page.category %}
                             <div class="blog-item well">
                                 {% include post-top.html post=post %}
-                                  <article>{{ post.content | markdownify }}</article>
+                                    <a href="{{ post.permalink }}"><h4>Read Full Blog Post...</h4></a>
+                                  <!-- NOT WORKING! <article>{{ post.content | markdownify }}</article> -->
                                 {% include post-bottom.html post=post showall=true %}
                             </div>
                         {% endif %}
