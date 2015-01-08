@@ -228,6 +228,184 @@
                 <div class="blog-item well">
                     
                         
+                            <a href="/2015/01/using-the-observable-ruby-standard-lib-module/"><h2>Using the Observable ruby standard lib module</h2></a>
+<div class="blog-meta clearfix">
+    <p class="pull-left">
+      <i class="icon-user"></i> by <a href="#"></a> |
+      <i class="icon-folder-open"></i>Category:
+      
+        <a href="/categories/programming">Programming</a> |
+      
+      <i class="icon-calendar"></i> January 2015
+    </p>
+</div>
+
+                                <a href="/2015/01/using-the-observable-ruby-standard-lib-module/"><h4>Read Full Blog Post...</h4></a>
+                              <!-- <article><h3 id="background">Background</h3>
+
+<p>The <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/observer/rdoc/Observable.html">Observable</a> module is a useful and elegant way to watch for changes in an object in Ruby. A common example is for alerting of some condition within the object being observed. The example shown in the documentation is for a <code>Ticker</code> class which has two observers: one for when the price goes <em>below</em> a certain level and one for when the price goes <em>above</em> a certain level. What we will do today is show something similar, but for a <code>CoffeeShop</code> class instead. Let’s get to it!</p>
+
+<h3 id="lets-observe-this-coffee-shop">Lets observe this coffee shop</h3>
+
+<p>So the application that we will build will be for a coffee shop where the manager has requested that they be notified when the shop is either full or empty. We will use the Observer pattern for this task!</p>
+
+<p>To get this working we need to do three things:</p>
+
+<ol>
+  <li>Include the <code>Observable</code> module into the <code>CoffeeShop</code> class.</li>
+  <li>Call <code>changed</code> when a customer enters or departs the shop.</li>
+  <li>Call <code>notify_observers</code>, passing any usful paramaters, whenever a customer enters or exits the shop.</li>
+</ol>
+
+<h3 id="an-observable-coffeeshop-class">An Observable CoffeeShop class</h3>
+
+<p>The basic class starts with including Observable and creating an initializer method that takes the name of our shop and the capacity - that is the maximum number of customers the shop can accomodate.</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="err">‘</span><span class="n">observer</span><span class="err">’</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;class CoffeeShop</span>
+<span class="sr">  include Observable&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">capacity</span><span class="p">)</span>
+    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
+    <span class="vi">@capacity</span> <span class="o">=</span> <span class="n">capacity</span>
+    <span class="vi">@customers</span> <span class="o">=</span> <span class="o">[]</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div></p>
+
+<h3 id="the-coffeeshop-enter-and-depart-methods">The CoffeeShop enter and depart methods</h3>
+
+<p>Now we need to create methods that allow a customer to enter and/or depart the shop. Notice that both methods call <code>changed</code>, then adjust the customers array accordingly and finally calls <code>notify_observers</code> on the Observable module.</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
+  <span class="n">changed</span>
+  <span class="vi">@customers</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
+  <span class="n">notify_observers</span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+<span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;def depart(customer)</span>
+<span class="sr">  changed</span>
+<span class="sr">  @customers.delete(customer)</span>
+<span class="sr">  notify_observers(Time.now)</span>
+<span class="sr">end</span></code></pre></div></p>
+
+<h3 id="create-our-first-observer-class-for-the-empty-coffee-shop-alerts">Create our first Observer class for the empty coffee shop alerts</h3>
+
+<p>Here is our first Observer. Note we pass in the instance of the class that we want the observer to observe (in this case our coffee shop instance). Then we call <code>add_observer</code> passing in <code>self</code> (that is the Observer class itself) - which essentially <em>registers</em> the observer with the object we are interested in.</p>
+
+<p>Next note the <code>update</code> method uses the instance of the coffee shop (@shop) and asks if it’s empty by calling a method we have not defined yet: <code>empty?</code>. So then if the shop is indeed empty an appropriate alert will be sent to the manager.</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopEmptyObserver</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
+    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
+    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;def update(time)</span>
+<span class="sr">    if @shop.empty?</span>
+<span class="sr">      puts “</span><span class="si">#{</span><span class="n">time</span><span class="si">}</span><span class="sr">: The shop is EMPTY so some staff can go home.”</span>
+<span class="sr">    end</span>
+<span class="sr">  end</span>
+<span class="sr">end</span></code></pre></div></p>
+
+<h3 id="defining-the-empty-and-full-methods-on-coffeeshop">Defining the empty? and full? methods on CoffeeShop</h3>
+
+<p>Since its clear that we need a method on CoffeeShop to determine if it’s empty we can also define a method for if it’s full as well (so that we can use that in our next observer). Here are the method definitions for <code>empty?</code> and <code>full?</code> on the <code>CoffeeShop</code> class.</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">full?</span>
+  <span class="vi">@customers</span><span class="o">.</span><span class="n">count</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">=</span> <span class="vi">@capacity</span>
+<span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;def empty?</span>
+<span class="sr">  @customers.count.zero?</span>
+<span class="sr">end</span></code></pre></div></p>
+
+<h3 id="create-the-full-coffee-shop-observer-class">Create the full coffee shop observer class</h3>
+
+<p>Next up we need to create the <code>CoffeeShopFullObserver</code> class so that we can notify the manager to hire more staff! Here is how that looks:</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopFullObserver</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
+    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
+    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;def update(time)</span>
+<span class="sr">    if @shop.full?</span>
+<span class="sr">      puts “</span><span class="si">#{</span><span class="n">time</span><span class="si">}</span><span class="sr">: The shop is FULL - quick call more staff!”</span>
+<span class="sr">    end</span>
+<span class="sr">  end</span>
+<span class="sr">end</span></code></pre></div></p>
+
+<p>Note how the constructor is <em>exactly</em> the same as the constructor in the <code>CoffeeShopEmptyObserver</code> class. We can refactor this by creating an abstract CoffeeShopObserver class like so:</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopObserver</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
+    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
+    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div></p>
+
+<p>Then we can inherit our concrete observers (for empty or full states) with the new abstract <code>CoffeeShopObserver</code>. See the link at the end of this post for the complete source code.</p>
+
+<h3 id="usage">Usage</h3>
+
+<p>So lets get this application up and running and open up our coffee shop and let the customers in (and out!).</p>
+
+<p>First we need to create an instance of our <code>CoffeeShop</code> class and pass that onto both observers like so:</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">coffee_shop</span> <span class="o">=</span> <span class="no">CoffeeShop</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Costa</span><span class="err">”</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="no">CoffeeShopEmptyObserver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">coffee_shop</span><span class="p">)</span>
+<span class="no">CoffeeShopFullObserver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">coffee_shop</span><span class="p">)</span></code></pre></div></p>
+
+<p>For basic usage we can manually assign some customers to enter or depart the shop like so:</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="err">“</span><span class="no">Darren</span><span class="err">”</span><span class="p">)</span>
+<span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="err">“</span><span class="no">Brian</span><span class="err">”</span><span class="p">)</span>
+<span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="err">“</span><span class="no">Tammy</span><span class="err">”</span><span class="p">)</span> <span class="c1">#will trigger the alert from the ‘full’ observer (capacity is set to 3)</span>
+<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="err">“</span><span class="no">Darren</span><span class="err">”</span><span class="p">)</span>
+<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="err">“</span><span class="no">Brian</span><span class="err">”</span><span class="p">)</span>
+<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="err">“</span><span class="no">Tammy</span><span class="err">”</span><span class="p">)</span> <span class="c1">#will trigger the alert from the ‘empty’ observer</span></code></pre></div></p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>The observer pattern as implemented in the Ruby Standard Library is pretty powerful and yet very easy to use. One can imagine using this in a real world application where instead of <code>puts</code> one might send out an sms alert or an email to a real manager.</p>
+
+<p>Here is a <a href="https://gist.github.com/jensendarren/e49c60596b7c7268e605">Gist</a> containing the full source code with some extra stuff for randomly generating customers to come and go as they please thus producing a typical ebb and flow of activity in our cool coffee shop!</p>
+</article> -->
+                            
+  <a class="btn btn-link" href="/2015/01/using-the-observable-ruby-standard-lib-module/">Read More <i class="icon-angle-right"></i></a>
+
+<div class="tag">
+  Tags :
+  
+    <a href="/tags/ruby"><span class="label label-success">ruby</span></a>
+  
+    <a href="/tags/custom"><span class="label label-success">custom</span></a>
+  
+    <a href="/tags/class"><span class="label label-success">class</span></a>
+  
+    <a href="/tags/enumerable"><span class="label label-success">enumerable</span></a>
+  
+    <a href="/tags/Modules"><span class="label label-success">Modules</span></a>
+  
+</div>
+
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </div>
+                
+                <div class="blog-item well">
+                    
+                        
                             <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h2>Implement a custom enumerable collection class in ruby</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
@@ -543,6 +721,10 @@
           
             
             <li><a href="#">January 2015</a></li>
+          
+        
+        
+        
           
         
         
