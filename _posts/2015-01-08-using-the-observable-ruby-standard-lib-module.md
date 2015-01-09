@@ -1,5 +1,6 @@
 ---
 layout: post
+author: Darren
 title: Using the Observable Ruby Standard Library module
 permalink: /2015/01/using-the-observable-ruby-standard-lib-module/
 categories:
@@ -8,8 +9,8 @@ tags:
   - ruby
   - custom
   - class
-  - enumerable
-  - Modules
+  - observable
+  - modules
 ---
 
 ### Background

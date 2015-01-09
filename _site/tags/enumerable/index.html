@@ -104,6 +104,8 @@
   
 
   
+
+  
     <li >
         <a class="page-link" href="/">Home</a>
     </li>
@@ -193,6 +195,8 @@
       
         
       
+        
+      
     </ul>
   </li>
   <li class="login"><a class="page-link" href="/contact">Get In Touch</a></li>
@@ -229,7 +233,7 @@
             <div class="blog">
 
                 
-                <div class="blog-item well">
+
                     
                         
                     
@@ -241,9 +245,9 @@
                     
                         
                     
-                </div>
+
                 
-                <div class="blog-item well">
+
                     
                         
                     
@@ -252,176 +256,12 @@
                         
                     
                         
-                            <a href="/2015/01/using-the-observable-ruby-standard-lib-module/"><h2>Using the Observable Ruby Standard Library module</h2></a>
-<div class="blog-meta clearfix">
-    <p class="pull-left">
-      <i class="icon-user"></i> by <a href="#"></a> |
-      <i class="icon-folder-open"></i>Category:
-      
-        <a href="/categories/programming">Programming</a> |
-      
-      <i class="icon-calendar"></i> January 2015
-    </p>
-</div>
-
-                                <a href="/2015/01/using-the-observable-ruby-standard-lib-module/"><h4>Read Full Blog Post...</h4></a>
-                              <!-- <article><h3 id="background">Background</h3>
-
-<p>The <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/observer/rdoc/Observable.html">Observable</a> module is a useful and elegant way to watch for changes in an object in Ruby. A common example is for alerting of some condition within the object being observed. The example shown in the documentation is for a <code>Ticker</code> class which has two observers: one for when the price goes <em>below</em> a certain level and one for when the price goes <em>above</em> a certain level. What we will do today is show something similar, but for a <code>CoffeeShop</code> class instead. Let’s get to it!</p>
-
-<h3 id="lets-observe-this-coffee-shop">Lets observe this coffee shop</h3>
-
-<p>So the application that we will build will be for a coffee shop where the manager has requested that they be notified when the shop is either full or empty. We will use the Observer pattern for this task!</p>
-
-<p>To get this working we need to do three things:</p>
-
-<ol>
-  <li>Include the <code>Observable</code> module into the <code>CoffeeShop</code> class.</li>
-  <li>Call <code>changed</code> when a customer enters or departs the shop.</li>
-  <li>Call <code>notify_observers</code>, passing any usful paramaters, whenever a customer enters or exits the shop.</li>
-</ol>
-
-<h3 id="an-observable-coffeeshop-class">An Observable CoffeeShop class</h3>
-
-<p>The basic class starts with including Observable and creating an initializer method that takes the name of our shop and the capacity - that is the maximum number of customers the shop can accomodate.</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="err">‘</span><span class="n">observer</span><span class="err">’</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;class CoffeeShop</span>
-<span class="sr">  include Observable&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">capacity</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="vi">@capacity</span> <span class="o">=</span> <span class="n">capacity</span>
-    <span class="vi">@customers</span> <span class="o">=</span> <span class="o">[]</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div></p>
-
-<h3 id="the-coffeeshop-enter-and-depart-methods">The CoffeeShop enter and depart methods</h3>
-
-<p>Now we need to create methods that allow a customer to enter and/or depart the shop. Notice that both methods call <code>changed</code>, then adjust the customers array accordingly and finally calls <code>notify_observers</code> on the Observable module.</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
-  <span class="n">changed</span>
-  <span class="vi">@customers</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
-  <span class="n">notify_observers</span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
-<span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;def depart(customer)</span>
-<span class="sr">  changed</span>
-<span class="sr">  @customers.delete(customer)</span>
-<span class="sr">  notify_observers(Time.now)</span>
-<span class="sr">end</span></code></pre></div></p>
-
-<h3 id="create-our-first-observer-class-for-the-empty-coffee-shop-alerts">Create our first Observer class for the empty coffee shop alerts</h3>
-
-<p>Here is our first Observer. Note we pass in the instance of the class that we want the observer to observe (in this case our coffee shop instance). Then we call <code>add_observer</code> passing in <code>self</code> (that is the Observer class itself) - which essentially <em>registers</em> the observer with the object we are interested in.</p>
-
-<p>Next note the <code>update</code> method uses the instance of the coffee shop (@shop) and asks if it’s empty by calling a method we have not defined yet: <code>empty?</code>. So then if the shop is indeed empty an appropriate alert will be sent to the manager.</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopEmptyObserver</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
-    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
-    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;def update(time)</span>
-<span class="sr">    if @shop.empty?</span>
-<span class="sr">      puts “</span><span class="si">#{</span><span class="n">time</span><span class="si">}</span><span class="sr">: The shop is EMPTY so some staff can go home.”</span>
-<span class="sr">    end</span>
-<span class="sr">  end</span>
-<span class="sr">end</span></code></pre></div></p>
-
-<h3 id="defining-the-empty-and-full-methods-on-coffeeshop">Defining the empty? and full? methods on CoffeeShop</h3>
-
-<p>Since its clear that we need a method on CoffeeShop to determine if it’s empty we can also define a method for if it’s full as well (so that we can use that in our next observer). Here are the method definitions for <code>empty?</code> and <code>full?</code> on the <code>CoffeeShop</code> class.</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">full?</span>
-  <span class="vi">@customers</span><span class="o">.</span><span class="n">count</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="o">=</span> <span class="vi">@capacity</span>
-<span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;def empty?</span>
-<span class="sr">  @customers.count.zero?</span>
-<span class="sr">end</span></code></pre></div></p>
-
-<h3 id="create-the-full-coffee-shop-observer-class">Create the full coffee shop observer class</h3>
-
-<p>Next up we need to create the <code>CoffeeShopFullObserver</code> class so that we can notify the manager to hire more staff! Here is how that looks:</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopFullObserver</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
-    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
-    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;def update(time)</span>
-<span class="sr">    if @shop.full?</span>
-<span class="sr">      puts “</span><span class="si">#{</span><span class="n">time</span><span class="si">}</span><span class="sr">: The shop is FULL - quick call more staff!”</span>
-<span class="sr">    end</span>
-<span class="sr">  end</span>
-<span class="sr">end</span></code></pre></div></p>
-
-<p>Note how the constructor is <em>exactly</em> the same as the constructor in the <code>CoffeeShopEmptyObserver</code> class. We can refactor this by creating an abstract CoffeeShopObserver class like so:</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopObserver</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
-    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
-    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div></p>
-
-<p>Then we can inherit our concrete observers (for empty or full states) with the new abstract <code>CoffeeShopObserver</code>. See the link at the end of this post for the complete source code.</p>
-
-<h3 id="usage">Usage</h3>
-
-<p>So lets get this application up and running and open up our coffee shop and let the customers in (and out!).</p>
-
-<p>First we need to create an instance of our <code>CoffeeShop</code> class and pass that onto both observers like so:</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">coffee_shop</span> <span class="o">=</span> <span class="no">CoffeeShop</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Costa</span><span class="err">”</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="no">CoffeeShopEmptyObserver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">coffee_shop</span><span class="p">)</span>
-<span class="no">CoffeeShopFullObserver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">coffee_shop</span><span class="p">)</span></code></pre></div></p>
-
-<p>For basic usage we can manually assign some customers to enter or depart the shop like so:</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="err">“</span><span class="no">Darren</span><span class="err">”</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="err">“</span><span class="no">Brian</span><span class="err">”</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="err">“</span><span class="no">Tammy</span><span class="err">”</span><span class="p">)</span> <span class="c1">#will trigger the alert from the ‘full’ observer (capacity is set to 3)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="err">“</span><span class="no">Darren</span><span class="err">”</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="err">“</span><span class="no">Brian</span><span class="err">”</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="err">“</span><span class="no">Tammy</span><span class="err">”</span><span class="p">)</span> <span class="c1">#will trigger the alert from the ‘empty’ observer</span></code></pre></div></p>
-
-<h3 id="conclusion">Conclusion</h3>
-
-<p>The observer pattern as implemented in the Ruby Standard Library is pretty powerful and yet very easy to use. One can imagine using this in a real world application where instead of <code>puts</code> one might send out an sms alert or an email to a real manager.</p>
-
-<p>Here is a <a href="https://gist.github.com/jensendarren/e49c60596b7c7268e605">Gist</a> containing the full source code with some extra stuff for randomly generating customers to come and go as they please thus producing a typical ebb and flow of activity in our cool coffee shop!</p>
-</article> -->
-                            
-  <a class="btn btn-link" href="/2015/01/using-the-observable-ruby-standard-lib-module/">Read More <i class="icon-angle-right"></i></a>
-
-<div class="tag">
-  Tags :
-  
-    <a href="/tags/ruby"><span class="label label-success">ruby</span></a>
-  
-    <a href="/tags/custom"><span class="label label-success">custom</span></a>
-  
-    <a href="/tags/class"><span class="label label-success">class</span></a>
-  
-    <a href="/tags/enumerable"><span class="label label-success">enumerable</span></a>
-  
-    <a href="/tags/Modules"><span class="label label-success">Modules</span></a>
-  
-</div>
-
-                        
                     
                         
                     
-                </div>
+
                 
-                <div class="blog-item well">
+
                     
                         
                     
@@ -430,7 +270,8 @@
                         
                     
                         
-                            <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h2>Implement a custom enumerable collection class in ruby</h2></a>
+                        <div class="blog-item well">
+                            <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h2>Implement a custom Enumerable collection class in Ruby</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
       <i class="icon-user"></i> by <a href="#">darren</a> |
@@ -442,111 +283,7 @@
     </p>
 </div>
 
-                                <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h4>Read Full Blog Post...</h4></a>
-                              <!-- <article><h3 id="background">Background</h3>
-
-<p>The <a href="http://www.ruby-doc.org/core-2.1.4/Enumerable.html">Enumerable</a> module in Ruby Core is very powerful. It provides methods such as sort, min, max and others for working specifically with collections. Its implemented by collection classes such as Array out of the box but what if you need to make your own custom collection class? In this case you will need to include the Enumerable module. Here’s how.</p>
-
-<h3 id="an-enumerable-coffee-shop">An Enumerable Coffee Shop</h3>
-
-<p>Lets consider a Coffee Shop that has a number of different blends of coffee on offer. Imagine that the shop wants to sort these different blends by strength. Also consider that we may need to quickly determine the stongest or the weakest coffee. Enumerable module to the rescue!</p>
-
-<h3 id="the-item-class-first-coffee-class">The item class first (Coffee Class)</h3>
-
-<p>First of all, lets get some coffee brewed by implementing our Coffee class!</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Coffee</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:name</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:strength</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;def initialize(name, strength)</span>
-<span class="sr">    @name = name</span>
-<span class="sr">    @strength = strength</span>
-<span class="sr">  end</span>
-<span class="sr">end</span></code></pre></div></p>
-
-<p>Lets make the coffee!</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Laos</span><span class="err">”</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Angkor</span><span class="err">”</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Nescafe</span><span class="err">”</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></div></p>
-
-<p>Now, for starters, lets just add this to an array and try and sort it.#</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_favorite_coffee</span> <span class="o">=</span> <span class="o">[</span><span class="n">laos</span><span class="p">,</span> <span class="n">angkor</span><span class="p">,</span> <span class="n">nescafe</span><span class="o">]</span>
-<span class="nb">puts</span> <span class="n">my_favorite_coffee</span><span class="o">.</span><span class="n">sort</span></code></pre></div></p>
-
-<p>This will blow up with the error in <strong>‘sort’: comparison of Coffee with Coffee failed</strong>. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the <em>spaceship operator</em> method on the Coffee class.</p>
-
-<h3 id="the-ruby-spaceship-operator">The Ruby Spaceship Operator</h3>
-
-<p>The Ruby spaceship operator is used to compare two objects. It returns only three possible values: -1, 0, 1. It works as follows</p>
-
-<ul>
-  <li><strong>Returns -1</strong> when the left side is <strong>LESS</strong> than the right side</li>
-  <li><strong>Returns 0</strong> when the left side is the <strong>SAME</strong> as the right side</li>
-  <li><strong>Returns 1</strong> when the left side is <strong>GREATER</strong> than the right side</li>
-</ul>
-
-<p>This simple logic is then used by the Enumerable Modules sort method.</p>
-
-<p>So without further ado lets implement our own spaceship operator method for our Coffee class. In our specific case we need to sort on the <em>strength</em> attribute.</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;(</span><span class="n">other_coffee</span><span class="p">)</span>
-  <span class="nb">self</span><span class="o">.</span><span class="n">strength</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">other_coffee</span><span class="o">.</span><span class="n">strength</span>
-<span class="k">end</span></code></pre></div></p>
-
-<p>Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: <code>&lt;Coffee:0x007f9ada820f10&gt;</code>. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the <code>to_s</code> method on the Coffee class.</p>
-
-<p>Once we override the <code>to_s</code> method like so</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">to_s</span>
-  <span class="err">“</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="c1">#{name}, strength: #{strength}&amp;gt;”</span>
-<span class="k">end</span></code></pre></div></p>
-
-<p>Then our output is now as follows, which is much better!</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Nescafe</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">1</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-<span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Angkor</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">7</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span>
-<span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Laos</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">10</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span></code></pre></div></p>
-
-<h3 id="enter-the-coffee-shop">Enter the Coffee Shop!</h3>
-
-<p>So now that we know we have provided enough detail to sort our Coffee objects by strength within a generic Array, we need to be able to do the same within our CoffeeShop class too. This is achieved by implementing the Enumerable module in the CoffeeShop class. There are two things we need to do in our CoffeeShop class to achive this:</p>
-
-<ol>
-  <li>Include the Enumerable module</li>
-  <li>Implement an <code>each</code> method that yields each Coffee instance to the caller</li>
-</ol>
-
-<p>Here is our completed CoffeeShop class:</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShop</span>
-  <span class="kp">include</span> <span class="no">Enumerable</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:coffees</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;def initialize(*coffees)</span>
-<span class="sr">    @coffees = coffees</span>
-<span class="sr">  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-
-<span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">each</span>
-    <span class="vi">@coffees</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">coffee</span><span class="o">|</span> <span class="k">yield</span> <span class="n">coffee</span><span class="p">}</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div></p>
-
-<p>We can use it as follows and we get the same result as we do with calling sort on the Array.</p>
-
-<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Laos</span><span class="err">”</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Angkor</span><span class="err">”</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="err">“</span><span class="no">Nescafe</span><span class="err">”</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-
-<span class="sr">&lt;p&gt;cs = CoffeeShop.new(nescafe, laos, angkor)</span>
-<span class="sr">puts cs.sort</span></code></pre></div></p>
-
-<h3 id="conculusion">Conculusion</h3>
-
-<p>So that is the basics of implementing Enumerable in Ruby. Here is a <a href="https://gist.github.com/jensendarren/ee1136dd046a916c7da4">Gist</a> that contains the full source code.</p>
-</article> -->
+                              <article><h3 id="background">Background</h3> <p>The <a href="http://www.ruby-doc.org/core-2.1.4/Enumerable.html">Enumerable</a> module in Ruby Core is very powerful. It provides methods such as sort, min, max and others for working specifically with collections. Its implemented by collection classes such as Array out of the box but what if you need to make your own custom collection...</article>
                             
   <a class="btn btn-link" href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby">Read More <i class="icon-angle-right"></i></a>
 
@@ -561,17 +298,18 @@
   
     <a href="/tags/enumerable"><span class="label label-success">enumerable</span></a>
   
-    <a href="/tags/Modules"><span class="label label-success">Modules</span></a>
+    <a href="/tags/modules"><span class="label label-success">modules</span></a>
   
 </div>
 
+                        </div>
                         
                     
                         
                     
-                </div>
+
                 
-                <div class="blog-item well">
+
                     
                         
                     
@@ -597,7 +335,7 @@
                     
                         
                     
-                </div>
+
                 
 
             </div> <!-- blog -->
@@ -664,9 +402,11 @@
         
           <li><a href="/tags/enumerable"><span class="label label-success">enumerable</span></a></li>
         
-          <li><a href="/tags/Modules"><span class="label label-success">Modules</span></a></li>
+          <li><a href="/tags/modules"><span class="label label-success">modules</span></a></li>
         
-          <li><a href="/tags/comparable"><span class="label label-success">comparable</span></a></li>
+          <li><a href="/tags/observable"><span class="label label-success">observable</span></a></li>
+        
+          <li><a href="/tags/optionparser"><span class="label label-success">optionparser</span></a></li>
         
       </ul>
   </div>
@@ -740,6 +480,8 @@
                     <ul class="arrow">
                       
 
+
+  
 
   
 

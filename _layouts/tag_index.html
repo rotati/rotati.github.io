@@ -25,16 +25,17 @@ layout: default
             <div class="blog">
 
                 {% for post in site.posts %}
-                <div class="blog-item well">
+
                     {% for tag in post.tags %}
                         {% if tag == page.tag %}
+                        <div class="blog-item well">
                             {% include post-top.html post=post %}
-                                <a href="{{ post.permalink }}"><h4>Read Full Blog Post...</h4></a>
-                              <!-- <article>{{ post.content | markdownify }}</article> -->
+                              <article>{{ post.content | markdownify | truncatewords: 50}}</article>
                             {% include post-bottom.html post=post %}
+                        </div>
                         {% endif %}
                     {% endfor %}
-                </div>
+
                 {% endfor %}
 
             </div> <!-- blog -->

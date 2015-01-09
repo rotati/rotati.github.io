@@ -29,8 +29,8 @@ weight: 3
                 {% for post in site.posts %}
                 <div class="blog-item well">
                     {% include post-top.html post=post %}
-                      <article>{{ post.content }}</article>
-                    {% include post-bottom.html post=post showall=true %}
+                      <article>{{ post.content | truncatewords: 50}}</article>
+                    {% include post-bottom.html post=post %}
                 </div>
                 {% endfor %}
 

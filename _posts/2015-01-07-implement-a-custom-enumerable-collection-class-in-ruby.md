@@ -1,7 +1,7 @@
 ---
 layout: post
 author: darren
-title: Implement a custom enumerable collection class in ruby
+title: Implement a custom Enumerable collection class in Ruby
 permalink: /2015/01/implement-a-custom-enumerable-collection-class-in-ruby
 categories:
   programming
@@ -10,7 +10,7 @@ tags:
   - custom
   - class
   - enumerable
-  - Modules
+  - modules
 ---
 
 ### Background

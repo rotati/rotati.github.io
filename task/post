@@ -13,14 +13,22 @@ slug=$(echo $title | tr '[:upper:]' '[:lower:]' | tr '[:space:]' '-')
 slug="${slug:0:${#slug}-1}"
 post="./_posts/$d-$slug.md"
 
+permalink=/$(date +"%Y/%m")/$slug/
+
 body=""
 read -d '' body <<EOF
 ---
 layout: post
+author: Darren
 title: $title
+permalink: $permalink
 categories:
+  programming
+tags:
   -
 ---
+
+### Background
 
 EOF
 

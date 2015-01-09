@@ -6,8 +6,8 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 09 Jan 2015 19:23:48 +0700</pubDate>
-    <lastBuildDate>Fri, 09 Jan 2015 19:23:48 +0700</lastBuildDate>
+    <pubDate>Fri, 09 Jan 2015 20:08:44 +0700</pubDate>
+    <lastBuildDate>Fri, 09 Jan 2015 20:08:44 +0700</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
@@ -133,9 +133,9 @@ hash we created earlier&lt;/li&gt;
         
         <category>class</category>
         
-        <category>comparable</category>
+        <category>optionparser</category>
         
-        <category>Modules</category>
+        <category>modules</category>
         
         
         <category>programming</category>
@@ -286,9 +286,9 @@ hash we created earlier&lt;/li&gt;
         
         <category>class</category>
         
-        <category>enumerable</category>
+        <category>observable</category>
         
-        <category>Modules</category>
+        <category>modules</category>
         
         
         <category>programming</category>
@@ -296,7 +296,7 @@ hash we created earlier&lt;/li&gt;
       </item>
     
       <item>
-        <title>Implement a custom enumerable collection class in ruby</title>
+        <title>Implement a custom Enumerable collection class in Ruby</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
 
 &lt;p&gt;The &lt;a href=&quot;http://www.ruby-doc.org/core-2.1.4/Enumerable.html&quot;&gt;Enumerable&lt;/a&gt; module in Ruby Core is very powerful. It provides methods such as sort, min, max and others for working specifically with collections. Its implemented by collection classes such as Array out of the box but what if you need to make your own custom collection class? In this case you will need to include the Enumerable module. Here’s how.&lt;/p&gt;
@@ -413,7 +413,7 @@ hash we created earlier&lt;/li&gt;
         
         <category>enumerable</category>
         
-        <category>Modules</category>
+        <category>modules</category>
         
         
         <category>programming</category>
