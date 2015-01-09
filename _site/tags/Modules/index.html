@@ -102,6 +102,8 @@
   
 
   
+
+  
     <li >
         <a class="page-link" href="/">Home</a>
     </li>
@@ -189,6 +191,8 @@
       
         
       
+        
+      
     </ul>
   </li>
   <li class="login"><a class="page-link" href="/contact">Get In Touch</a></li>
@@ -236,7 +240,163 @@
                         
                     
                         
-                            <a href="/2015/01/using-the-observable-ruby-standard-lib-module/"><h2>Using the Observable ruby standard lib module</h2></a>
+                            <a href="/2015/01/using-the-optionparser-ruby-standard-lib-module/"><h2>Using the OptionParser Ruby Standard Library module</h2></a>
+<div class="blog-meta clearfix">
+    <p class="pull-left">
+      <i class="icon-user"></i> by <a href="#"></a> |
+      <i class="icon-folder-open"></i>Category:
+      
+        <a href="/categories/programming">Programming</a> |
+      
+      <i class="icon-calendar"></i> January 2015
+    </p>
+</div>
+
+                                <a href="/2015/01/using-the-optionparser-ruby-standard-lib-module/"><h4>Read Full Blog Post...</h4></a>
+                              <!-- <article><h3 id="background">Background</h3>
+
+<p>Most command line applications usually accept a variety of options that can be passed in to alter the behaviour of the application. For example, in linux, the <code>find</code> command can take a <code>-type d</code> option to specify <em>only search for directories</em>. For example the following command will find all empty directories under <code>~/Documents</code>:</p>
+
+<p><div class="highlight"><pre><code class="language-bash" data-lang="bash">find ~/Documents -type d -empty</code></pre></div></p>
+
+<p>Ruby command line applications require the same functionality and this is provided using the <code>OptionParser</code> module.</p>
+
+<h3 id="a-basic-hello-world-parser-class">A Basic Hello World parser class</h3>
+
+<p>So lets start off with a simple example - a Ruby command line application that politely says ‘hello’ back the user! Why not! There are several basic things we need to do to get this working:</p>
+
+<ol>
+  <li>Require the <code>OptionParser</code> module by using <code>require 'optparse'</code></li>
+  <li>Create an empty hash to store and return our options</li>
+  <li>Pass a block to a new instance of <code>OptionParser</code> and calling <code>on</code> (an alias for <code>make_switch</code>) for each option we want available in our application</li>
+  <li>The <code>on</code> method also in turn takes a block where we can set the variable on the
+hash we created earlier</li>
+</ol>
+
+<p>So here is our first example:</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="err">‘</span><span class="n">optparse</span><span class="err">’</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;class HelloParser</span>
+<span class="sr">  def self.parse(args)</span>
+<span class="sr">    options = {}</span>
+<span class="sr">    opts = OptionParser.new do |opts|</span>
+<span class="sr">      opts.on(‘-n’, ‘–name NAME’, ‘The name of the person to say hello to’) do |name|</span>
+<span class="sr">        options[:name] = name</span>
+<span class="sr">      end</span>
+<span class="sr">    end</span>
+<span class="sr">    opts.parse(args)</span>
+<span class="sr">    options</span>
+<span class="sr">  end</span>
+<span class="sr">end</span></code></pre></div></p>
+
+<p>This is how to use the HelloParser class in Ruby …</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">options</span> <span class="o">=</span> <span class="no">HelloParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="err">“</span><span class="no">Hello</span><span class="p">,</span> <span class="c1">#{options[:name]}” if options[:name]</span></code></pre></div></p>
+
+<p>… and call the application from the command line passing in the <code>--name</code> (or <code>-n</code>) switch</p>
+
+<p><div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby optparse_example.rb –name Darren
+<span class="c"># Outputs:</span>
+<span class="c"># Hello, Darren</span></code></pre></div></p>
+
+<h3 id="extending-the-functionality-with-a-second-switch">Extending the functionality with a second switch</h3>
+
+<p>Lets extend this basic application by introducing a second switch <code>-t</code> which can indicate the number of times to say hello!</p>
+
+<p>Notice the use of <code>OptionParser::OctalInteger</code> in the second <code>-t</code> option definition which will automatically convert the input from a <code>String</code> to a <code>Fixnum</code></p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">HelloParser</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="no">OptionParser</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">opts</span><span class="o">|</span>
+      <span class="n">opts</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="err">‘</span><span class="o">-</span><span class="n">n</span><span class="err">’</span><span class="p">,</span> <span class="err">‘–</span><span class="nb">name</span> <span class="no">NAME</span><span class="err">’</span><span class="p">,</span> <span class="err">‘</span><span class="no">The</span> <span class="nb">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">person</span> <span class="n">to</span> <span class="n">say</span> <span class="n">hello</span> <span class="n">to</span><span class="err">’</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+        <span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span> <span class="o">=</span> <span class="nb">name</span>
+      <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;pre&gt;&lt;code&gt;  opts.on(&#39;-t&#39;, &#39;--times TIMES&#39;, OptionParser::OctalInteger, &#39;The number of times to say hello&#39;) do |times|</span>
+<span class="sr">    options[:times] = times</span>
+<span class="sr">  end</span>
+<span class="sr">end</span>
+
+<span class="sr">opts.parse(args)</span>
+<span class="sr">options   end end</span></code></pre></div>
+</code></pre>
+
+<p>This is how to use the HelloParser class is now used in Ruby with the extra option. Note that we use a ternary operator to consider a default value of 1 if <code>-t</code> is not set.</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">options</span> <span class="o">=</span> <span class="no">HelloParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+
+<span class="sr">&lt;p&gt;repeat = options[:times].nil? ? 1 : options[:times]&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span>
+  <span class="n">repeat</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="err">“</span><span class="no">Hello</span><span class="p">,</span> <span class="c1">#{options[:name]}”</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div></p>
+
+<p>This is how the application is run on the command line:</p>
+
+<p><div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby optparse_example.rb -n Darren -t 2
+<span class="c"># Outputs:</span>
+<span class="c"># Hello, Darren</span>
+<span class="c"># Hello, Darren</span></code></pre></div></p>
+
+<h3 id="handling-exceptions">Handling exceptions</h3>
+
+<p>Up til now we have not considered exception handling in our application. Since we are dealing with user input we should really be considering this. The location where exceptions can occor is in the <code>parse</code> method of our <code>OptionParser</code> instance so lets wrap that in a <code>begin..rescue</code> block as follows:</p>
+
+<p><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">begin</span>
+  <span class="n">opts</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="k">rescue</span> <span class="no">Exception</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="n">e</span>
+  <span class="nb">puts</span> <span class="err">“</span><span class="no">Exception</span> <span class="ss">encountered</span><span class="p">:</span> <span class="c1">#{e}”</span>
+  <span class="nb">exit</span> <span class="mi">1</span>
+<span class="k">end</span></code></pre></div></p>
+
+<p>Now we should be good to go and our <code>HelloParser</code> will exit gracefully if there is an error.</p>
+
+<h3 id="conculusion">Conculusion</h3>
+
+<p>The <a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/optparse/rdoc/OptionParser.html">OptionParser module</a> is a great and simple way to parse parameters for Ruby command line applications. The simple DSL of <code>make_switch</code> or <code>on</code> are intuitive and self explainatory. Convertion of types at the parser level is also pretty handy. Next time I write a command line application in Ruby I will certainly use the <code>OptionParser</code> module!</p>
+
+<p>Here is <a href="https://gist.github.com/jensendarren/0311418311ae18149081">Gist</a> with the full example code.</p>
+
+</article> -->
+                            
+  <a class="btn btn-link" href="/2015/01/using-the-optionparser-ruby-standard-lib-module/">Read More <i class="icon-angle-right"></i></a>
+
+<div class="tag">
+  Tags :
+  
+    <a href="/tags/ruby"><span class="label label-success">ruby</span></a>
+  
+    <a href="/tags/custom"><span class="label label-success">custom</span></a>
+  
+    <a href="/tags/class"><span class="label label-success">class</span></a>
+  
+    <a href="/tags/comparable"><span class="label label-success">comparable</span></a>
+  
+    <a href="/tags/Modules"><span class="label label-success">Modules</span></a>
+  
+</div>
+
+                        
+                    
+                </div>
+                
+                <div class="blog-item well">
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                            <a href="/2015/01/using-the-observable-ruby-standard-lib-module/"><h2>Using the Observable Ruby Standard Library module</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
       <i class="icon-user"></i> by <a href="#"></a> |
@@ -648,6 +808,8 @@
         
           <li><a href="/tags/Modules"><span class="label label-success">Modules</span></a></li>
         
+          <li><a href="/tags/comparable"><span class="label label-success">comparable</span></a></li>
+        
       </ul>
   </div>
   <!-- End Tag Cloud Widget -->
@@ -661,6 +823,10 @@
           
             
             <li><a href="#">January 2015</a></li>
+          
+        
+        
+        
           
         
         
@@ -716,6 +882,8 @@
                     <ul class="arrow">
                       
 
+
+  
 
   
 

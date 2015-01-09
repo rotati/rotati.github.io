@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using the Observable ruby standard lib module
+title: Using the Observable Ruby Standard Library module
 permalink: /2015/01/using-the-observable-ruby-standard-lib-module/
 categories:
   programming
