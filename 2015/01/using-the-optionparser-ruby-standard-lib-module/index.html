@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Using the Observable Ruby Standard Library module - Crafting Beautiful Applications</title>
+    <title>Using the OptionParser Ruby Standard Library module - Crafting Beautiful Applications</title>
     <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://rotati.com/2015/01/using-the-observable-ruby-standard-lib-module/">
+    <link rel="canonical" href="http://rotati.com/2015/01/using-the-optionparser-ruby-standard-lib-module/">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
@@ -210,7 +210,7 @@
     <div class="container">
         <div class="row-fluid">
             <div class="span6">
-                <h1>Using the Observable Ruby Standard Library module</h1>
+                <h1>Using the OptionParser Ruby Standard Library module</h1>
             </div>
             <div class="span6">
                 <ul class="breadcrumb pull-right">
@@ -226,7 +226,7 @@
   <div class="row">
     <div class="span8">
         <div class="well">
-            <a href="/2015/01/using-the-observable-ruby-standard-lib-module/"><h2>Using the Observable Ruby Standard Library module</h2></a>
+            <a href="/2015/01/using-the-optionparser-ruby-standard-lib-module/"><h2>Using the OptionParser Ruby Standard Library module</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
       <i class="icon-user"></i> by <a href="#"></a> |
@@ -240,135 +240,114 @@
 
               <article><h3 id="background">Background</h3>
 
-<p>The <a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/observer/rdoc/Observable.html">Observable</a> module is a useful and elegant way to watch for changes in an object in Ruby. A common example is for alerting of some condition within the object being observed. The example shown in the documentation is for a <code>Ticker</code> class which has two observers: one for when the price goes <em>below</em> a certain level and one for when the price goes <em>above</em> a certain level. What we will do today is show something similar, but for a <code>CoffeeShop</code> class instead. Let’s get to it!</p>
+<p>Most command line applications usually accept a variety of options that can be passed in to alter the behaviour of the application. For example, in linux, the <code>find</code> command can take a <code>-type d</code> option to specify <em>only search for directories</em>. For example the following command will find all empty directories under <code>~/Documents</code>:</p>
 
-<h3 id="lets-observe-this-coffee-shop">Lets observe this coffee shop</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">find ~/Documents -type d -empty</code></pre></div>
 
-<p>So the application that we will build will be for a coffee shop where the manager has requested that they be notified when the shop is either full or empty. We will use the Observer pattern for this task!</p>
+<p>Ruby command line applications require the same functionality and this is provided using the <code>OptionParser</code> module.</p>
 
-<p>To get this working we need to do three things:</p>
+<h3 id="a-basic-hello-world-parser-class">A Basic Hello World parser class</h3>
+
+<p>So lets start off with a simple example - a Ruby command line application that politely says ‘hello’ back the user! Why not! There are several basic things we need to do to get this working:</p>
 
 <ol>
-  <li>Include the <code>Observable</code> module into the <code>CoffeeShop</code> class.</li>
-  <li>Call <code>changed</code> when a customer enters or departs the shop.</li>
-  <li>Call <code>notify_observers</code>, passing any usful paramaters, whenever a customer enters or exits the shop.</li>
+  <li>Require the <code>OptionParser</code> module by using <code>require 'optparse'</code></li>
+  <li>Create an empty hash to store and return our options</li>
+  <li>Pass a block to a new instance of <code>OptionParser</code> and calling <code>on</code> (an alias for <code>make_switch</code>) for each option we want available in our application</li>
+  <li>The <code>on</code> method also in turn takes a block where we can set the variable on the
+hash we created earlier</li>
 </ol>
 
-<h3 id="an-observable-coffeeshop-class">An Observable CoffeeShop class</h3>
+<p>So here is our first example:</p>
 
-<p>The basic class starts with including Observable and creating an initializer method that takes the name of our shop and the capacity - that is the maximum number of customers the shop can accomodate.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;optparse&#39;</span>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;observer&#39;</span>
-
-<span class="k">class</span> <span class="nc">CoffeeShop</span>
-  <span class="kp">include</span> <span class="no">Observable</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">capacity</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="vi">@capacity</span> <span class="o">=</span> <span class="n">capacity</span>
-    <span class="vi">@customers</span> <span class="o">=</span> <span class="o">[]</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
-
-<h3 id="the-coffeeshop-enter-and-depart-methods">The CoffeeShop enter and depart methods</h3>
-
-<p>Now we need to create methods that allow a customer to enter and/or depart the shop. Notice that both methods call <code>changed</code>, then adjust the customers array accordingly and finally calls <code>notify_observers</code> on the Observable module.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">enter</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
-  <span class="n">changed</span>
-  <span class="vi">@customers</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
-  <span class="n">notify_observers</span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
-<span class="k">end</span>
-
-<span class="k">def</span> <span class="nf">depart</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
-  <span class="n">changed</span>
-  <span class="vi">@customers</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
-  <span class="n">notify_observers</span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
-<span class="k">end</span></code></pre></div>
-
-<h3 id="create-our-first-observer-class-for-the-empty-coffee-shop-alerts">Create our first Observer class for the empty coffee shop alerts</h3>
-
-<p>Here is our first Observer. Note we pass in the instance of the class that we want the observer to observe (in this case our coffee shop instance). Then we call <code>add_observer</code> passing in <code>self</code> (that is the Observer class itself) - which essentially <em>registers</em> the observer with the object we are interested in.</p>
-
-<p>Next note the <code>update</code> method uses the instance of the coffee shop (@shop) and asks if it’s empty by calling a method we have not defined yet: <code>empty?</code>. So then if the shop is indeed empty an appropriate alert will be sent to the manager.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopEmptyObserver</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
-    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
-    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
-    <span class="k">if</span> <span class="vi">@shop</span><span class="o">.</span><span class="n">empty?</span>
-      <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">time</span><span class="si">}</span><span class="s2">: The shop is EMPTY so some staff can go home.&quot;</span>
+<span class="k">class</span> <span class="nc">HelloParser</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="no">OptionParser</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">opts</span><span class="o">|</span>
+      <span class="n">opts</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--name NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;The name of the person to say hello to&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+        <span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span> <span class="o">=</span> <span class="nb">name</span>
+      <span class="k">end</span>
     <span class="k">end</span>
+    <span class="n">opts</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">options</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre></div>
 
-<h3 id="defining-the-empty-and-full-methods-on-coffeeshop">Defining the empty? and full? methods on CoffeeShop</h3>
+<p>This is how to use the HelloParser class in Ruby …</p>
 
-<p>Since its clear that we need a method on CoffeeShop to determine if it’s empty we can also define a method for if it’s full as well (so that we can use that in our next observer). Here are the method definitions for <code>empty?</code> and <code>full?</code> on the <code>CoffeeShop</code> class.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">options</span> <span class="o">=</span> <span class="no">HelloParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span></code></pre></div>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">full?</span>
-  <span class="vi">@customers</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;=</span> <span class="vi">@capacity</span>
-<span class="k">end</span>
+<p>… and call the application from the command line passing in the <code>--name</code> (or <code>-n</code>) switch</p>
 
-<span class="k">def</span> <span class="nf">empty?</span>
-  <span class="vi">@customers</span><span class="o">.</span><span class="n">count</span><span class="o">.</span><span class="n">zero?</span>
-<span class="k">end</span></code></pre></div>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby optparse_example.rb --name Darren
+<span class="c"># Outputs:</span>
+<span class="c"># Hello, Darren</span></code></pre></div>
 
-<h3 id="create-the-full-coffee-shop-observer-class">Create the full coffee shop observer class</h3>
+<h3 id="extending-the-functionality-with-a-second-switch">Extending the functionality with a second switch</h3>
 
-<p>Next up we need to create the <code>CoffeeShopFullObserver</code> class so that we can notify the manager to hire more staff! Here is how that looks:</p>
+<p>Lets extend this basic application by introducing a second switch <code>-t</code> which can indicate the number of times to say hello!</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopFullObserver</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
-    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
-    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
-  <span class="k">end</span>
+<p>Notice the use of <code>OptionParser::OctalInteger</code> in the second <code>-t</code> option definition which will automatically convert the input from a <code>String</code> to a <code>Fixnum</code></p>
 
-  <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
-    <span class="k">if</span> <span class="vi">@shop</span><span class="o">.</span><span class="n">full?</span>
-      <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">time</span><span class="si">}</span><span class="s2">: The shop is FULL - quick call more staff!&quot;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">HelloParser</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">opts</span> <span class="o">=</span> <span class="no">OptionParser</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">opts</span><span class="o">|</span>
+      <span class="n">opts</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;-n&#39;</span><span class="p">,</span> <span class="s1">&#39;--name NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;The name of the person to say hello to&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+        <span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span> <span class="o">=</span> <span class="nb">name</span>
+      <span class="k">end</span>
+
+      <span class="n">opts</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s1">&#39;-t&#39;</span><span class="p">,</span> <span class="s1">&#39;--times TIMES&#39;</span><span class="p">,</span> <span class="no">OptionParser</span><span class="o">::</span><span class="no">OctalInteger</span><span class="p">,</span> <span class="s1">&#39;The number of times to say hello&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">times</span><span class="o">|</span>
+        <span class="n">options</span><span class="o">[</span><span class="ss">:times</span><span class="o">]</span> <span class="o">=</span> <span class="n">times</span>
+      <span class="k">end</span>
     <span class="k">end</span>
+
+    <span class="n">opts</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">options</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre></div>
 
-<p>Note how the constructor is <em>exactly</em> the same as the constructor in the <code>CoffeeShopEmptyObserver</code> class. We can refactor this by creating an abstract CoffeeShopObserver class like so:</p>
+<p>This is how to use the HelloParser class is now used in Ruby with the extra option. Note that we use a ternary operator to consider a default value of 1 if <code>-t</code> is not set.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShopObserver</span>
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">shop</span><span class="p">)</span>
-    <span class="vi">@shop</span> <span class="o">=</span> <span class="n">shop</span>
-    <span class="vi">@shop</span><span class="o">.</span><span class="n">add_observer</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">options</span> <span class="o">=</span> <span class="no">HelloParser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
+
+<span class="n">repeat</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:times</span><span class="o">].</span><span class="n">nil?</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="n">options</span><span class="o">[</span><span class="ss">:times</span><span class="o">]</span>
+
+<span class="k">if</span> <span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span>
+  <span class="n">repeat</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+    <span class="nb">puts</span> <span class="s2">&quot;Hello, </span><span class="si">#{</span><span class="n">options</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
   <span class="k">end</span>
 <span class="k">end</span></code></pre></div>
 
-<p>Then we can inherit our concrete observers (for empty or full states) with the new abstract <code>CoffeeShopObserver</code>. See the link at the end of this post for the complete source code.</p>
+<p>This is how the application is run on the command line:</p>
 
-<h3 id="usage">Usage</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby optparse_example.rb -n Darren -t 2
+<span class="c"># Outputs:</span>
+<span class="c"># Hello, Darren</span>
+<span class="c"># Hello, Darren</span></code></pre></div>
 
-<p>So lets get this application up and running and open up our coffee shop and let the customers in (and out!).</p>
+<h3 id="handling-exceptions">Handling exceptions</h3>
 
-<p>First we need to create an instance of our <code>CoffeeShop</code> class and pass that onto both observers like so:</p>
+<p>Up til now we have not considered exception handling in our application. Since we are dealing with user input we should really be considering this. The location where exceptions can occor is in the <code>parse</code> method of our <code>OptionParser</code> instance so lets wrap that in a <code>begin..rescue</code> block as follows:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">coffee_shop</span> <span class="o">=</span> <span class="no">CoffeeShop</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Costa&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="no">CoffeeShopEmptyObserver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">coffee_shop</span><span class="p">)</span>
-<span class="no">CoffeeShopFullObserver</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">coffee_shop</span><span class="p">)</span></code></pre></div>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">begin</span>
+  <span class="n">opts</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<span class="k">rescue</span> <span class="no">Exception</span> <span class="o">=&gt;</span> <span class="n">e</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Exception encountered: </span><span class="si">#{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">exit</span> <span class="mi">1</span>
+<span class="k">end</span></code></pre></div>
 
-<p>For basic usage we can manually assign some customers to enter or depart the shop like so:</p>
+<p>Now we should be good to go and our <code>HelloParser</code> will exit gracefully if there is an error.</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="s2">&quot;Darren&quot;</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="s2">&quot;Brian&quot;</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">enter</span><span class="p">(</span><span class="s2">&quot;Tammy&quot;</span><span class="p">)</span> <span class="c1">#will trigger the alert from the &#39;full&#39; observer (capacity is set to 3)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="s2">&quot;Darren&quot;</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="s2">&quot;Brian&quot;</span><span class="p">)</span>
-<span class="n">coffee_shop</span><span class="o">.</span><span class="n">depart</span><span class="p">(</span><span class="s2">&quot;Tammy&quot;</span><span class="p">)</span> <span class="c1">#will trigger the alert from the &#39;empty&#39; observer</span></code></pre></div>
+<h3 id="conculusion">Conculusion</h3>
 
-<h3 id="conclusion">Conclusion</h3>
+<p>The <a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/optparse/rdoc/OptionParser.html">OptionParser module</a> is a great and simple way to parse parameters for Ruby command line applications. The simple DSL of <code>make_switch</code> or <code>on</code> are intuitive and self explainatory. Convertion of types at the parser level is also pretty handy. Next time I write a command line application in Ruby I will certainly use the <code>OptionParser</code> module!</p>
 
-<p>The observer pattern as implemented in the Ruby Standard Library is pretty powerful and yet very easy to use. One can imagine using this in a real world application where instead of <code>puts</code> one might send out an sms alert or an email to a real manager.</p>
+<p>Here is <a href="https://gist.github.com/jensendarren/0311418311ae18149081">Gist</a> with the full example code.</p>
 
-<p>Here is a <a href="https://gist.github.com/jensendarren/e49c60596b7c7268e605">Gist</a> containing the full source code with some extra stuff for randomly generating customers to come and go as they please thus producing a typical ebb and flow of activity in our cool coffee shop!</p>
 </article>
             
 <div class="tag">
@@ -380,7 +359,7 @@
   
     <a href="/tags/class"><span class="label label-success">class</span></a>
   
-    <a href="/tags/enumerable"><span class="label label-success">enumerable</span></a>
+    <a href="/tags/comparable"><span class="label label-success">comparable</span></a>
   
     <a href="/tags/Modules"><span class="label label-success">Modules</span></a>
   
