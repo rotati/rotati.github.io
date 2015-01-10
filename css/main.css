@@ -411,7 +411,8 @@ header .dropdown-menu:before {
 
 #bottom {
   background: #232323;
-  color: #6f6f6f; }
+  color: #6f6f6f;
+  font-size: 10px; }
 
 #bottom h4 {
   margin-bottom: 15px;
