@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+
 .clearfix
 {
   zoom: 1;
@@ -34,7 +35,6 @@ body
 {
   background: #f5f5f5;
   color: #34495e;
-  font-size: 12px;
   padding: 0px;
 }
 body h1,body h2,body h3,body h4,body .created
@@ -637,6 +637,16 @@ ul.social>li>a:hover
 .accordion-inner
 {
   border-top: 0;
+}
+.blog
+{
+  font-size: 20px;
+  line-height: 1.5;
+}
+p
+{
+  font-size: 16px;
+  line-height: 1.5;
 }
 .blog .blog-item h2
 {
