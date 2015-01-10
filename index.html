@@ -210,8 +210,7 @@
 </header>
 
 
-      <!--Slider-->
-<section id="slide-show">
+      <section id="slide-show">
  <div id="slider" class="sl-slider-wrapper">
 
     <!--Slider Items-->
@@ -219,11 +218,12 @@
         <!--Slider Item1-->
         <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
             <div class="sl-slide-inner">
-               <div class="container">
+              <div class="container">
                 <img class="pull-right" src="images/sample/slider/img3.png" alt="" />
                 <h2>Mobile Apps</h2>
-                <h3 class="gap">HTML 5 and Hybrid solutions</h3>
+                <h3 class="gap">Using Angular JS & Famous JS</h3>
                 <a class="btn btn-large btn-transparent" href="/mobileapps/">Learn More</a>
+              </div>
             </div>
         </div>
         <!--/Slider Item1-->
@@ -231,12 +231,11 @@
         <!--Slider Item2-->
         <div class="sl-slide item2" data-orientation="horizontal" data-slice1-rotation="2" data-slice2-rotation="2" data-slice1-scale="2" data-slice2-scale="1">
             <div class="sl-slide-inner">
-                <div class="container">
-                    <!-- <img class="pull-right" src="images/home-splash.jpg" alt="" /> -->
-                    <h2>Web Apps</h2>
-                    <h3 class="gap">Using Ruby on Rails</h3>
-                    <a class="btn btn-large btn-transparent" href="/webapps/">Learn More</a>
-                </div>
+              <div class="container">
+                <img class="pull-right" src="images/angularjs-rails.png" alt="" />
+                <h2>Web Apps</h2>
+                <h3 class="gap">Ruby on Rails & Angular JS</h3>
+                <a class="btn btn-large btn-transparent" href="/webapps/">Learn More</a>
             </div>
         </div>
     </div>
@@ -697,6 +696,7 @@ $(function() {
         },
         initEvents = function() {
             $navArrows.children( ':last' ).on( 'click', function() {
+                console.log("cl", slitslider.next());
                 slitslider.next();
                 return false;
             });

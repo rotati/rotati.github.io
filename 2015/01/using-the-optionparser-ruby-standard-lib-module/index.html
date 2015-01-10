@@ -229,7 +229,7 @@
 <section class="container">
   <div class="row">
     <div class="span8">
-        <div class="well">
+        <div class="well blog">
             <a href="/2015/01/using-the-optionparser-ruby-standard-lib-module/"><h2>Using the OptionParser Ruby Standard Library module</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
@@ -683,6 +683,7 @@ $(function() {
         },
         initEvents = function() {
             $navArrows.children( ':last' ).on( 'click', function() {
+                console.log("cl", slitslider.next());
                 slitslider.next();
                 return false;
             });
