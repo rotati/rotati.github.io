@@ -11,7 +11,7 @@ title: Contact
             </div>
             <div class="span6">
                 <ul class="breadcrumb pull-right">
-                    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                    <li><a href="/">Home</a> <span class="divider">/</span></li>
                     <li class="active">Get in Touch</li>
                 </ul>
             </div>
@@ -21,57 +21,77 @@ title: Contact
 </section>
 
 <section id="contact" class="container">
-  <h2>We would love to hear from you!</h2>
-  <h4>Tell us a little bit about your project and please provide a phone number and time when we can call you for a chat.</h4>
-  <hr>
-    <form action="//formspree.io/darren.jensen@gmail.com" method="POST">
-      <table>
-        <tr>
-          <td valign="top">
-            <label for="first_name">First Name *</label>
-          </td>
-          <td valign="top">
-            <input type="text" name="first_name" maxlength="50">
-          </td>
-        </tr>
-        <tr>
-         <td valign="top">
-          <label for="last_name">Last Name *</label>
-         </td>
-         <td valign="top">
-          <input type="text" name="last_name" maxlength="50">
-         </td>
-        </tr>
-        <tr>
-         <td valign="top">
-          <label for="email">Email Address *</label>
-         </td>
-         <td valign="top">
-          <input type="text" name="email" maxlength="50">
-         </td>
-        </tr>
-        <tr>
-         <td valign="top">
-          <label for="telephone">Tel No.</label>
-         </td>
-         <td valign="top">
-          <input type="text" name="telephone" maxlength="30">
-         </td>
-        </tr>
-        <tr>
-         <td valign="top">
-          <label for="comments">Tell us about your project *</label>
-         </td>
-         <td valign="top">
-          <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
-         </td>
-        </tr>
+  <div class="row-fluid">
+    <div class="span6">
+      <h2>We would love to hear from you!</h2>
+      <h4>Tell us a little bit about your project and please provide a phone number and time when we can call you for a chat.</h4>
+      <hr>
+        <form action="//formspree.io/darren.jensen@gmail.com" method="POST">
+          <table>
+            <tr>
+              <td valign="top">
+                <label for="first_name">First Name *</label>
+              </td>
+              <td valign="top">
+                <input type="text" name="first_name" maxlength="50">
+              </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="last_name">Last Name *</label>
+             </td>
+             <td valign="top">
+              <input type="text" name="last_name" maxlength="50">
+             </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="email">Email Address *</label>
+             </td>
+             <td valign="top">
+              <input type="text" name="email" maxlength="50">
+             </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="telephone">Tel No.</label>
+             </td>
+             <td valign="top">
+              <input type="text" name="telephone" maxlength="30">
+             </td>
+            </tr>
+            <tr>
+             <td valign="top">
+              <label for="comments">Tell us about your project *</label>
+             </td>
+             <td valign="top">
+              <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+             </td>
+            </tr>
 
-        <tr>
-         <td colspan="2" style="text-align:center">
-          <input type="submit" value="Submit"></a>
-         </td>
-        </tr>
-      </table>
-    </form>
+            <tr>
+             <td colspan="2" style="text-align:center">
+              <input type="submit" value="Submit"></a>
+             </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div class="span6">
+        <h2>Location</h2>
+        <h4>Rotati is located at the Development Innovations Building in Toul Tom Pong. We would love if you can visit us!</h4>
+        <hr>
+        <a href="http://www.google.com.kh/maps/@11.5343753,104.9122514,3a,90y,62.72h,105.54t/data=!3m4!1e1!3m2!1slhI0SvDmMX9Rw1-zS_bUgA!2e0?hl=en%22" target="_blank">Street View Link: Rotati Location on Google Street View (opens new tab)</a>
+        <br><br>
+        <h4>Map</h4>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1954.6214723130288!2d104.912374!3d11.534422397423238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310950e64c784aa1%3A0x10bdbdd0ebc94004!2sDevelopment+Innovations!5e0!3m2!1sen!2s!4v1413644891246" width="100%" height="400" frameborder="0" style="border:0"></iframe>
+        <br><br>
+        <h4>Full Address:</h4>
+        <address>
+          {% for line in site.address_lines %}
+            {{ line }}<br/>
+          {% endfor %}
+        </address>
+      </div>
+    </div>
 </section>

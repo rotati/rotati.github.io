@@ -20,8 +20,14 @@ author:
   github_username: jensendarren
 
 # Address
-address_line1: DI Building, House 296, Street 271
-address_line2: Phnom Penh, Cambodia
+address_lines:
+  - Rotati Consulting
+  - Development Innovations Building
+  - Mezzanine Floor
+  - House 296
+  - Phoumin Blvd (Street 271)
+  - Phnom Penh
+  - Cambodia
 
 # Build settings
 markdown: kramdown
