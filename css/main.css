@@ -536,7 +536,8 @@ ul.social > li > a:hover {
 .accordion-inner {
   border-top: 0; }
 
-.blog p, li {
+.blog p,
+.blog li {
   font-size: 20px;
   line-height: 1.5; }
 
