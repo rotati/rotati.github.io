@@ -10,12 +10,12 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Posts Tagged &ldquo;enumerable&rdquo; - Crafting Beautiful Applications</title>
+    <title>Using the Benchmark Ruby Standard Library module - Crafting Beautiful Applications</title>
     <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://rotati.com/tags/enumerable/">
+    <link rel="canonical" href="http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/">
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
@@ -222,85 +222,26 @@
     <div class="container">
         <div class="row-fluid">
             <div class="span6">
-                <h1>Tags: Enumerable</h1>
+                <h1>Using the Benchmark Ruby Standard Library module</h1>
             </div>
             <div class="span6">
                 <ul class="breadcrumb pull-right">
                     <li><a href="/">Home</a> <span class="divider">/</span></li>
-                    <li><a href="/blog/">Blog</a><span class="divider">/</span></li>
-                    <li>Tags <span class="divider">/</span></li>
+                    <li><a href="/blog/">Blog <span class="divider">/</span></li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<section id="blog" class="container main">
-    <div class="row-fluid">
-        <div class="span8">
-            <div class="blog">
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                        <div class="blog-item well">
-                            <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h2>Implement a custom Enumerable collection class in Ruby</h2></a>
+<section class="container">
+  <div class="row">
+    <div class="span8">
+        <div class="well blog">
+            <a href="/2015/01/using-the-benchmark-ruby-standard-library-module/"><h2>Using the Benchmark Ruby Standard Library module</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
-      <i class="icon-user"></i> by <a href="#">darren</a> |
+      <i class="icon-user"></i> by <a href="#">Darren</a> |
       <i class="icon-folder-open"></i>Category:
       
         <a href="/categories/programming">Programming</a> |
@@ -309,10 +250,64 @@
     </p>
 </div>
 
-                              <article><h3 id="background">Background</h3> <p>The <a href="http://www.ruby-doc.org/core-2.1.4/Enumerable.html">Enumerable</a> module in Ruby Core is very powerful. It provides methods such as sort, min, max and others for working specifically with collections. Its implemented by collection classes such as Array out of the box but what if you need to make your own custom collection...</article>
-                            
-  <a class="btn btn-link" href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby">Read More <i class="icon-angle-right"></i></a>
+              <article><h3 id="background">Background</h3>
 
+<p>When an application grows in size it’s common for these to slow down considerably in the face of heavy usage. Rather than looking at the larger picture its often best to take a microscope and look closely at the performance of the code, method by method, line by line. One tool that the Ruby Standar Libary provides to assist with this is <a href="http://ruby-doc.org/stdlib-2.0/libdoc/benchmark/rdoc/Benchmark.html">Benchmark</a>. Lets take a quick dive into the features of the Ruby Benchmarking tool!</p>
+
+<h3 id="contrived-example-compare-array-sort-with-hash-sort">Contrived Example: Compare Array Sort with Hash Sort</h3>
+
+<p>I say this is contrived becuase we are going to compare two methods that are essentially quite different in their implemntation. However the main point of this exercise is to get up and running with the Benchmark tool. Probably most importantly, it snot possible to sort a Hash and so <code>sort_by</code> returns a sorted Array of Arrays. Anyway, we expect to see <code>sort_by</code> on Hash to be <em>slower</em> than the Array sort!</p>
+
+<p>What we will do in this example is create an <code>Array</code> of 10,000 random characters and sort that. Then we will create a <code>Hash</code> with the <em>values</em> of the Hash set the to the random characters. The reason we set the values to the random characters is becuase Hash keys are unique and we are only using the ASCII character set and therefore we only have 255 characters to play with.</p>
+
+<p>Here the code to create our <code>Array</code> and <code>Hash</code> object:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">10_000</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="n">ascii_code</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+  <span class="n">random_char</span> <span class="o">=</span> <span class="n">ascii_code</span><span class="o">.</span><span class="n">chr</span>
+  <span class="n">arr</span> <span class="o">&lt;&lt;</span> <span class="n">random_char</span>
+  <span class="nb">hash</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">random_char</span>
+<span class="k">end</span></code></pre></div>
+
+<p>Now we have an Array size 10,000 (all ASCII chars, randomly inserted) and we have a Hash size 10,000 (with values of the same randomly generated char).</p>
+
+<p>Below is a sneak peak at the new array object containing the random characters:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># puts arr[0..10]</span>
+<span class="o">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xC5</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xE1</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xF4</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\x16</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\x81</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\x03</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xA1</span><span class="s2">&quot;</span><span class="o">]</span>
+
+<span class="c1"># puts hash.first(10).to_h</span>
+<span class="p">{</span><span class="mi">0</span><span class="o">=&gt;</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">=&gt;</span><span class="s2">&quot;%&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\xC5</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\xE1</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="o">=&gt;</span><span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\xF4</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\x16</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\x81</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\x03</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="o">=&gt;</span><span class="s2">&quot;+&quot;</span><span class="p">}</span></code></pre></div>
+
+<p>Note that the characters, altough random, are in the same order in both the Array and the Hash.</p>
+
+<h3 id="setting-up-our-benchmark-harness">Setting up our Benchmark harness</h3>
+
+<p>In order to use the Benchmark class we need to call the <code>bm</code> method on it passing in a block of code that we want to report on. We can run several reports in one iteration of benchark. As shown below we pass into the <code>bm</code> method some tab formatting value of 7, followed by setting up two reports with titles ‘Sort Array’ and ‘Sort Hash’. The titles allow the developer to easily read the result once the benchmark has run.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Benchmark</span><span class="o">.</span><span class="n">bm</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span> <span class="s1">&#39;Sort Array&#39;</span> <span class="k">do</span>
+    <span class="n">arr</span><span class="o">.</span><span class="n">sort!</span>
+  <span class="k">end</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span> <span class="s1">&#39;Sort Hash&#39;</span> <span class="k">do</span>
+    <span class="nb">hash</span><span class="o">.</span><span class="n">sort_by</span><span class="p">{</span><span class="o">|</span><span class="n">_key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span> <span class="n">value</span><span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+
+<p>The result is as expected that the <code>hash.sort_by</code> method call is far slower than the <code>arr.sort</code> method call. This is due to the implentation of the Hash sort_by being different to the Array#sort method.</p>
+
+<p>The output from running this Benchmark on my machine is as follows:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">user     system      total        real
+Sort Array   0.010000   0.000000   0.010000 <span class="o">(</span>  0.001907<span class="o">)</span>
+Sort Hash    0.000000   0.000000   0.000000 <span class="o">(</span>  0.007687<span class="o">)</span></code></pre></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In a real application, its unlikely that developers will be testing the Ruby API but instead may wish to test how their code performs before after refactoring. As always, here is a <a href="https://gist.github.com/jensendarren/bc605c714f71f549180a">Gist for this Benchmark</a></p>
+
+</article>
+            
 <div class="tag">
   Tags :
   
@@ -322,54 +317,29 @@
   
     <a href="/tags/class"><span class="label label-success">class</span></a>
   
-    <a href="/tags/enumerable"><span class="label label-success">enumerable</span></a>
+    <a href="/tags/benchmark"><span class="label label-success">benchmark</span></a>
   
     <a href="/tags/modules"><span class="label label-success">modules</span></a>
   
+    <a href="/tags/stdlib"><span class="label label-success">stdlib</span></a>
+  
 </div>
 
-                        </div>
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-            </div> <!-- blog -->
-
-          <div class="gap"></div>
-
-     </div> <!-- span8 -->
-     <aside class="span4">
+            <div class="user-info media box">
+              <div class="pull-left">
+                  <img src="/images/darren.jpg" alt="Darren" />
+              </div>
+              <div class="media-body">
+                  <h5 style="margin-top: 0">Darren</h5>
+                  <p>Interested in software startups, mountain biking and playing piano!</p>
+                  <div class="author-meta">
+                      <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/jensendarren"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/jensendarren"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/jensendarren1"><i class="icon-linkedin"></i></a>
+                  </div>
+             </div>
+          </div>
+        </div>
+    </div>
+    <aside class="span4">
 
   <div class="widget">
       <h3>Blog Categories</h3>
@@ -475,7 +445,7 @@
 
 </aside>
 
-    </div> <!-- row -->
+  </div>
 </section>
 
 
