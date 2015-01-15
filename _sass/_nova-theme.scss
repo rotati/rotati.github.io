@@ -260,7 +260,7 @@ ul.tag-cloud li
 {
   color: #fff;
 }
-header.navbar .navbar-inner
+nav.navbar
 {
   background: #fff!important;
   border: 0;
@@ -268,25 +268,25 @@ header.navbar .navbar-inner
   moz-box-shadow: none;
   webkit-box-shadow: none;
 }
-header #logo
+.navbar-brand
 {
   background: url(../images/logo.jpg) no-repeat 0 50%;
   height: 80px;
   width: 220px;
 }
-header.navbar
+nav.navbar
 {
   margin-bottom: 0;
 }
-header.navbar .nav
+nav.navbar .nav
 {
   margin-top: 20px;
 }
-header.navbar .nav>li
+nav.navbar .nav>li
 {
   margin-left: 1px;
 }
-header.navbar .nav>li>a
+nav.navbar .nav>li>a
 {
   color: #333;
   font-family: "Fjalla One";
@@ -296,7 +296,7 @@ header.navbar .nav>li>a
   text-shadow: none;
   text-transform: uppercase;
 }
-header.navbar .nav>li>a:hover
+nav.navbar .nav>li>a:hover
 {
   background: transparent;
   box-shadow: none;
@@ -304,7 +304,7 @@ header.navbar .nav>li>a:hover
   moz-box-shadow: none;
   webkit-box-shadow: none;
 }
-header.navbar .nav>li.active>a,header.navbar .nav>li.active>a:hover
+nav.navbar .nav>li.active>a,nav.navbar .nav>li.active>a:hover
 {
   background: transparent;
   box-shadow: none;
@@ -312,12 +312,12 @@ header.navbar .nav>li.active>a,header.navbar .nav>li.active>a:hover
   moz-box-shadow: none;
   webkit-box-shadow: none;
 }
-header.navbar .nav>li.dropdown.open>a.dropdown-toggle
+nav.navbar .nav>li.dropdown.open>a.dropdown-toggle
 {
   background: transparent;
   color: #34ace2;
 }
-header.navbar .nav>li.login>a
+nav.navbar .nav>li.login>a
 {
   border-left: 1px solid #e5e5e5;
 }
@@ -625,17 +625,17 @@ ul.social>li>a:hover
 {
   padding: 15px;
 }
-.accordion-group
+.panel
 {
   background-color: #fff;
   border-top: 1px solid #f0f0f0;
 }
-.accordion-heading .accordion-toggle
+.panel-heading .panel-toggle
 {
   color: #666;
   font-weight: 700;
 }
-.accordion-inner
+.panel-body
 {
   border-top: 0;
 }

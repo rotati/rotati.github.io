@@ -14,6 +14,16 @@
   margin-bottom:0;
 }
 
+.nav-right {
+  float: right;
+}
+
+@media (max-width: 765px){
+  .nav-right {
+    float: none;
+  }
+}
+
 @media (min-width: 978px) {
   .title {
     margin-top: 80px;

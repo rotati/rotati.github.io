@@ -3,10 +3,9 @@
     <!--Container-->
     <div class="container">
 
-        <!--row-fluids-->
-        <div class="row-fluid">
+        <div class="row">
 
-            <div class="span3">
+            <div class="col-md-3">
                 <h4>ADDRESS</h4>
                 <ul class="unstyled address">
                     <li>
@@ -30,7 +29,7 @@
                 </ul>
             </div>
 
-            <div id="menu" class="span3">
+            <div id="menu" class="col-md-3">
                 <h4>MENU</h4>
                 <div>
                     <ul class="arrow">
@@ -40,7 +39,7 @@
             </div>
 
             <!--Services -->
-            <div id="services" class="span3">
+            <div id="services" class="col-md-3">
                 <h4>SERVICES</h4>
                 <div>
                     <ul class="arrow">
@@ -56,14 +55,14 @@
             </div>
             <!--End Archives-->
 
-            <div class="span3">
+            <div class="col-md-3">
                 <h4>ABOUT {{site.title | upcase}}</h4>
                 <p>{{ site.description }}</p>
             </div>
         </div>
 
     </div>
-    <!--/row-fluid-->
+    <!--/row-->
 </div>
 <!--/container-->
 
@@ -72,13 +71,13 @@
 <!--Footer-->
 <footer id="footer">
     <div class="container">
-        <div class="row-fluid">
-            <div class="span5 cp">
+        <div class="row">
+            <div class="col-md-5 cp">
                 &copy; {{ site.time | date: '%Y' }} {{site.title}}. All rights reserved.
             </div>
             <!--/Copyright-->
 
-            <div class="span6">
+            <div class="col-md-6">
                 <ul class="social pull-right">
 <!--                     <li><a href="http://fb.com/rotati" target="_blank"><i class="icon-facebook"></i></a></li>
                     <li><a href="http://twitter.com/rotati" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -88,7 +87,7 @@
                 </ul>
             </div>
 
-            <div class="span1">
+            <div class="col-md-1">
                 <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
             </div>
             <!--/Goto Top-->
@@ -98,7 +97,8 @@
 <!--/Footer-->
 
 <script src="/js/vendor/jquery-1.9.1.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="/js/main.js"></script>
 <!-- Required javascript files for Slider -->
 <script src="/js/vendor/jquery.ba-cond.min.js"></script>
