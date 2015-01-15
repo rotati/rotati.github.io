@@ -7,24 +7,24 @@
 
             <div class="col-md-3">
                 <h4>ADDRESS</h4>
-                <ul class="unstyled address">
+                <ul class="list-unstyled address">
                     <li>
-                        <i class="icon-home"></i><strong>a:</strong>
+                        <i class="icon-home"></i>
                         {% for line in site.address_lines %}
                             {{ line }}<br/>
                         {% endfor %}
                     </li>
                     <li>
                         <i class="icon-envelope"></i>
-                        <strong>e: </strong> {{site.email}}
+                        {{site.email}}
                     </li>
                     <li>
                         <i class="icon-globe"></i>
-                        <strong>w: </strong> {{site.website}}
+                        {{site.website}}
                     </li>
                     <li>
                         <i class="icon-phone"></i>
-                        <strong>m: </strong> {{site.mobile}}
+                        {{site.mobile}}
                     </li>
                 </ul>
             </div>

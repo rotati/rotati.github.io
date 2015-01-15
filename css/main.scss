@@ -22,11 +22,14 @@
   .nav-right {
     float: none;
   }
+  .box p {
+    font-size: 0.7em;
+  }
 }
 
 @media (min-width: 978px) {
   .title {
-    margin-top: 80px;
+    margin-top: -15px;
   }
 }
 
@@ -40,3 +43,4 @@
 @import
   "nova-theme"
 ;
+
