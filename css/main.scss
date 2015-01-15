@@ -14,19 +14,30 @@
   margin-bottom:0;
 }
 
-@media (min-width: 978px) {
-  .title {
-    margin-top: 80px;
+.nav-right {
+  float: right;
+}
+
+@media (max-width: 765px){
+  .nav-right {
+    float: none;
+  }
+  .box p {
+    font-size: 0.7em;
+  }
+  .media-body {
+    font-size: 0.7em;
   }
 }
 
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+@media (min-width: 978px) {
+  .title {
+    margin-top: -15px;
+  }
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "nova-theme"
 ;
+

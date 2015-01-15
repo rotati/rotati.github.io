@@ -8,14 +8,21 @@
   margin-right: 0;
   margin-bottom: 0; }
 
+.nav-right {
+  float: right; }
+
+@media (max-width: 765px) {
+  .nav-right {
+    float: none; }
+
+  .box p {
+    font-size: 0.7em; }
+
+  .media-body {
+    font-size: 0.7em; } }
 @media (min-width: 978px) {
   .title {
-    margin-top: 80px; } }
-.helper {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle; }
-
+    margin-top: -15px; } }
 .clearfix {
   zoom: 1; }
 
@@ -43,15 +50,17 @@
   width: 100%; }
 
 body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   background: #f5f5f5;
   color: #34495e;
   padding: 0px; }
 
 body h1, body h2, body h3, body h4, body .created {
-  font-family: "Fjalla One";
-  font-weight: normal; }
+  font-weight: normal;
+  line-height: 1.6; }
 
 body h5, body h6 {
+  line-height: 1.6;
   margin: 0; }
 
 body h3, body h4 {
@@ -155,6 +164,7 @@ body > section#slide-show {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   moz-border-radius: 4px;
   padding: 10px;
+  margin: 2px;
   webkit-border-radius: 4px;
   webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); }
 
@@ -226,28 +236,28 @@ ul.tag-cloud li {
 .btn-social:hover {
   color: #fff; }
 
-header.navbar .navbar-inner {
+nav.navbar {
   background: white !important;
   border: 0;
   box-shadow: none;
   moz-box-shadow: none;
   webkit-box-shadow: none; }
 
-header #logo {
+.navbar-brand {
   background: url(../images/logo.jpg) no-repeat 0 50%;
   height: 80px;
   width: 220px; }
 
-header.navbar {
+nav.navbar {
   margin-bottom: 0; }
 
-header.navbar .nav {
+nav.navbar .nav {
   margin-top: 20px; }
 
-header.navbar .nav > li {
+nav.navbar .nav > li {
   margin-left: 1px; }
 
-header.navbar .nav > li > a {
+nav.navbar .nav > li > a {
   color: #333;
   font-family: "Fjalla One";
   font-size: 14px;
@@ -256,25 +266,25 @@ header.navbar .nav > li > a {
   text-shadow: none;
   text-transform: uppercase; }
 
-header.navbar .nav > li > a:hover {
+nav.navbar .nav > li > a:hover {
   background: transparent;
   box-shadow: none;
   color: #34ace2;
   moz-box-shadow: none;
   webkit-box-shadow: none; }
 
-header.navbar .nav > li.active > a, header.navbar .nav > li.active > a:hover {
+nav.navbar .nav > li.active > a, nav.navbar .nav > li.active > a:hover {
   background: transparent;
   box-shadow: none;
   color: #34ace2;
   moz-box-shadow: none;
   webkit-box-shadow: none; }
 
-header.navbar .nav > li.dropdown.open > a.dropdown-toggle {
+nav.navbar .nav > li.dropdown.open > a.dropdown-toggle {
   background: transparent;
   color: #34ace2; }
 
-header.navbar .nav > li.login > a {
+nav.navbar .nav > li.login > a {
   border-left: 1px solid #e5e5e5; }
 
 header .dropdown-menu {
@@ -412,7 +422,7 @@ header .dropdown-menu:before {
 #bottom {
   background: #232323;
   color: #6f6f6f;
-  font-size: 10px; }
+  font-size: 14px; }
 
 #bottom h4 {
   margin-bottom: 15px;
@@ -525,15 +535,15 @@ ul.social > li > a:hover {
 .box-border {
   padding: 15px; }
 
-.accordion-group {
+.panel {
   background-color: #fff;
   border-top: 1px solid #f0f0f0; }
 
-.accordion-heading .accordion-toggle {
+.panel-heading .panel-toggle {
   color: #666;
   font-weight: 700; }
 
-.accordion-inner {
+.panel-body {
   border-top: 0; }
 
 .blog p,
@@ -781,3 +791,21 @@ ul.faq li > div h3 {
   margin-bottom: 150px;
   margin-top: 150px;
   text-align: center; }
+
+#team {
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3; }
+
+.logos {
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3; }
+
+.logos img {
+  height: 70px;
+  margin: 0 auto; }
+
+.uppercased {
+  text-transform: uppercase; }
+
+.user-info {
+  height: 270px; }

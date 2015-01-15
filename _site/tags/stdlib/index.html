@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="canonical" href="http://rotati.com/tags/stdlib/">
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional bootstrap theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
+
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/sl-slide.css">
@@ -37,18 +39,20 @@
 
   <body>
 
-    <header class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a id="logo" class="pull-left" href="/"></a>
-            <div class="nav-collapse collapse pull-right">
-                <ul class="nav">
-                    
+    <section id="nav" class="row">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand pull-left" href="/"></a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse nav-right">
+          <ul class="nav navbar-nav">
+              
 
 
   
@@ -211,16 +215,16 @@
 
 
 
-                </ul>
-            </div><!--/.nav-collapse -->
+          </ul>
         </div>
     </div>
-</header>
+  </nav>
+</section>
 
 
       <section class="title">
     <div class="container">
-        <div class="row-fluid">
+        <div class="row">
             <div class="span6">
                 <h1>Tags: Stdlib</h1>
             </div>
@@ -236,7 +240,7 @@
 </section>
 
 <section id="blog" class="container main">
-    <div class="row-fluid">
+    <div class="row">
         <div class="span8">
             <div class="blog">
 
@@ -407,15 +411,15 @@
           <div class="gap"></div>
 
      </div> <!-- span8 -->
-     <aside class="span4">
+     <aside class="col-md-4">
 
   <div class="widget">
       <h3>Blog Categories</h3>
       <div>
-          <div class="row-fluid">
+          <div class="row">
 
-              <div class="span6">
-                  <ul class="unstyled">
+              <div class="col-md-6">
+                  <ul class="list-unstyled">
                   
                     <li><a href="/categories/business" name="Business">Business</a></li>
                   
@@ -434,7 +438,7 @@
 
   <div class="widget">
       <h3>Tag Cloud</h3>
-      <ul class="tag-cloud unstyled">
+      <ul class="tag-cloud list-unstyled">
         
           <li><a href="/tags/rotati"><span class="label label-success">rotati</span></a></li>
         
@@ -522,14 +526,13 @@
     <!--Container-->
     <div class="container">
 
-        <!--row-fluids-->
-        <div class="row-fluid">
+        <div class="row">
 
-            <div class="span3">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h4>ADDRESS</h4>
-                <ul class="unstyled address">
+                <ul class="list-unstyled address">
                     <li>
-                        <i class="icon-home"></i><strong>a:</strong>
+                        <i class="icon-home"></i>
                         
                             Rotati Consulting<br/>
                         
@@ -548,20 +551,21 @@
                     </li>
                     <li>
                         <i class="icon-envelope"></i>
-                        <strong>e: </strong> info@rotati.com
+                        info@rotati.com
                     </li>
                     <li>
                         <i class="icon-globe"></i>
-                        <strong>w: </strong> www.rotati.com
+                        www.rotati.com
                     </li>
                     <li>
                         <i class="icon-phone"></i>
-                        <strong>m: </strong> +855 12 22 33 48
+                        +855 12 22 33 48
                     </li>
                 </ul>
+                <p>&nbsp;</p>
             </div>
 
-            <div id="menu" class="span3">
+            <div id="menu" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h4>MENU</h4>
                 <div>
                     <ul class="arrow">
@@ -650,10 +654,11 @@
 
                     </ul>
                 </div>
+                <p>&nbsp;</p>
             </div>
 
             <!--Services -->
-            <div id="services" class="span3">
+            <div id="services" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h4>SERVICES</h4>
                 <div>
                     <ul class="arrow">
@@ -666,10 +671,11 @@
                         <!-- <li>Web Scrapers</li> -->
                     </ul>
                 </div>
+                <p>&nbsp;</p>
             </div>
             <!--End Archives-->
 
-            <div class="span3">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <h4>ABOUT ROTATI</h4>
                 <p>Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
 </p>
@@ -677,7 +683,7 @@
         </div>
 
     </div>
-    <!--/row-fluid-->
+    <!--/row-->
 </div>
 <!--/container-->
 
@@ -686,13 +692,13 @@
 <!--Footer-->
 <footer id="footer">
     <div class="container">
-        <div class="row-fluid">
-            <div class="span5 cp">
+        <div class="row">
+            <div class="col-md-5 cp">
                 &copy; 2015 Rotati. All rights reserved.
             </div>
             <!--/Copyright-->
 
-            <div class="span6">
+            <div class="col-md-6">
                 <ul class="social pull-right">
 <!--                     <li><a href="http://fb.com/rotati" target="_blank"><i class="icon-facebook"></i></a></li>
                     <li><a href="http://twitter.com/rotati" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -702,7 +708,7 @@
                 </ul>
             </div>
 
-            <div class="span1">
+            <div class="col-md-1">
                 <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
             </div>
             <!--/Goto Top-->
@@ -712,7 +718,8 @@
 <!--/Footer-->
 
 <script src="/js/vendor/jquery-1.9.1.min.js"></script>
-<script src="/js/vendor/bootstrap.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="/js/main.js"></script>
 <!-- Required javascript files for Slider -->
 <script src="/js/vendor/jquery.ba-cond.min.js"></script>
