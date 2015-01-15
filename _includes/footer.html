@@ -5,7 +5,7 @@
 
         <div class="row">
 
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h4>ADDRESS</h4>
                 <ul class="list-unstyled address">
                     <li>
@@ -27,19 +27,21 @@
                         {{site.mobile}}
                     </li>
                 </ul>
+                <p>&nbsp;</p>
             </div>
 
-            <div id="menu" class="col-md-3">
+            <div id="menu" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h4>MENU</h4>
                 <div>
                     <ul class="arrow">
                       {% include navigation.html dropdown=false %}
                     </ul>
                 </div>
+                <p>&nbsp;</p>
             </div>
 
             <!--Services -->
-            <div id="services" class="col-md-3">
+            <div id="services" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <h4>SERVICES</h4>
                 <div>
                     <ul class="arrow">
@@ -52,10 +54,11 @@
                         <!-- <li>Web Scrapers</li> -->
                     </ul>
                 </div>
+                <p>&nbsp;</p>
             </div>
             <!--End Archives-->
 
-            <div class="col-md-3">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
                 <h4>ABOUT {{site.title | upcase}}</h4>
                 <p>{{ site.description }}</p>
             </div>

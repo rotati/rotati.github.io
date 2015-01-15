@@ -938,7 +938,25 @@ ul.faq li>div h3
   text-align: center;
 }
 
+#team {
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3;
+}
+
+.logos {
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3;
+}
+
 .logos img {
   height: 70px;
   margin: 0 auto;
+}
+
+.uppercased {
+  text-transform: uppercase;
+}
+
+.user-info {
+  height: 270px;
 }
