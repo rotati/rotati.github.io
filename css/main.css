@@ -16,15 +16,13 @@
     float: none; }
 
   .box p {
+    font-size: 0.7em; }
+
+  .media-body {
     font-size: 0.7em; } }
 @media (min-width: 978px) {
   .title {
     margin-top: -15px; } }
-.helper {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle; }
-
 .clearfix {
   zoom: 1; }
 
@@ -794,6 +792,20 @@ ul.faq li > div h3 {
   margin-top: 150px;
   text-align: center; }
 
+#team {
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3; }
+
+.logos {
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3; }
+
 .logos img {
   height: 70px;
   margin: 0 auto; }
+
+.uppercased {
+  text-transform: uppercase; }
+
+.user-info {
+  height: 270px; }
