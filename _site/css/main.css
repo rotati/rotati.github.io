@@ -808,4 +808,4 @@ ul.faq li > div h3 {
   text-transform: uppercase; }
 
 .user-info {
-  height: 270px; }
+  display: table; }

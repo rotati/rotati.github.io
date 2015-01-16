@@ -20,17 +20,19 @@ layout: default
 
 <section class="container">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <div class="well blog">
             {% include post-top.html post=page %}
               <article>{{ content }}</article>
             {% include post-bottom.html post=page showall=true %}
+            <div class="gap"></div>
             <div class="user-info media box">
-              <div class="pull-left">
+              <div class="pull-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
                   <img src="/images/darren.jpg" alt="Darren" />
               </div>
-              <div class="media-body">
-                  <h5 style="margin-top: 0">{{ page.author }}</h5>
+              <!-- <div class="clearfix visible-xs-block"></div> -->
+              <div class="media-body col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <h5>{{ page.author }}</h5>
                   <p>{{ site.author.bio }}</p>
                   <div class="author-meta">
                       <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/{{site.author.facebook_username}}"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/{{site.author.twitter_username}}"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/{{site.author.linkedin_username}}"><i class="icon-linkedin"></i></a>
@@ -39,6 +41,7 @@ layout: default
           </div>
         </div>
     </div>
+
     {% include blog-aside.html %}
   </div>
 </section>
