@@ -5,6 +5,18 @@ menu_title: Home
 weight: 1
 ---
 
+<!-- We only show this title in mobile view -->
+<section class="title visible-xs-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{site.slogan_page}}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of title view for mobile -->
+
 <section id="slide-show">
  <div id="slider" class="sl-slider-wrapper">
 
@@ -55,7 +67,7 @@ weight: 1
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <h2>We craft beautiful, well tested, software applications.</h2>
+                <h2>{{site.slogan_page}}</h2>
                 <h4 class="no-margin">We build applications with real passion and we use a technology which we are really passionate about: Ruby on Rails and Angular JS. </h4>
             </div>
             <div class="col-md-3">
