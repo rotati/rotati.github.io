@@ -730,7 +730,7 @@ $(function() {
 
         var $navArrows = $( '#nav-arrows' ),
         slitslider = $( '#slider' ).slitslider( {
-            autoplay : false
+            autoplay : true
         } ),
 
         init = function() {
@@ -738,7 +738,6 @@ $(function() {
         },
         initEvents = function() {
             $navArrows.children( ':last' ).on( 'click', function() {
-                console.log("cl", slitslider.next());
                 slitslider.next();
                 return false;
             });
