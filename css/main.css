@@ -424,6 +424,9 @@ header .dropdown-menu:before {
   color: #6f6f6f;
   font-size: 14px; }
 
+#bottom p {
+  font-size: 14px; }
+
 #bottom h4 {
   margin-bottom: 15px;
   margin-top: 0; }
