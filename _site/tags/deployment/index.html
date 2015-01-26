@@ -11,12 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="P1trWWBECm4uIvLtkYRRM-JEaUdtXNIasgkPXIqTXh8" />
 
-    <title>Implement a custom Enumerable collection class in Ruby - Crafting Beautiful Applications</title>
+    <title>Posts Tagged &ldquo;deployment&rdquo; - Crafting Beautiful Applications</title>
     <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://rotati.com/2015/01/implement-a-custom-enumerable-collection-class-in-ruby">
+    <link rel="canonical" href="http://rotati.com/tags/deployment/">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- Optional bootstrap theme -->
@@ -247,26 +247,39 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Implement a custom Enumerable collection class in Ruby</h1>
+                <h1>Tags: Deployment</h1>
             </div>
             <div class="col-md-6">
                 <ul class="breadcrumb pull-right">
                     <li><a href="/">Home</a> <span class="divider"></span></li>
-                    <li><a href="/blog/">Blog <span class="divider"></span></li>
+                    <li><a href="/blog/">Blog</a><span class="divider"></span></li>
+                    <li>Tags <span class="divider">/</span></li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<section class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-        <div class="well blog">
-            <a href="/2015/01/implement-a-custom-enumerable-collection-class-in-ruby"><h2>Implement a custom Enumerable collection class in Ruby</h2></a>
+<section id="blog" class="container main">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="blog">
+
+                
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        <div class="blog-item well">
+                            <a href="/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/"><h2>Basic automated deployment from Travis CI to Heroku</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
-      <i class="icon-user"></i> by <a href="#">darren</a> |
+      <i class="icon-user"></i> by <a href="#">Darren</a> |
       <i class="icon-folder-open"></i>Category:
       
         <a href="/categories/programming">Programming</a> |
@@ -275,144 +288,173 @@
     </p>
 </div>
 
-              <article><h3 id="background">Background</h3>
+                              <article><h3 id="background">Background</h3> <p>It’s important to get continuous feedback while an application is being developed. In today’s post, lets explore the process to setup a simple, single branch, open source Git repo hosted on <a href="http://github.com">Github.com</a> that needs to be deployed to <a href="http://heroku.com">Heroku</a> when the build passes.</p> <h3 id="installations">Installations</h3> <p>First...</article>
+                            
+  <a class="btn btn-link" href="/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/">Read More <i class="icon-angle-right"></i></a>
 
-<p>The <a href="http://www.ruby-doc.org/core-2.1.4/Enumerable.html">Enumerable</a> module in Ruby Core is very powerful. It provides methods such as sort, min, max and others for working specifically with collections. Its implemented by collection classes such as Array out of the box but what if you need to make your own custom collection class? In this case you will need to include the Enumerable module. Here’s how.</p>
-
-<h3 id="an-enumerable-coffee-shop">An Enumerable Coffee Shop</h3>
-
-<p>Lets consider a Coffee Shop that has a number of different blends of coffee on offer. Imagine that the shop wants to sort these different blends by strength. Also consider that we may need to quickly determine the stongest or the weakest coffee. Enumerable module to the rescue!</p>
-
-<h3 id="the-item-class-first-coffee-class">The item class first (Coffee Class)</h3>
-
-<p>First of all, lets get some coffee brewed by implementing our Coffee class!</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Coffee</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:name</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:strength</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">strength</span><span class="p">)</span>
-    <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="vi">@strength</span> <span class="o">=</span> <span class="n">strength</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
-
-<p>Lets make the coffee!</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Laos&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Angkor&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Nescafe&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></pre></div>
-
-<p>Now, for starters, lets just add this to an array and try and sort it.#</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_favorite_coffee</span> <span class="o">=</span> <span class="o">[</span><span class="n">laos</span><span class="p">,</span> <span class="n">angkor</span><span class="p">,</span> <span class="n">nescafe</span><span class="o">]</span>
-<span class="nb">puts</span> <span class="n">my_favorite_coffee</span><span class="o">.</span><span class="n">sort</span></code></pre></div>
-
-<p>This will blow up with the error in <strong>‘sort’: comparison of Coffee with Coffee failed</strong>. This is becuase the Enumerable sort method (being called on the Array instance) does not have any idea how to sort a collection of Coffee objects. In order to fix this we need to implement the <em>spaceship operator</em> method on the Coffee class.</p>
-
-<h3 id="the-ruby-spaceship-operator">The Ruby Spaceship Operator</h3>
-
-<p>The Ruby spaceship operator is used to compare two objects. It returns only three possible values: -1, 0, 1. It works as follows</p>
-
-<ul>
-  <li><strong>Returns -1</strong> when the left side is <strong>LESS</strong> than the right side</li>
-  <li><strong>Returns 0</strong> when the left side is the <strong>SAME</strong> as the right side</li>
-  <li><strong>Returns 1</strong> when the left side is <strong>GREATER</strong> than the right side</li>
-</ul>
-
-<p>This simple logic is then used by the Enumerable Modules sort method.</p>
-
-<p>So without further ado lets implement our own spaceship operator method for our Coffee class. In our specific case we need to sort on the <em>strength</em> attribute.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">&lt;=&gt;</span><span class="p">(</span><span class="n">other_coffee</span><span class="p">)</span>
-  <span class="nb">self</span><span class="o">.</span><span class="n">strength</span> <span class="o">&lt;=&gt;</span> <span class="n">other_coffee</span><span class="o">.</span><span class="n">strength</span>
-<span class="k">end</span></code></pre></div>
-
-<p>Now if we run the program again it does not fail but it does not work so well becuase we see three Coffee object strings like this output: <code>&lt;Coffee:0x007f9ada820f10&gt;</code>. What we really want is the human readable detail about the coffee name and strength. In order to do this we need to override the <code>to_s</code> method on the Coffee class.</p>
-
-<p>Once we override the <code>to_s</code> method like so</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">to_s</span>
-  <span class="s2">&quot;&lt;name: </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">, strength: </span><span class="si">#{</span><span class="n">strength</span><span class="si">}</span><span class="s2">&gt;&quot;</span>
-<span class="k">end</span></code></pre></div>
-
-<p>Then our output is now as follows, which is much better!</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Nescafe</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">1</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Angkor</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">7</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="nb">name</span><span class="p">:</span> <span class="no">Laos</span><span class="p">,</span> <span class="ss">strength</span><span class="p">:</span> <span class="mi">10</span><span class="o">&gt;</span></code></pre></div>
-
-<h3 id="enter-the-coffee-shop">Enter the Coffee Shop!</h3>
-
-<p>So now that we know we have provided enough detail to sort our Coffee objects by strength within a generic Array, we need to be able to do the same within our CoffeeShop class too. This is achieved by implementing the Enumerable module in the CoffeeShop class. There are two things we need to do in our CoffeeShop class to achive this:</p>
-
-<ol>
-  <li>Include the Enumerable module</li>
-  <li>Implement an <code>each</code> method that yields each Coffee instance to the caller</li>
-</ol>
-
-<p>Here is our completed CoffeeShop class:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">CoffeeShop</span>
-  <span class="kp">include</span> <span class="no">Enumerable</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:coffees</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">coffees</span><span class="p">)</span>
-    <span class="vi">@coffees</span> <span class="o">=</span> <span class="n">coffees</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">each</span>
-    <span class="vi">@coffees</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">coffee</span><span class="o">|</span> <span class="k">yield</span> <span class="n">coffee</span><span class="p">}</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></div>
-
-<p>We can use it as follows and we get the same result as we do with calling sort on the Array.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">laos</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Laos&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">angkor</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Angkor&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-<span class="n">nescafe</span> <span class="o">=</span> <span class="no">Coffee</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Nescafe&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">cs</span> <span class="o">=</span> <span class="no">CoffeeShop</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">nescafe</span><span class="p">,</span> <span class="n">laos</span><span class="p">,</span> <span class="n">angkor</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">cs</span><span class="o">.</span><span class="n">sort</span></code></pre></div>
-
-<h3 id="conculusion">Conculusion</h3>
-
-<p>So that is the basics of implementing Enumerable in Ruby. Here is a <a href="https://gist.github.com/jensendarren/ee1136dd046a916c7da4">Gist</a> that contains the full source code.</p>
-</article>
-            
 <div class="tag">
   Tags :
   
-    <a href="/tags/ruby"><span class="label label-success">ruby</span></a>
+    <a href="/tags/heroku"><span class="label label-success">heroku</span></a>
   
-    <a href="/tags/custom"><span class="label label-success">custom</span></a>
+    <a href="/tags/travis-ci"><span class="label label-success">travis-ci</span></a>
   
-    <a href="/tags/class"><span class="label label-success">class</span></a>
+    <a href="/tags/rails"><span class="label label-success">rails</span></a>
   
-    <a href="/tags/enumerable"><span class="label label-success">enumerable</span></a>
+    <a href="/tags/deployment"><span class="label label-success">deployment</span></a>
   
-    <a href="/tags/modules"><span class="label label-success">modules</span></a>
+    <a href="/tags/ci"><span class="label label-success">ci</span></a>
+  
+    <a href="/tags/continuous"><span class="label label-success">continuous</span></a>
+  
+    <a href="/tags/deployment"><span class="label label-success">deployment</span></a>
   
 </div>
 
-            <div class="gap"></div>
-            <div class="user-info media box">
-              <div class="pull-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <img src="/images/darren.jpg" alt="Darren" />
-              </div>
-              <!-- <div class="clearfix visible-xs-block"></div> -->
-              <div class="media-body col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <h5>darren</h5>
-                  <p>Interested in software startups, mountain biking and playing piano!</p>
-                  <div class="author-meta">
-                      <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/jensendarren"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/jensendarren"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/jensendarren1"><i class="icon-linkedin"></i></a>
-                  </div>
-             </div>
-          </div>
-        </div>
-    </div>
+                        </div>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                        <div class="blog-item well">
+                            <a href="/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/"><h2>Basic automated deployment from Travis CI to Heroku</h2></a>
+<div class="blog-meta clearfix">
+    <p class="pull-left">
+      <i class="icon-user"></i> by <a href="#">Darren</a> |
+      <i class="icon-folder-open"></i>Category:
+      
+        <a href="/categories/programming">Programming</a> |
+      
+      <i class="icon-calendar"></i> January 2015
+    </p>
+</div>
 
-    <aside class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                              <article><h3 id="background">Background</h3> <p>It’s important to get continuous feedback while an application is being developed. In today’s post, lets explore the process to setup a simple, single branch, open source Git repo hosted on <a href="http://github.com">Github.com</a> that needs to be deployed to <a href="http://heroku.com">Heroku</a> when the build passes.</p> <h3 id="installations">Installations</h3> <p>First...</article>
+                            
+  <a class="btn btn-link" href="/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/">Read More <i class="icon-angle-right"></i></a>
+
+<div class="tag">
+  Tags :
+  
+    <a href="/tags/heroku"><span class="label label-success">heroku</span></a>
+  
+    <a href="/tags/travis-ci"><span class="label label-success">travis-ci</span></a>
+  
+    <a href="/tags/rails"><span class="label label-success">rails</span></a>
+  
+    <a href="/tags/deployment"><span class="label label-success">deployment</span></a>
+  
+    <a href="/tags/ci"><span class="label label-success">ci</span></a>
+  
+    <a href="/tags/continuous"><span class="label label-success">continuous</span></a>
+  
+    <a href="/tags/deployment"><span class="label label-success">deployment</span></a>
+  
+</div>
+
+                        </div>
+                        
+                    
+
+                
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                
+
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
+                
+
+            </div> <!-- blog -->
+
+          <div class="gap"></div>
+
+     </div> <!-- span8 -->
+     <aside class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
   <div class="widget">
       <h3>Blog Categories</h3>
@@ -532,7 +574,7 @@
 
 </aside>
 
-  </div>
+    </div> <!-- row -->
 </section>
 
 
