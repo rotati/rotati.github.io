@@ -92,18 +92,6 @@ gem 'pg'
 
 __NOTE__ the version of Ruby specified in the Gemfile must be the same as the version specified in the `.travis.yml` file above (otherwise Travis will complain!)
 
-### Rails 4.2 and the default Rake task using RSpec
-
-When using Rails 4.2, Travis will complain that it does not '"know how to build task 'default'"'. To fix this, add the following lines to your applications `Rakefile`.
-
-{% highlight ruby %}
-require 'rspec/core/rake_task'
-task :default => :spec
-RSpec::Core::RakeTask.new
-{% endhighlight %}
-
-This is, of course, assuming you are using RSpec so you will also need to add the `rspec-rails` gem to your `:development` and `:test` group of your Gemfile and run bundle to install it.
-
 ### Conclusion
 
 While there are several steps to setup this CI workflow, once its done, well, its done and you will appreciate its rapid feedback and ease of use.

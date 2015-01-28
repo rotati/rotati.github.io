@@ -339,16 +339,6 @@ travis setup heroku</code></pre></div>
 
 <p><strong>NOTE</strong> the version of Ruby specified in the Gemfile must be the same as the version specified in the <code>.travis.yml</code> file above (otherwise Travis will complain!)</p>
 
-<h3 id="rails-42-and-the-default-rake-task-using-rspec">Rails 4.2 and the default Rake task using RSpec</h3>
-
-<p>When using Rails 4.2, Travis will complain that it does not ‘“know how to build task ‘default’”’. To fix this, add the following lines to your applications <code>Rakefile</code>.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">&#39;rspec/core/rake_task&#39;</span>
-<span class="n">task</span> <span class="ss">:default</span> <span class="o">=&gt;</span> <span class="ss">:spec</span>
-<span class="no">RSpec</span><span class="o">::</span><span class="no">Core</span><span class="o">::</span><span class="no">RakeTask</span><span class="o">.</span><span class="n">new</span></code></pre></div>
-
-<p>This is, of course, assuming you are using RSpec so you will also need to add the <code>rspec-rails</code> gem to your <code>:development</code> and <code>:test</code> group of your Gemfile and run bundle to install it.</p>
-
 <h3 id="conclusion">Conclusion</h3>
 
 <p>While there are several steps to setup this CI workflow, once its done, well, its done and you will appreciate its rapid feedback and ease of use.</p>
