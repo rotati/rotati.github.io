@@ -14,10 +14,10 @@
                             {{ line }}<br/>
                         {% endfor %}
                     </li>
-                    <!-- <li>
+                    <li>
                         <i class="icon-envelope"></i>
-                        {{site.email}}
-                    </li> -->
+                        {{site.email | replace: '@', '(at)'}}
+                    </li>
                     <li>
                         <i class="icon-globe"></i>
                         {{site.website}}
