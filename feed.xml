@@ -6,8 +6,8 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 26 Jan 2015 20:22:39 +0700</pubDate>
-    <lastBuildDate>Mon, 26 Jan 2015 20:22:39 +0700</lastBuildDate>
+    <pubDate>Wed, 28 Jan 2015 16:04:05 +0700</pubDate>
+    <lastBuildDate>Wed, 28 Jan 2015 16:04:05 +0700</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
@@ -75,16 +75,6 @@ travis setup heroku&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;pg&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt; the version of Ruby specified in the Gemfile must be the same as the version specified in the &lt;code&gt;.travis.yml&lt;/code&gt; file above (otherwise Travis will complain!)&lt;/p&gt;
-
-&lt;h3 id=&quot;rails-42-and-the-default-rake-task-using-rspec&quot;&gt;Rails 4.2 and the default Rake task using RSpec&lt;/h3&gt;
-
-&lt;p&gt;When using Rails 4.2, Travis will complain that it does not ‘“know how to build task ‘default’”’. To fix this, add the following lines to your applications &lt;code&gt;Rakefile&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rspec/core/rake_task&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;task&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:default&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:spec&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;RSpec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Core&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;RakeTask&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;This is, of course, assuming you are using RSpec so you will also need to add the &lt;code&gt;rspec-rails&lt;/code&gt; gem to your &lt;code&gt;:development&lt;/code&gt; and &lt;code&gt;:test&lt;/code&gt; group of your Gemfile and run bundle to install it.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 
