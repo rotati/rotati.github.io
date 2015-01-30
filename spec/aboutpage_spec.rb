@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "about page" do
   staff_data =[
-    {name: 'Darrens', image_filename: 'darren.jpg', link: 'https://linkedin.com/in/jensendarren1'},
+    {name: 'Darren', image_filename: 'darren.jpg', link: 'https://linkedin.com/in/jensendarren1'},
     {name: 'Reaksmey', image_filename: 'reaksmey.jpg', link: 'https://www.facebook.com/ymingliang'},
     {name: 'Seyha', image_filename: 'seyha.jpg', link: 'https://www.facebook.com/sino.chef7'},
     {name: 'Vicheth', image_filename: 'vicheth.jpg', link: 'https://www.facebook.com/vicheth.info'},
