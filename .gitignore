@@ -1,5 +1,5 @@
 .sass-cache
-_site/spec
+_site/spec/*
 _site/task
 _site/Gemfile
 _site/Rakefile
