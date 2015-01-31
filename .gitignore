@@ -4,3 +4,4 @@ _site/task/*
 _site/Gemfile
 _site/Gemfile.lock
 _site/Rakefile
+_site/README.md
