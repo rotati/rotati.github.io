@@ -1,4 +1,12 @@
-# Rotati.com Readme
+# README
+
+## Run tests
+
+bundle exec rspec spec
+
+## Deploy
+
+git publish-website
 
 ## Travis Build Status
 
