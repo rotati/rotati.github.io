@@ -4,7 +4,11 @@
 
 bundle exec rspec spec
 
-## Deploy
+## Run development site
+
+jekyll serve
+
+## Deploy site
 
 git publish-website
 
