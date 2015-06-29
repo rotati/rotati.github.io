@@ -1,12 +1,12 @@
 # README
 
+## Run development site
+
+jekyll serve --watch
+
 ## Run tests
 
 bundle exec rspec spec
-
-## Run development site
-
-jekyll serve
 
 ## Deploy site
 
