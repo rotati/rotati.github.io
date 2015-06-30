@@ -3,13 +3,13 @@ require 'spec_helper'
 describe "about page" do
   staff_data =[
     {name: 'Darren', image_filename: 'darren.jpg', link: 'https://linkedin.com/in/jensendarren1'},
-    {name: 'Reaksmey', image_filename: 'reaksmey.jpg', link: 'https://www.facebook.com/ymingliang'},
-    {name: 'Seyha', image_filename: 'seyha.jpg', link: 'https://www.facebook.com/sino.chef7'},
-    {name: 'Vicheth', image_filename: 'vicheth.jpg', link: 'https://www.facebook.com/vicheth.info'},
-    {name: 'Penh', image_filename: 'penh.jpg', link: 'https://www.facebook.com/penhlenh'},
     {name: 'Bunhout', image_filename: 'bunhout.jpg', link: 'https://www.facebook.com/bun.houth.7'},
     {name: 'Sim', image_filename: 'sim.jpg', link: 'https://www.facebook.com/uysim'},
-    {name: 'Some', image_filename: 'some.jpg', link: 'https://www.facebook.com/ho.sysome'},
+    {name: 'Vicheth', image_filename: 'vicheth.jpg', link: 'https://www.facebook.com/vicheth.info'},
+    {name: 'Kosal', image_filename: 'kosal.jpg', link: 'https://www.facebook.com/ma.c.kosal'},
+    {name: 'Pirun', image_filename: 'pirun.png', link: 'https://www.facebook.com/profile.php?id=100009053969884'},
+    {name: 'Siya', image_filename: 'siya.png', link: 'https://www.facebook.com/siya.ny01/'},
+    
   ]
 
   before do
