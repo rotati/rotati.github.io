@@ -10,7 +10,13 @@
                 <ul class="list-unstyled address">
                     <li>
                         <i class="icon-home"></i>
-                        {% for line in site.address_lines %}
+                        {% for line in site.address_lines_canada %}
+                            {{ line }}<br/>
+                        {% endfor %}
+                    </li>
+                    <li>
+                        <i class="icon-home"></i>
+                        {% for line in site.address_lines_cambodia %}
                             {{ line }}<br/>
                         {% endfor %}
                     </li>
