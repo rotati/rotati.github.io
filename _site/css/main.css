@@ -812,3 +812,10 @@ ul.faq li > div h3 {
 
 .user-info {
   display: table; }
+
+@media (min-width: 768px) {
+  #cool-clear {
+    clear: right; } }
+@media (min-width: 992px) {
+  #cool-clear {
+    clear: left; } }
