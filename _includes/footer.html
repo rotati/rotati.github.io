@@ -21,6 +21,12 @@
                         {% endfor %}
                     </li>
                     <li>
+                        <i class="icon-home"></i>
+                        {% for line in site.address_lines_philippines %}
+                            {{ line }}<br/>
+                        {% endfor %}
+                    </li>
+                    <li>
                         <i class="icon-envelope"></i>
                         {{site.email | replace: '@', '(at)'}}
                     </li>

@@ -36,6 +36,14 @@ address_lines_cambodia:
   - 166 Norodom Boulevard,
   - Phnom Penh,<br>12301,
   - Cambodia
+address_lines_philippines:
+  - Rotati Consulting (Philippines)
+  - Taguihon Internet Research Services,
+  - National Highway,
+  - Taguihon,
+  - Baclayon,
+  - Bohol,
+  - Philippines
 
 # Build settings
 markdown: kramdown
