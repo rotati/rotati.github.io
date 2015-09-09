@@ -16,7 +16,7 @@ jQuery(function($) {
 		 $('html, body').animate({
 			 scrollTop: $("body").offset().top
 		 }, 500);
-	});	
-	//End goto top		
+	});
+	//End goto top
 
 });

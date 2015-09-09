@@ -286,8 +286,20 @@ nav.navbar .nav
 }
 nav.navbar .nav>li
 {
-  margin-left: 1px;
+  margin-left: -1px;
+  -webkit-margin-start: -1px;
+  -moz-margin-start: 0em;
 }
+
+@media (min-width: 768px) {
+  nav.navbar .nav>li
+  {
+    margin-left: -1px;
+    -webkit-margin-start: -1px;
+    -moz-margin-start: -0.5em;
+  }
+}
+
 nav.navbar .nav>li>a
 {
   color: #333;

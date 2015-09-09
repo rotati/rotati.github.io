@@ -23,6 +23,45 @@
 @media (min-width: 978px) {
   .title {
     margin-top: -15px; } }
+.nav-sidebar {
+  width: 100%;
+  padding: 8px 0;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd; }
+
+.nav-sidebar a {
+  color: #333;
+  -webkit-transition: all 0.08s linear;
+  -moz-transition: all 0.08s linear;
+  -o-transition: all 0.08s linear;
+  transition: all 0.08s linear;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px; }
+
+.nav-sidebar .course-active a {
+  cursor: default;
+  background-color: #428bca;
+  color: #fff;
+  text-shadow: 1px 1px 1px #666; }
+
+.nav-sidebar .course-active a:hover {
+  background-color: #428bca; }
+
+.course-active {
+  background: #34ACE2;
+  border-radius: 4px 0 0 4px; }
+
+#course-outline {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+  text-decoration: none; }
+
 .clearfix {
   zoom: 1; }
 
@@ -255,8 +294,15 @@ nav.navbar .nav {
   margin-top: 20px; }
 
 nav.navbar .nav > li {
-  margin-left: 1px; }
+  margin-left: -1px;
+  -webkit-margin-start: -1px;
+  -moz-margin-start: 0em; }
 
+@media (min-width: 768px) {
+  nav.navbar .nav > li {
+    margin-left: -1px;
+    -webkit-margin-start: -1px;
+    -moz-margin-start: -0.5em; } }
 nav.navbar .nav > li > a {
   color: #333;
   font-family: "Fjalla One";
