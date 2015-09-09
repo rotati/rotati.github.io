@@ -68,7 +68,7 @@
   border-radius: 4px 0 0 4px;
 }
 
-#course-outline {
+.course-outline {
   display: block;
   list-style-type: disc;
   -webkit-margin-before: 1em;
@@ -76,6 +76,9 @@
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 40px;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 0px;
+  -moz-padding-start: 40px;
   text-decoration: none;
 }
 
