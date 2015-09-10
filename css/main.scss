@@ -82,6 +82,17 @@
   text-decoration: none;
 }
 
+@media (min-width: 768px) {
+  h5#contact-number {
+    font-size: 20px;
+  }
+}
+
+.alert-msg {
+  color: green;
+  display: none;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 "nova-theme"
