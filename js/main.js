@@ -1,14 +1,6 @@
-jQuery(function($) {
+var d = document.getElementById("alert-msg");
 
-	//Ajax contact
-	var form = $('.contact-form');
-		form.submit(function () {
-			$this = $(this);
-			$.post($(this).attr('action'), function(data) {
-			$this.prev().text(data.message).fadeIn().delay(3000).fadeOut();
-		},'json');
-		return false;
-	});
+jQuery(function($) {
 
 	//Goto Top
 	$('.gototop').click(function(event) {
@@ -19,4 +11,28 @@ jQuery(function($) {
 	});
 	//End goto top
 
+});
+
+$(document).ready(function () {
+	//Ajax contact
+	var $form = $("form");
+
+	$form.submit(function () {
+			$.ajax({
+				type: "POST",
+				dataType: 'json',
+				url: $form.attr("action"),
+				data: $form.serialize(),
+			});
+			$form[0].reset();
+
+			d.style.display ="block";
+			setInterval(function(){hideMessage()},6000);
+
+			function hideMessage() {
+				document.getElementById("alert-msg").style.display = "none";
+			}
+
+		return false;
+	});
 });
