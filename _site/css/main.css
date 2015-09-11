@@ -72,6 +72,12 @@
   color: green;
   display: none; }
 
+#ionic-logo {
+  margin-top: 150px; }
+
+#rubymotion-logo {
+  width: 530px; }
+
 .clearfix {
   zoom: 1; }
 
