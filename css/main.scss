@@ -106,12 +106,29 @@
   border-top: 1px solid #e3e3e3;
 }
 
-#rotati-team-1 {
+.img-full-width {
   width: 100%;
 }
 
-#dave-img {
-  width: 100%;
+@media (max-width: 768px) {
+  #pirun{
+    clear: left;
+  }
+}
+
+@media (min-width: 768px) {
+  #pirun, #victory, #dave {
+    clear: left;
+  }
+}
+
+@media (min-width: 992px) {
+  #ben, #victory, #why-us {
+    clear: left;
+  }
+  #pirun, #dave {
+    clear:right;
+  }
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
