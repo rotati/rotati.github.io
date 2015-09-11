@@ -131,6 +131,18 @@
   }
 }
 
+.text-box {
+  border-radius: 30px !important;
+}
+
+#textarea-box {
+  border-radius: 10px !important;
+}
+
+#btn-submit {
+  border-radius: 5px !important;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 "nova-theme"

@@ -97,6 +97,15 @@
 
   #pirun, #dave {
     clear: right; } }
+.text-box {
+  border-radius: 30px !important; }
+
+#textarea-box {
+  border-radius: 10px !important; }
+
+#btn-submit {
+  border-radius: 5px !important; }
+
 .clearfix {
   zoom: 1; }
 
