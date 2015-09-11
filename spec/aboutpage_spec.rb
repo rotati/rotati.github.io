@@ -8,7 +8,7 @@ describe "about page" do
     {name: 'Vicheth', image_filename: 'vicheth.jpg', link: 'https://www.facebook.com/vicheth.info'},
     {name: 'Kosal', image_filename: 'kosal.jpg', link: 'https://www.facebook.com/ma.c.kosal'},
     {name: 'Pirun', image_filename: 'pirun.png', link: 'https://www.facebook.com/profile.php?id=100009053969884'},
-    {name: 'Siya', image_filename: 'siya.png', link: 'https://www.facebook.com/siya.ny01/'},
+    {name: 'Siya', image_filename: 'siya.jpg', link: 'https://www.facebook.com/siya.ny01/'},
   ]
 
   before do
