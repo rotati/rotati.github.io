@@ -165,6 +165,12 @@
   font-weight: 400;
   font-size: 15px; }
 
+.mobile-apps-type {
+  color: #37ACE2; }
+
+#native-app-section {
+  margin-top: 40px; }
+
 .clearfix {
   zoom: 1; }
 
