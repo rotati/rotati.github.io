@@ -12,9 +12,6 @@ describe "team page" do
     {name: 'Pirun', image_filename: 'pirun.png', link: 'https://www.facebook.com/profile.php?id=100009053969884'},
     {name: 'Siya', image_filename: 'siya.jpg', link: 'https://www.facebook.com/siya.ny01?fref=ts'},
     {name: 'Phanith', image_filename: 'phanith.jpg', link: 'https://twitter.com/Mphanith'},
-    {name: 'Siya', image_filename: 'siya.jpg', link: 'https://www.facebook.com/siya.ny01?fref=ts'},
-    {name: 'Siya', image_filename: 'siya.jpg', link: 'https://www.facebook.com/siya.ny01?fref=ts'},
-    {name: 'Siya', image_filename: 'siya.jpg', link: 'https://www.facebook.com/siya.ny01?fref=ts'},
 
   ]
 
