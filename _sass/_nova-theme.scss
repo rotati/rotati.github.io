@@ -294,6 +294,14 @@ nav.navbar .nav>li
 @media (min-width: 768px) {
   nav.navbar .nav>li
   {
+    margin-left: -9px;
+    -webkit-margin-start: -9px;
+    -moz-margin-start: -0.7em;
+  }
+}
+@media (min-width: 992px) {
+  nav.navbar .nav>li
+  {
     margin-left: -1px;
     -webkit-margin-start: -1px;
     -moz-margin-start: -0.5em;

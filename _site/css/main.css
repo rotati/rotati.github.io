@@ -85,18 +85,6 @@
 .img-full-width {
   width: 100%; }
 
-@media (max-width: 768px) {
-  #pirun {
-    clear: left; } }
-@media (min-width: 768px) {
-  #pirun, #victory, #dave {
-    clear: left; } }
-@media (min-width: 992px) {
-  #ben, #victory, #why-us {
-    clear: left; }
-
-  #pirun, #dave {
-    clear: right; } }
 .text-box {
   border-radius: 30px !important; }
 
@@ -105,6 +93,77 @@
 
 #btn-submit {
   border-radius: 5px !important; }
+
+.team {
+  max-width: 90em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+.team::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.team ul {
+  text-align: center;
+  margin: 0;
+  padding: 0; }
+
+.team ul::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.team ul li {
+  padding: 2.35765%;
+  list-style: none;
+  line-height: 30px; }
+
+.team ul li a {
+  width: 33px;
+  height: 33px; }
+
+@media screen and (min-width: 768px) {
+  .team ul li {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%; }
+
+  .team ul li:last-child {
+    margin-right: 0; }
+
+  .team ul li:nth-child(4n) {
+    margin-right: 0; }
+
+  .team ul li:nth-child(4n+1) {
+    clear: left; } }
+.team ul li {
+  display: block; }
+
+.team ul li:hover img {
+  opacity: .75; }
+
+.team ul li img {
+  border-radius: 100%;
+  display: block;
+  vertical-align: middle;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  width: 65%;
+  margin: 0 auto 15px; }
+
+.team ul li strong {
+  color: #468847; }
+
+.team ul li strong,
+.team ul li span {
+  display: block; }
+
+.team ul li span {
+  color: #8e9fa1;
+  font-weight: 400;
+  font-size: 15px; }
 
 .clearfix {
   zoom: 1; }
@@ -343,6 +402,11 @@ nav.navbar .nav > li {
   -moz-margin-start: 0em; }
 
 @media (min-width: 768px) {
+  nav.navbar .nav > li {
+    margin-left: -9px;
+    -webkit-margin-start: -9px;
+    -moz-margin-start: -0.7em; } }
+@media (min-width: 992px) {
   nav.navbar .nav > li {
     margin-left: -1px;
     -webkit-margin-start: -1px;
