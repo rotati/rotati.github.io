@@ -65,6 +65,9 @@
   -moz-padding-start: 40px;
   text-decoration: none; }
 
+.course-outline ul {
+  list-style-type: circle; }
+
 @media (min-width: 768px) {
   h5#contact-number {
     font-size: 20px; } }
