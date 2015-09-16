@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="P1trWWBECm4uIvLtkYRRM-JEaUdtXNIasgkPXIqTXh8" />
+
+    <title>Rotati Design Patterns Training - Crafting Beautiful Applications</title>
+    <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://rotati.com/training/design-patterns-training/">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional bootstrap theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sl-slide.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+</head>
+
+
+  <body>
+
+    <section id="nav">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand pull-left" href="/"></a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse nav-right">
+          <ul class="nav navbar-nav">
+              
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li >
+        <a class="page-link" href="/about/">About</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/team/">Team</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/blog/">Blog</a>
+    </li>
+  
+
+
+
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Training <i class="icon-angle-down"></i></a>
+    <ul class="dropdown-menu">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/angular-js-courses/">Angular JS Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/enterprise-architect-boot-camp-courses/">Enterprise Architect Boot Camp Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/hybrid-mobile-courses/">Hybrid Mobile Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/java-frameworks-courses/">Java Frameworks Courses</a>
+          </li>
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/java-short-courses/">Java Short Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="icon-angle-down"></i></a>
+    <ul class="dropdown-menu">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/mobileapps/">Mobile Apps</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/webapps/">Web Apps</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </li>
+  <li class="login"><a class="page-link" href="/contact">Get In Touch</a></li>
+
+
+
+          </ul>
+        </div>
+    </div>
+  </nav>
+</section>
+
+
+      <section class="title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Design Patterns Training</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="breadcrumb pull-right">
+          <li><a href="/">Home</a> <span class="divider"></span></li>
+          <li><a href="/training/enterprise-architect-boot-camp-courses">Enterprise Architect Boot Camp Courses</a></li>
+          <li class="active">Design Patterns Training</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="design-patterns-training" class="container">
+
+  <div class="row">
+    <div class="col-md-3 center">
+      <img src="/images/bootcamp.png" height="200" width="168" />
+    </div>
+
+    <div class="col-md-7">
+      <h3>Practice your learning in a safe environment via numerous case studies, which will be reviewed and critiqued by industry experts.</h3>
+    </div>
+
+    <div class="col-md-2">
+      <a class="btn btn-success btn-large pull-right" href="/contact">Get In Touch</a>
+    </div>
+    <hr>
+  </div>
+
+  <div class="row">
+    <!-- Left Column -->
+    <div class="col-md-3">
+      <nav class="nav-sidebar">
+        <ul class="nav nav-list">
+          <li>
+            <a href="/training/enterprise-architect-boot-camp-courses">All Enterprise Architect's Boot Camp</a>
+          </li>
+          <li>
+            <a href="/training/agile-business-analysis-and-domain-design-with-uml-and-patterns-training/">Agile Business Analysis & Domain Design, with UML & Patterns Training</a>
+          </li>
+          <li class="course-active">
+            <a href="/training/design-patterns-training/">Design Patterns Training</a>
+          </li>
+          <li>
+            <a href="/training/agile-software-development-training/">Agile Software Development Training</a>
+          </li>
+          <li>
+            <a href="/training/introduction-to-test-driven-development-training/">Introduction to Test-Driven Development in Java</a>
+          </li>
+          <li>
+            <a href="/training/advanced-test-driven-development-training/">Advanced Test-Driven Development Training</a>
+          </li>
+          <li>
+            <a href="/training/domain-driven-design-training/">Domain-Driven Design Training</a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+    <!-- /Left Column -->
+
+    <!-- Right Column -->
+    <div class="col-md-9">
+      <p>
+        <strong>Duration:</strong> 3 days
+      </p>
+      <p>
+        <strong>Course Description:</strong>
+      </p>
+      <p>
+        Design Patterns are recurring software design solutions that can be used to improve new or existing applications. The course teaches both the foundational (aka Gang of Four or GoF) design patterns as well as the Enterprise Application design patterns which focus on building enterprise applications, covering such topics as designing web components, business logic, and persistence.
+      </p>
+      <p>
+        This training course was developed and is taught by some of the Philippines' well-known and respected Java software engineers and architects, and uses the format trusted by some of the best companies in the Philippines.
+      </p>
+      <p>
+        <strong>Benefits of the Program:</strong>
+      </p>
+      <p>
+        Learn established solutions to common problems. Don't reinvent the wheel. Arm your team with a language for describing design concepts and improve productivity. Trainees are able to apply their learning via case studies, which are reviewed and critiqued by industry experts. The course is applicable to any object-oriented programming language.
+      </p>
+      <p>
+        <strong>Prerequisite:</strong>
+      </p>
+      <p>
+        Basic programming knowledge of an object-oriented language.
+      </p>
+      <p>
+        <strong>Course Outline:</strong>
+      </p>
+      <ul class="course-outline">
+        <li>Design principles behind the Patterns</li>
+        <li>
+          Commonly-used GoF design patterns
+          <ul class="course-outline">
+            <li>With hands-on exercises</li>
+          </ul>
+        </li>
+        <li>
+          Enterprise design patterns
+          <ul class="course-outline">
+            <li>Domain logic</li>
+            <li>Presentation</li>
+            <li>Persistence</li>
+            <li>Others</li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+      <p>
+        <strong>Schedule:</strong>
+      </p>
+      <p>
+        
+        Please <a href="/contact">call Rotati Training</a> to request a convenient date and location for delivering this course. Rotati Training teachers are available any time (weekdays and weekends) and we can conduct the training at our Training Center (in Phnom Penh) or at a location of your choice. We are quite flexible!<br><br/>
+        
+        Note if the training location is outside of Phnom Penh we will need to request transport and accomodation costs as appropriate.<br><br/>
+        
+      </p>
+
+    </div>
+    <!-- /Right Column -->
+  </div>
+</section>
+
+
+    <!--Bottom-->
+<section id="bottom" class="main">
+    <!--Container-->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>ADDRESS</h4>
+                <ul class="list-unstyled address">
+                    <li>
+                        <i class="icon-home"></i>
+                        
+                            Rotati Consulting (Cambodia)<br/>
+                        
+                            Penthouse Office,<br/>
+                        
+                            10th Floor,<br/>
+                        
+                            B Ray Tower,<br/>
+                        
+                            166 Norodom Boulevard,<br/>
+                        
+                            Phnom Penh,<br>12301,<br/>
+                        
+                            Cambodia<br/>
+                        
+                    </li>
+                    <li>
+                        <i class="icon-home"></i>
+                        
+                            Rotati Consulting (Philippines)<br/>
+                        
+                            Taguihon Internet Research Services,<br/>
+                        
+                            National Highway,<br/>
+                        
+                            Taguihon,<br/>
+                        
+                            Baclayon,<br/>
+                        
+                            Bohol,<br/>
+                        
+                            Philippines<br/>
+                        
+                    </li>
+                    <li>
+                        <i class="icon-home"></i>
+                        
+                            Rotati Consulting (Canada)<br/>
+                        
+                            6-470 King Street W,<br/>
+                        
+                            Suite 279,<br/>
+                        
+                            Oshawa, ON,<br/>
+                        
+                            L1J 2K9,<br/>
+                        
+                            Canada<br/>
+                        
+                    </li>
+                    <li>
+                        <i class="icon-envelope"></i>
+                        info(at)rotati.com
+                    </li>
+                    <li>
+                        <i class="icon-globe"></i>
+                        www.rotati.com
+                    </li>
+                    <li>
+                        <i class="icon-phone"></i>
+                        +855 12 22 33 48
+                    </li>
+                </ul>
+                <p>&nbsp;</p>
+            </div>
+
+            <div id="menu" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>MENU</h4>
+                <div>
+                    <ul class="arrow">
+                      <li><a href="/"> Home </a></li>
+                      
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li >
+        <a class="page-link" href="/about/">About</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/team/">Team</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/blog/">Blog</a>
+    </li>
+  
+
+
+
+
+
+                      <li><a href="/jobs"> Jobs </a></li>
+                    </ul>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+
+            <!--Training -->
+            <div id="training" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>TRAINING</h4>
+                <div>
+                    <ul class="arrow">
+                        <li><a href="/training/angular-js-courses/">Angular JS Courses</a></li>
+                        <li><a href="/training/enterprise-architect-boot-camp-courses">Enterprise Architect Boot Camp Courses</a></li>
+                        <li><a href="/training/hybrid-mobile-courses">Hybrid Mobile Courses</a></li>
+                        <li><a href="/training/java-frameworks-courses/">Java Frameworks Courses</a></li>
+                        <li><a href="/training/java-short-courses/">Java Short Courses</a></li>
+                    </ul>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+
+            <!--Services -->
+            <div id="services" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>SERVICES</h4>
+                <div>
+                    <ul class="arrow">
+                        <li><a href="/services/mobileapps/">Mobile Apps</a></li>
+                        <li><a href="/services/webapps/">Web Apps</a></li>
+                        <li><a href="/about#services">API Integration</a></li>
+                        <li><a href="/about#services">GIS Apps</a></li>
+<!--                         <li>Ruby Gems</li> -->
+                        <!-- <li>Web Scrapers</li> -->
+                    </ul>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+            <!--End Archives-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <h4>ABOUT ROTATI CONSULTING</h4>
+                <p>Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+</p>
+            </div>
+        </div>
+
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+</section>
+<!--/bottom-->
+<!--Footer-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 cp">
+                &copy; 2015 Rotati Consulting. All rights reserved.
+            </div>
+            <!--/Copyright-->
+
+            <div class="col-md-6">
+                <ul class="social pull-right">
+<!--    <li><a href="http://linkedin.com/in/rotati" target="_blank"><i class="icon-linkedin"></i></a></li> -->
+                    <li><a href="http://github.com/rotati" target="_blank"><i class="icon-github-alt"></i></a></li>
+                    <li><a href="http://twitter.com/rotaticonsult" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://fb.com/rotaticonsulting" target="_blank"><i class="icon-facebook"></i></a></li>
+                    <li><a href="/feed.xml" target="_blank"><i class="icon-rss"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-1">
+                <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+            </div>
+            <!--/Goto Top-->
+        </div>
+    </div>
+</footer>
+<!--/Footer-->
+
+<script src="/js/vendor/jquery-1.9.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Required javascript files for Slider -->
+<script src="/js/vendor/jquery.ba-cond.min.js"></script>
+<script src="/js/vendor/jquery.slitslider.js"></script>
+<!-- /Required javascript files for Slider -->
+
+<!-- SL Slider -->
+<script type="text/javascript">
+$(function() {
+    var Page = (function() {
+
+        var $navArrows = $( '#nav-arrows' ),
+        slitslider = $( '#slider' ).slitslider( {
+            autoplay : true
+        } ),
+
+        init = function() {
+            initEvents();
+        },
+        initEvents = function() {
+            $navArrows.children( ':last' ).on( 'click', function() {
+                slitslider.next();
+                return false;
+            });
+
+            $navArrows.children( ':first' ).on( 'click', function() {
+                slitslider.previous();
+                return false;
+            });
+        };
+
+        return { init : init };
+
+    })();
+
+    Page.init();
+});
+</script>
+<!-- /SL Slider -->
+
+
+  </body>
+
+</html>
