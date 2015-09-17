@@ -211,6 +211,29 @@
   padding-bottom: 10px;
 }
 
+.teacher img {
+  width: 70%;
+}
+
+@media (min-width: 768px) {
+  #teacher-vicheth {
+    clear: left;
+  }
+}
+@media (min-width: 992px) {
+  #teacher-arky {
+    clear: left;
+  }
+  #teacher-vicheth {
+    clear: right;
+  }
+}
+
+#training-center-q {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 "nova-theme"
