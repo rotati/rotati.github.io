@@ -193,6 +193,12 @@
   margin-top: 20px;
   margin-bottom: 20px; }
 
+#location-icon {
+  margin-bottom: 15px; }
+
+#map-training-center-section {
+  margin-top: 10px; }
+
 .clearfix {
   zoom: 1; }
 
