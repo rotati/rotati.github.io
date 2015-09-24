@@ -6,12 +6,12 @@ permalink: /2015/01/basic-automated-deployment-from-travis-ci-to-heroku/
 categories:
   programming
 tags:
-  heroku
-  travis-ci
-  rails
-  deployment
-  ci
-  continuous deployment
+  - heroku
+  - travis-ci
+  - rails
+  - deployment
+  - ci
+  - "continuous deployment"
 ---
 
 ### Background

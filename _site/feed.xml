@@ -6,8 +6,8 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 24 Sep 2015 16:50:36 +0700</pubDate>
-    <lastBuildDate>Thu, 24 Sep 2015 16:50:36 +0700</lastBuildDate>
+    <pubDate>Thu, 24 Sep 2015 17:49:41 +0700</pubDate>
+    <lastBuildDate>Thu, 24 Sep 2015 17:49:41 +0700</lastBuildDate>
     <generator>Jekyll v2.2.0</generator>
     
       <item>
@@ -75,11 +75,11 @@
         <link>http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</link>
         <guid isPermaLink="true">http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</guid>
         
-        <category>heroku</category>
-        
-        <category>rails</category>
+        <category>elasticsearch</category>
         
         <category>deployment</category>
+        
+        <category>aws</category>
         
         
         <category>programming</category>
@@ -175,9 +175,7 @@ travis setup heroku&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         
         <category>ci</category>
         
-        <category>continuous</category>
-        
-        <category>deployment</category>
+        <category>continuous deployment</category>
         
         
         <category>programming</category>

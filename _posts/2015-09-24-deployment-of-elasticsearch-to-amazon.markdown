@@ -6,9 +6,9 @@ permalink: /2015/09/deployment-of-elasticsearch-to-amazon/
 categories:
   programming
 tags:
-  heroku
-  rails
-  deployment
+  - elasticsearch
+  - deployment
+  - aws
 ---
 
 ### INSTALL AND SETUP ELASTICSEARCH
