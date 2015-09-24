@@ -36,7 +36,7 @@
         {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
         {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
           {% if month != nmonth %}
-            {% if forloop.index != 1 %}</ul>{% endif %}
+            <!-- {% if forloop.index != 1 %}</ul>{% endif %} -->
             <li><a href="#">{{ post.date | date: '%B %Y' }}</a></li>
           {% endif %}
         {% endfor %}
