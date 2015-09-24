@@ -6,25 +6,11 @@
         <div class="row">
 
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <h4>ADDRESS</h4>
+                <h4>CONTACT</h4>
                 <ul class="list-unstyled address">
                     <li>
                         <i class="icon-home"></i>
-                        {% for line in site.address_lines_cambodia %}
-                            {{ line }}<br/>
-                        {% endfor %}
-                    </li>
-                    <li>
-                        <i class="icon-home"></i>
-                        {% for line in site.address_lines_philippines %}
-                            {{ line }}<br/>
-                        {% endfor %}
-                    </li>
-                    <li>
-                        <i class="icon-home"></i>
-                        {% for line in site.address_lines_canada %}
-                            {{ line }}<br/>
-                        {% endfor %}
+                        <a href="/contact">Get In Touch</a>
                     </li>
                     <li>
                         <i class="icon-envelope"></i>
@@ -39,18 +25,6 @@
                         {{site.mobile}}
                     </li>
                 </ul>
-                <p>&nbsp;</p>
-            </div>
-
-            <div id="menu" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <h4>MENU</h4>
-                <div>
-                    <ul class="arrow">
-                      <li><a href="/"> Home </a></li>
-                      {% include navigation.html dropdown=false %}
-                      <li><a href="/jobs"> Jobs </a></li>
-                    </ul>
-                </div>
                 <p>&nbsp;</p>
             </div>
 
@@ -115,6 +89,7 @@
                     <li><a href="http://twitter.com/rotaticonsult" target="_blank"><i class="icon-twitter"></i></a></li>
                     <li><a href="http://fb.com/rotaticonsulting" target="_blank"><i class="icon-facebook"></i></a></li>
                     <li><a href="/feed.xml" target="_blank"><i class="icon-rss"></i></a></li>
+                    <li><a href="https://github.com/rotati/wiki/wiki" target="_blank"><i class="icon-book"></i></a></li>
                 </ul>
             </div>
 
