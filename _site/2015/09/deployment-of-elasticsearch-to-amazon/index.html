@@ -11,12 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="P1trWWBECm4uIvLtkYRRM-JEaUdtXNIasgkPXIqTXh8" />
 
-    <title>Posts Tagged &ldquo;continuous&rdquo; - Crafting Beautiful Applications</title>
+    <title>Deployment of Elasticsearch to Amazon - Crafting Beautiful Applications</title>
     <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://rotati.com/tags/continuous/">
+    <link rel="canonical" href="http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <!-- Optional bootstrap theme -->
@@ -499,50 +499,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Tags: Continuous</h1>
+                <h1>Deployment of Elasticsearch to Amazon</h1>
             </div>
             <div class="col-md-6">
                 <ul class="breadcrumb pull-right">
                     <li><a href="/">Home</a> <span class="divider"></span></li>
-                    <li><a href="/blog/">Blog</a><span class="divider"></span></li>
-                    <li>Tags <span class="divider">/</span></li>
+                    <li><a href="/blog/">Blog <span class="divider"></span></li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<section id="blog" class="container main">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="blog">
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                        <div class="blog-item well">
-                            <a href="/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/"><h2>Basic automated deployment from Travis CI to Heroku</h2></a>
+<section class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="well blog">
+            <a href="/2015/09/deployment-of-elasticsearch-to-amazon/"><h2>Deployment of Elasticsearch to Amazon</h2></a>
 <div class="blog-meta clearfix">
     <p class="pull-left">
       <i class="icon-user"></i> by <a href="#">Darren</a> |
@@ -550,135 +523,99 @@
       
         <a href="/categories/programming">Programming</a> |
       
-      <i class="icon-calendar"></i> January 2015
+      <i class="icon-calendar"></i> September 2015
     </p>
 </div>
 
-                              <article><h3 id="background">Background</h3> <p>It’s important to get continuous feedback while an application is being developed. In today’s post, lets explore the process to setup a simple, single branch, open source Git repo hosted on <a href="http://github.com">Github.com</a> that needs to be deployed to <a href="http://heroku.com">Heroku</a> when the build passes.</p> <h3 id="installations">Installations</h3> <p>First...</article>
-                            
-  <a class="btn btn-link" href="/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/">Read More <i class="icon-angle-right"></i></a>
+              <article><h3 id="install-and-setup-elasticsearch">INSTALL AND SETUP ELASTICSEARCH</h3>
 
+<h3 id="install-oracle-java">Install Oracle Java</h3>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="ss">ppa</span><span class="p">:</span><span class="n">webupd8team</span><span class="o">/</span><span class="n">java</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">oracle</span><span class="o">-</span><span class="n">java7</span><span class="o">-</span><span class="n">installer</span></code></pre></div>
+
+<h3 id="install-the-deb-package-for-elasticsearch">Install the deb package for Elasticsearch:</h3>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">wget</span> <span class="ss">https</span><span class="p">:</span><span class="sr">//</span><span class="n">download</span><span class="o">.</span><span class="n">elasticsearch</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="n">deb</span>
+<span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="n">elasticsearch</span><span class="o">-</span><span class="mi">1</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="n">deb</span></code></pre></div>
+
+<h3 id="open-the-elasticsearch-config-file">Open the elasticsearch config file</h3>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">nano</span> <span class="sr">/etc/e</span><span class="n">lasticsearch</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">.</span><span class="n">yml</span></code></pre></div>
+
+<p>add the following line:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">script</span><span class="o">.</span><span class="n">disable_dynamic</span><span class="p">:</span> <span class="kp">true</span></code></pre></div>
+
+<p>install the attachment type plugin</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">cd</span> <span class="sr">/usr/s</span><span class="n">hare</span><span class="o">/</span><span class="n">elasticsearch</span>
+<span class="n">sudo</span> <span class="n">bin</span><span class="o">/</span><span class="n">plugin</span> <span class="n">install</span> <span class="n">elasticsearch</span><span class="o">/</span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">mapper</span><span class="o">-</span><span class="n">attachments</span><span class="o">/</span><span class="mi">2</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span></code></pre></div>
+
+<h3 id="follow-this-change-numbers-based-on-available-ram">Follow this (change numbers based on available RAM):</h3>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">http</span><span class="p">:</span><span class="sr">//</span><span class="n">blog</span><span class="o">.</span><span class="n">lavoie</span><span class="o">.</span><span class="n">sl</span><span class="o">/</span><span class="mi">2012</span><span class="o">/</span><span class="mi">09</span><span class="o">/</span><span class="n">configure</span><span class="o">-</span><span class="n">elasticsearch</span><span class="o">-</span><span class="n">on</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="n">single</span><span class="o">-</span><span class="n">host</span><span class="o">.</span><span class="n">html</span></code></pre></div>
+
+<p>sudo nano /etc/security/limits.conf and add:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">elasticsearch</span> <span class="n">hard</span> <span class="n">memlock</span> <span class="mi">100000</span></code></pre></div>
+
+<p>sudo nano /etc/init.d/elasticsearch</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Change</span> <span class="no">ES_HEAP_SIZE</span> <span class="n">to</span> <span class="mi">10</span><span class="o">-</span><span class="mi">20</span><span class="o">%</span> <span class="n">of</span> <span class="n">your</span> <span class="n">machine</span><span class="p">,</span> <span class="n">I</span> <span class="n">used</span> <span class="mi">128</span><span class="n">m</span>
+<span class="no">Change</span> <span class="no">MAX_LOCKED_MEMORY</span> <span class="n">to</span> <span class="mi">100000</span>  <span class="p">(</span><span class="o">~</span><span class="mi">100</span><span class="no">MB</span><span class="p">)</span>
+<span class="no">Change</span> <span class="no">ES_JAVA_OPTS</span> <span class="n">to</span> <span class="s2">&quot;-server&quot;</span></code></pre></div>
+
+<p>set the following in /etc/elasticsearch/elasticsearch.yml</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">bootstrap</span><span class="o">.</span><span class="n">mlockall</span><span class="p">:</span> <span class="kp">true</span></code></pre></div>
+
+<p>add the following to /etc/default/elasticsearch</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ES_HEAP_SIZE</span><span class="o">=</span><span class="mi">512</span><span class="n">m</span></code></pre></div>
+
+<p>add the following to ~/.bash_profile</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="no">ES_MIN_MEM</span><span class="o">=</span><span class="mi">256</span><span class="n">m</span>
+<span class="n">export</span> <span class="no">ES_MAX_MEM</span><span class="o">=</span><span class="mi">800</span><span class="n">m</span></code></pre></div>
+
+<p>restart elasticsearch</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">service</span> <span class="n">elasticsearch</span> <span class="n">restart</span></code></pre></div>
+
+<p>Configure ElasticSearch on a single shared host by deactivating replication and limiting memory usage</p>
+</article>
+            
 <div class="tag">
   Tags :
   
     <a href="/tags/heroku"><span class="label label-success">heroku</span></a>
   
-    <a href="/tags/travis-ci"><span class="label label-success">travis-ci</span></a>
-  
     <a href="/tags/rails"><span class="label label-success">rails</span></a>
-  
-    <a href="/tags/deployment"><span class="label label-success">deployment</span></a>
-  
-    <a href="/tags/ci"><span class="label label-success">ci</span></a>
-  
-    <a href="/tags/continuous"><span class="label label-success">continuous</span></a>
   
     <a href="/tags/deployment"><span class="label label-success">deployment</span></a>
   
 </div>
 
-                        </div>
-                        
-                    
-                        
-                    
+            <div class="gap"></div>
+            <div class="user-info media box">
+              <div class="pull-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <img src="/images/staff/darren.jpg" alt="Darren" />
+              </div>
+              <!-- <div class="clearfix visible-xs-block"></div> -->
+              <div class="media-body col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <h5>Darren</h5>
+                  <p>Founder of Rotati and DevBootstrap. A software developer at heart who also loves spending time with his family - enjoying cycling, piano, reading and playing games with his daughter Sophia.</p>
+                  <div class="author-meta">
+                      <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/jensendarren"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/jensendarren"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/jensendarren1"><i class="icon-linkedin"></i></a>
+                  </div>
+             </div>
+          </div>
+        </div>
+    </div>
 
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-                        
-                    
-
-                
-
-            </div> <!-- blog -->
-
-          <div class="gap"></div>
-
-     </div> <!-- span8 -->
-     <aside class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+    <aside class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
   <div class="widget">
       <h3>Blog Categories</h3>
@@ -805,7 +742,7 @@
 
 </aside>
 
-    </div> <!-- row -->
+  </div>
 </section>
 
 
