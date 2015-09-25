@@ -440,14 +440,14 @@ nav.navbar .nav > li {
 
 @media (min-width: 768px) {
   nav.navbar .nav > li {
-    margin-left: -9px;
-    -webkit-margin-start: -9px;
-    -moz-margin-start: -0.7em; } }
+    margin-left: -11px;
+    -webkit-margin-start: -11px;
+    -moz-margin-start: -0.8em; } }
 @media (min-width: 992px) {
   nav.navbar .nav > li {
     margin-left: -1px;
     -webkit-margin-start: -1px;
-    -moz-margin-start: -0.5em; } }
+    -moz-margin-start: 0em; } }
 nav.navbar .nav > li > a {
   color: #333;
   font-family: "Fjalla One";
