@@ -254,6 +254,19 @@
   margin-top: 7px;
 }
 
+.about-section-header {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #000;
+   line-height: 0.1em;
+   margin: 30px 0 20px;
+}
+
+.about-section-header span {
+    background: #f5f5f5;
+    padding:0 10px;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 "nova-theme"
