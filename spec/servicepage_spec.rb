@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "Service Pages" do
-  service_page_ids = ['mobileapps', 'webapps']
+  service_page_ids = ['hybridmobileapps', 'nativemobileapps', 'webapps']
 
   service_page_ids.each do |service_page_id|
     context "within the #{service_page_id} service page section id" do
