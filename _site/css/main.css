@@ -220,6 +220,14 @@
   background: #f5f5f5;
   padding: 0 10px; }
 
+#essential-answers ul li, #essential-answers p {
+  font-size: 16px; }
+
+#essential-answers {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px; }
+
 .clearfix {
   zoom: 1; }
 

@@ -1,6 +1,12 @@
 ---
 layout: post
-author: darren
+author: Darren
+bio: Founder of Rotati and DevBootstrap. A software developer at heart who also loves spending time with his family - enjoying cycling, piano, reading and playing games with his daughter Sophia.
+twitter_username: jensendarren
+facebook_username: jensendarren
+linkedin_username: jensendarren1
+github_username: jensendarren
+
 title: Implement a custom Enumerable collection class in Ruby
 permalink: /2015/01/implement-a-custom-enumerable-collection-class-in-ruby
 categories:

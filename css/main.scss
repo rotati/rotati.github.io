@@ -267,6 +267,16 @@
     padding:0 10px;
 }
 
+#essential-answers ul li, #essential-answers p {
+  font-size: 16px;
+}
+
+#essential-answers{
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 "nova-theme"
