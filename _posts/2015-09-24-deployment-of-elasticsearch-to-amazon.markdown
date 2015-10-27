@@ -6,6 +6,7 @@ twitter_username: jensendarren
 facebook_username: jensendarren
 linkedin_username: jensendarren1
 github_username: jensendarren
+author_profile: http://www.tweetegy.com
 
 title: Deployment of Elasticsearch to Amazon
 permalink: /2015/09/deployment-of-elasticsearch-to-amazon/

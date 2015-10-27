@@ -7,6 +7,7 @@ twitter_username: jensendarren
 facebook_username: jensendarren
 linkedin_username: jensendarren1
 github_username: jensendarren
+author_profile: http://www.tweetegy.com
 
 categories:
   - Business

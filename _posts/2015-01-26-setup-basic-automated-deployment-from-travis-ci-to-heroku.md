@@ -6,6 +6,7 @@ twitter_username: jensendarren
 facebook_username: jensendarren
 linkedin_username: jensendarren1
 github_username: jensendarren
+author_profile: http://www.tweetegy.com
 
 title: Basic automated deployment from Travis CI to Heroku
 permalink: /2015/01/basic-automated-deployment-from-travis-ci-to-heroku/

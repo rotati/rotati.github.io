@@ -1,13 +1,14 @@
 ---
 layout: post
 author: Demir Selmanovic
-bio: FDemir is a developer and project manager with over 15 years of professional experience in a wide range of software development roles. He excels as a solo developer, team member, team leader, or manager of multiple distributed teams. He works closely with clients to define ideas and deliver products.
+bio: Demir is a developer and project manager with over 15 years of professional experience in a wide range of software development roles. He excels as a solo developer, team member, team leader, or manager of multiple distributed teams. He works closely with clients to define ideas and deliver products.
 twitter_username: mantrakbeg
 facebook_username: demir.selmanovic
 linkedin_username: demirselmanovic
 github_username: dselmanovic
+author_profile: http://www.toptal.com/resume/demir-selmanovic
 
-title: 10-essential-angularJS-interview-questions
+title: 10 Essential AngularJS Interview Questions
 permalink: /2015/10/10-essential-angularJS-interview-questions/
 categories:
   programming

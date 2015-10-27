@@ -6,12 +6,12 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 26 Oct 2015 16:29:08 +0700</pubDate>
-    <lastBuildDate>Mon, 26 Oct 2015 16:29:08 +0700</lastBuildDate>
+    <pubDate>Tue, 27 Oct 2015 17:37:17 +0700</pubDate>
+    <lastBuildDate>Tue, 27 Oct 2015 17:37:17 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>10-essential-angularJS-interview-questions</title>
+        <title>10 Essential AngularJS Interview Questions</title>
         <description>&lt;h3 id=&quot;what-are-the-ways-to-communicate-between-modules-of-your-application-using-core-angularjs-functionality-name-three-ways&quot;&gt;1. What are the ways to communicate between modules of your application using core AngularJS functionality? Name three ways.&lt;/h3&gt;
 
 &lt;h3 id=&quot;answer&quot;&gt;Answer:&lt;/h3&gt;

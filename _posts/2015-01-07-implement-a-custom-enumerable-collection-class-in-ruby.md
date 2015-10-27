@@ -6,6 +6,7 @@ twitter_username: jensendarren
 facebook_username: jensendarren
 linkedin_username: jensendarren1
 github_username: jensendarren
+author_profile: http://www.tweetegy.com
 
 title: Implement a custom Enumerable collection class in Ruby
 permalink: /2015/01/implement-a-custom-enumerable-collection-class-in-ruby
