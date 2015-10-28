@@ -2,6 +2,12 @@
 title: Rotati a modern web mobile cloud consultancy
 author: Darren
 layout: post
+bio: Founder of Rotati and DevBootstrap. A software developer at heart who also loves spending time with his family - enjoying cycling, piano, reading and playing games with his daughter Sophia.
+twitter_username: jensendarren
+facebook_username: jensendarren
+linkedin_username: jensendarren1
+github_username: jensendarren
+author_profile: http://www.tweetegy.com
 
 categories:
   - Business

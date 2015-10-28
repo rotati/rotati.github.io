@@ -28,14 +28,14 @@ layout: default
             <div class="gap"></div>
             <div class="user-info media box">
               <div class="pull-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <img src="/images/staff/darren.jpg" alt="Darren" />
+                  <img src="/images/author/{{page.author}}.jpg" alt="{{page.author}}" />
               </div>
               <!-- <div class="clearfix visible-xs-block"></div> -->
               <div class="media-body col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                  <h5>{{ page.author }}</h5>
-                  <p>{{ site.author.bio }}</p>
+                  <a href="{{ page.author_profile }}" target="_blank"><h3>{{ page.author }}</h3></a>
+                  <p>{{ page.bio }}</p>
                   <div class="author-meta">
-                      <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/{{site.author.facebook_username}}"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/{{site.author.twitter_username}}"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/{{site.author.linkedin_username}}"><i class="icon-linkedin"></i></a>
+                      <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/{{page.facebook_username}}"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/{{page.twitter_username}}"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/{{page.linkedin_username}}"><i class="icon-linkedin"></i></a>
                   </div>
              </div>
           </div>
