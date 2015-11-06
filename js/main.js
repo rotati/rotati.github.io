@@ -36,3 +36,21 @@ $(document).ready(function () {
 		return false;
 	});
 });
+
+$(document).ready(function () {
+	$('.project').mouseover(function () {
+		$(this).css({
+		  '-webkit-box-shadow': '3px 3px 6px 0px rgba(50, 50, 50, 0.5)',
+		  '-moz-box-shadow':    '3px 3px 6px 0px rgba(50, 50, 50, 0.5)',
+		  'box-shadow':         '3px 3px 6px 0px rgba(50, 50, 50, 0.5)',
+		});
+	});
+
+	$('.project').mouseleave(function () {
+		$(this).css({
+		  '-webkit-box-shadow': '0 0 0 0 #777',
+		  '-moz-box-shadow':    '0 0 0 0 #777',
+		  'box-shadow':         '0 0 0 0 #777'
+		});
+	});
+});
