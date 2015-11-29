@@ -228,6 +228,26 @@
   padding: 15px;
   margin-bottom: 10px; }
 
+.project {
+  height: 360px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px; }
+
+.cambosearch-project {
+  width: 50%;
+  margin: 0 auto; }
+
+#project-content h4 {
+  color: #5cb85c;
+  font-weight: bold; }
+
+@media screen and (max-width: 414px) {
+  .cambosearch-project {
+    width: 100%; } }
+@media screen and (max-width: 360px) {
+  .project {
+    height: 370px; } }
 .clearfix {
   zoom: 1; }
 
