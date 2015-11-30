@@ -9,7 +9,7 @@
     <pubDate>Mon, 30 Nov 2015 08:49:45 +0700</pubDate>
     <lastBuildDate>Mon, 30 Nov 2015 08:49:45 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
-    
+
       <item>
         <title>10 Essential AngularJS Interview Questions</title>
         <description>&lt;h3 id=&quot;what-are-the-ways-to-communicate-between-modules-of-your-application-using-core-angularjs-functionality-name-three-ways&quot;&gt;1. What are the ways to communicate between modules of your application using core AngularJS functionality? Name three ways.&lt;/h3&gt;
@@ -202,16 +202,16 @@
         <pubDate>Fri, 23 Oct 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/10/10-essential-angularJS-interview-questions/</link>
         <guid isPermaLink="true">http://rotati.com/2015/10/10-essential-angularJS-interview-questions/</guid>
-        
+
         <category>angularjs</category>
-        
+
         <category>javascript</category>
-        
-        
+
+
         <category>programming</category>
-        
+
       </item>
-    
+
       <item>
         <title>Deployment of Elasticsearch to Amazon</title>
         <description>&lt;h3 id=&quot;install-and-setup-elasticsearch&quot;&gt;INSTALL AND SETUP ELASTICSEARCH&lt;/h3&gt;
@@ -276,18 +276,18 @@
         <pubDate>Thu, 24 Sep 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</link>
         <guid isPermaLink="true">http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</guid>
-        
+
         <category>elasticsearch</category>
-        
+
         <category>deployment</category>
-        
+
         <category>aws</category>
-        
-        
+
+
         <category>programming</category>
-        
+
       </item>
-    
+
       <item>
         <title>Basic automated deployment from Travis CI to Heroku</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -366,24 +366,24 @@ travis setup heroku&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         <pubDate>Mon, 26 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/</guid>
-        
+
         <category>heroku</category>
-        
+
         <category>travis-ci</category>
-        
+
         <category>rails</category>
-        
+
         <category>deployment</category>
-        
+
         <category>ci</category>
-        
+
         <category>continuous deployment</category>
-        
-        
+
+
         <category>programming</category>
-        
+
       </item>
-    
+
       <item>
         <title>Using the Benchmark Ruby Standard Library module</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -451,24 +451,24 @@ Sort Hash    0.000000   0.000000   0.000000 &lt;span class=&quot;o&quot;&gt;(&lt
         <pubDate>Wed, 14 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/</guid>
-        
+
         <category>ruby</category>
-        
+
         <category>custom</category>
-        
+
         <category>class</category>
-        
+
         <category>benchmark</category>
-        
+
         <category>modules</category>
-        
+
         <category>stdlib</category>
-        
-        
+
+
         <category>programming</category>
-        
+
       </item>
-    
+
       <item>
         <title>Using the OptionParser Ruby Standard Library module</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -585,24 +585,24 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Fri, 09 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/using-the-optionparser-ruby-standard-lib-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-optionparser-ruby-standard-lib-module/</guid>
-        
+
         <category>ruby</category>
-        
+
         <category>custom</category>
-        
+
         <category>class</category>
-        
+
         <category>optionparser</category>
-        
+
         <category>modules</category>
-        
+
         <category>stdlib</category>
-        
-        
+
+
         <category>programming</category>
-        
+
       </item>
-    
+
       <item>
         <title>Using the Observable Ruby Standard Library module</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -740,22 +740,22 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Thu, 08 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/using-the-observable-ruby-standard-lib-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-observable-ruby-standard-lib-module/</guid>
-        
+
         <category>ruby</category>
-        
+
         <category>custom</category>
-        
+
         <category>class</category>
-        
+
         <category>observable</category>
-        
+
         <category>modules</category>
-        
-        
+
+
         <category>programming</category>
-        
+
       </item>
-    
+
       <item>
         <title>Implement a custom Enumerable collection class in Ruby</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -865,22 +865,22 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Wed, 07 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/implement-a-custom-enumerable-collection-class-in-ruby</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/implement-a-custom-enumerable-collection-class-in-ruby</guid>
-        
+
         <category>ruby</category>
-        
+
         <category>custom</category>
-        
+
         <category>class</category>
-        
+
         <category>enumerable</category>
-        
+
         <category>modules</category>
-        
-        
+
+
         <category>programming</category>
-        
+
       </item>
-    
+
       <item>
         <title>Rotati a modern web mobile cloud consultancy</title>
         <description>&lt;h3 id=&quot;welcome-to-rotati&quot;&gt;Welcome To Rotati&lt;/h3&gt;
@@ -898,37 +898,37 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Sun, 04 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/rotati-a-modern-web-mobile-cloud-consultancy</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/rotati-a-modern-web-mobile-cloud-consultancy</guid>
-        
+
         <category>rotati</category>
-        
+
         <category>consulting</category>
-        
+
         <category>webdevelopment</category>
-        
+
         <category>mobiledevelopment</category>
-        
+
         <category>clouddevelopment</category>
-        
+
         <category>web</category>
-        
+
         <category>mobile</category>
-        
+
         <category>cloud</category>
-        
+
         <category>ruby</category>
-        
+
         <category>javascript</category>
-        
+
         <category>rails</category>
-        
+
         <category>angularjs</category>
-        
-        
+
+
         <category>business</category>
-        
+
         <category>consulting</category>
-        
+
       </item>
-    
+
   </channel>
 </rss>
