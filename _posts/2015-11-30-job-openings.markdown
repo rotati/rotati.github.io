@@ -1,12 +1,12 @@
 ---
 layout: post
-author: Darren
-bio: Founder of Rotati and DevBootstrap. A software developer at heart who also loves spending time with his family - enjoying cycling, piano, reading and playing games with his daughter Sophia.
-twitter_username: jensendarren
-facebook_username: jensendarren
-linkedin_username: jensendarren1
-github_username: jensendarren
-author_profile: http://www.tweetegy.com
+author: Siya
+bio: Developer in Rotati after graduate from a 4 weeks intensive Software Developer training program in DevBootstrap.
+twitter_username: 01siya
+facebook_username: siya.ny01
+linkedin_username: siya-ny-24700097
+github_username: NySiya
+author_profile: http://tech.cambosearch.com/
 
 title: Job Opening
 permalink: /2015/11/job-openings/
