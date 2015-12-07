@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "Usage: provide a title argument."
+  exit -1
+else
+  title="$@"
+fi
+
+d=$(date +"%Y-%m-%d")
+
+slug=$(echo $title | tr '[:upper:]' '[:lower:]' | tr '[:space:]' '-')
+slug="${slug:0:${#slug}-1}"
+post="./_posts/$d-$slug.md"
+
+permalink=/$(date +"%Y/%m")/$slug/
+
+body=""
+read -d '' body <<EOF
+---
+layout: post
+author: Darren
+title: $title
+permalink: $permalink
+categories:
+  programming
+tags:
+  -
+---
+
+### Background
+
+EOF
+
+echo "$body" > $post
+subl . $post
