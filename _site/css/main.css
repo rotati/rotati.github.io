@@ -248,6 +248,13 @@
 @media screen and (max-width: 360px) {
   .project {
     height: 370px; } }
+#paymentsolutions .row {
+  padding: 10px; }
+  #paymentsolutions .row .center img {
+    margin: 0 auto; }
+  #paymentsolutions .row h3 {
+    color: #5cb85c; }
+
 .clearfix {
   zoom: 1; }
 

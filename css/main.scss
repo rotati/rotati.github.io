@@ -306,6 +306,19 @@
   }
 }
 
+#paymentsolutions {
+  .row {
+    padding: 10px;
+    .center {
+      img {
+        margin: 0 auto;
+      }
+    }
+    h3 {
+      color: #5cb85c;
+    }
+  }
+}
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
 "nova-theme"
