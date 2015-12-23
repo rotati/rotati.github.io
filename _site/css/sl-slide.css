@@ -110,6 +110,15 @@
 	background: #9B59B6;
 }
 
+.item4 .sl-slide-inner {
+	background: #55ba52;
+}
+
+.item4 .sl-slide-inner #paymentsolutions #paymentsolutions_slide {
+	margin-top: 75px;
+	width: 35%;
+}
+
 .sl-slider h2 {
 	padding: 170px 0 0;
 	margin: 0;
