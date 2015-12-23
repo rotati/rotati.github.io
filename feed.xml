@@ -6,9 +6,61 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 18 Dec 2015 13:08:40 +0700</pubDate>
-    <lastBuildDate>Fri, 18 Dec 2015 13:08:40 +0700</lastBuildDate>
+    <pubDate>Wed, 23 Dec 2015 11:03:09 +0700</pubDate>
+    <lastBuildDate>Wed, 23 Dec 2015 11:03:09 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Rotati Tech &amp; Business Social</title>
+        <description>&lt;h3 id=&quot;software-testing-getting-the-right-team--tools&quot;&gt;Software Testing: Getting the Right Team &amp;amp; Tools&lt;/h3&gt;
+
+&lt;p&gt;Discover the latest in better software, technologies, tools for your type of web application testing which is the most suitable for your project. Getting to know more about testing your software by using CI Server. Continuous Integration (CI) is a development practice that requires developers to integrate code into a shared repository frequently. Each check-in is verified by an automated build, allowing teams to quick defect detection; so that application’s risk are reduced and locate problems more easily; everyone can see what’s happening, making your application self-testing, avoiding the team from checking in the broken code or untested code.&lt;/p&gt;
+
+&lt;p&gt;Getting to know more advantages of In-House Testing. In-House Testing helps you in flexible testing in Agile Methodology, full control over the system and its functionality, secure system stability, and quick customisation. You will learn testing methodologies like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Functional Testing&lt;/li&gt;
+  &lt;li&gt;Load Testing&lt;/li&gt;
+  &lt;li&gt;Security Testing&lt;/li&gt;
+  &lt;li&gt;Regression Testing&lt;/li&gt;
+  &lt;li&gt;Usability Testing&lt;/li&gt;
+  &lt;li&gt;Performance Testing&lt;/li&gt;
+  &lt;li&gt;Compatibility Testing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Join our event and getting more advantages at:&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;glyphicon glyphicon-home event-icon-padding&quot;&gt;&lt;/i&gt;: Rotati Consulting (Cambodia), Rotati Villa, Villa No 11, Street 496, Sangkat Phsar Deum Thkov, Khan Cham Kamorn, Phnom Penh, Cambodia.&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;glyphicon glyphicon-time event-icon-padding&quot;&gt;&lt;/i&gt;: Wednesday 20th January, 2016 from 6:00pm to 7:00pm&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+For More Information:&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;glyphicon glyphicon-earphone event-icon-padding&quot;&gt;&lt;/i&gt;: +855 12 22 33 48&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&quot;glyphicon glyphicon-envelope event-icon-padding&quot;&gt;&lt;/i&gt;: info@rotati.com&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Dec 2015 00:00:00 +0700</pubDate>
+        <link>http://rotati.com/2015/12/rotati-event/</link>
+        <guid isPermaLink="true">http://rotati.com/2015/12/rotati-event/</guid>
+        
+        <category>rotati</category>
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>webdevelopment</category>
+        
+        <category>ci</category>
+        
+        
+        <category>programming</category>
+        
+        <category>business</category>
+        
+      </item>
     
       <item>
         <title>Job Openings at Rotati Consulting</title>
