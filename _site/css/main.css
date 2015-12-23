@@ -242,6 +242,9 @@
   color: #5cb85c;
   font-weight: bold; }
 
+.event-icon-padding {
+  padding-left: 20px; }
+
 @media screen and (max-width: 414px) {
   .cambosearch-project {
     width: 100%; } }
