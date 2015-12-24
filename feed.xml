@@ -6,28 +6,23 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 24 Dec 2015 14:17:52 +0700</pubDate>
-    <lastBuildDate>Thu, 24 Dec 2015 14:17:52 +0700</lastBuildDate>
+    <pubDate>Thu, 24 Dec 2015 16:59:15 +0700</pubDate>
+    <lastBuildDate>Thu, 24 Dec 2015 16:59:15 +0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
-
+    
       <item>
-        <title>Rotati Tech &amp; Business Social</title>
-        <description>&lt;h2 id=&quot;software-testing-getting-the-right-team--tools&quot;&gt;&lt;strong&gt;Software Testing: Getting the Right Team &amp;amp; Tools&lt;/strong&gt;&lt;/h2&gt;
+        <title>Software Testing&amp;#58; Getting the Right Team and Tools</title>
+        <description>&lt;p&gt;At Rotati Consulting we take software testing very seriously. For all of our projects, whether they are web or mobile applications, we test, test and test! We provide many layers of testing and we test at many stages of the software development process.&lt;/p&gt;
 
-&lt;p&gt;At Rotati Consulting we take software testing very seriously. For all of our projects, weather they are web or mobile applications, we test, test and test! We provide many layers of testing and we test at many stages of the software development process.&lt;/p&gt;
-
-&lt;p&gt;If you want to learn more about software testing you maybe intested in attending our short presentation and open discussion event on Wednesday 20th January 2016, from 6pm at Rotati Villa. Check out the event on our &lt;a href=&quot;https://www.facebook.com/events/1167059606656122/&quot;&gt;Facebook page&lt;/a&gt; and please RSVP!&lt;/p&gt;
+&lt;p&gt;If you want to learn more about software testing you maybe intested in attending our short presentation and open discussion event on Wednesday 20th January 2016, from 6pm at &lt;a href=&quot;/contact/&quot;&gt;Rotati Villa&lt;/a&gt;. Check out the event on our &lt;a href=&quot;https://www.facebook.com/events/1167059606656122/&quot;&gt;Facebook page&lt;/a&gt; and please RSVP!&lt;/p&gt;
 
 &lt;h3 id=&quot;it-all-starts-with-the-business&quot;&gt;&lt;strong&gt;It all starts with the business!&lt;/strong&gt;&lt;/h3&gt;
 
-&lt;p&gt;The first thing that we generally will test for our clients is the business logic that underpins the clients requirements for their application. We will write automated tests for this level using a technology called RSpec. Since these tests are written in Ruby, developers can read the tests and understand the applications specifications. Developers can run these tests on their own development computers to ensure that the software is in stalled and running as expected.&lt;/p&gt;
+&lt;p&gt;The first thing that we generally will test for our clients is the business logic that underpins the clients requirements for their application. We will write automated tests for this level using a technology called RSpec. Since these tests are written in Ruby, developers can read the tests and understand the applications specifications. Developers can run these tests on their own development computers to ensure that the software is installed and running as expected.&lt;/p&gt;
 
 &lt;h3 id=&quot;enter-the-ci-server&quot;&gt;&lt;strong&gt;Enter the CI Server&lt;/strong&gt;&lt;/h3&gt;
 
-<<<<<<< Updated upstream
-&lt;p&gt;&lt;i class=&quot;glyphicon glyphicon-envelope event-icon-padding&quot;&gt;&lt;/i&gt;: info@rotati.com&lt;/p&gt;
-=======
-&lt;p&gt;Another testing component is something called the ‘CI Server’. CI stands for Continuous Integration and at Rotati we use Codeship for this. What Codeship does for us is they run all the tests for all our projects &lt;em&gt;every time&lt;/em&gt; we make a change to the software! That means we continusouly know that the software is still working as expected. For every feature that we add to our projects we will include a corresponding test for that feature so that as complexity grows - the software testing never falls behind.&lt;/p&gt;
+&lt;p&gt;Another testing component is something called the ‘CI Server’. CI stands for Continuous Integration and at Rotati we use &lt;a href=&quot;https://codeship.com/&quot; target=&quot;_blank&quot;&gt;Codeship&lt;/a&gt; for this. What Codeship does for us is they run all the tests for all our projects &lt;em&gt;every time&lt;/em&gt; we make a change to the software! That means we continusouly know that the software is still working as expected. For every feature that we add to our projects we will include a corresponding test for that feature so that as complexity grows - the software testing never falls behind.&lt;/p&gt;
 
 &lt;h3 id=&quot;human-team-testing&quot;&gt;&lt;strong&gt;Human Team Testing&lt;/strong&gt;&lt;/h3&gt;
 
@@ -48,29 +43,24 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Rotati Consulting sincerely look forward to meeting you at our event. If you are interested to join, please register via our &lt;a href=&quot;https://www.facebook.com/events/1167059606656122/&quot;&gt;Facebook page&lt;/a&gt;.&lt;/p&gt;
->>>>>>> Stashed changes
 </description>
         <pubDate>Tue, 22 Dec 2015 00:00:00 +0700</pubDate>
-        <link>http://rotati.com/2015/12/rotati-event/</link>
-        <guid isPermaLink="true">http://rotati.com/2015/12/rotati-event/</guid>
-
-        <category>rotati</category>
-
-        <category>ruby</category>
-
-        <category>rails</category>
-
+        <link>http://rotati.com/2015/12/software-testing-:-getting-the-right-team-and-tools/</link>
+        <guid isPermaLink="true">http://rotati.com/2015/12/software-testing-:-getting-the-right-team-and-tools/</guid>
+        
+        <category>testing</category>
+        
         <category>webdevelopment</category>
-
+        
         <category>ci</category>
-
-
+        
+        
         <category>programming</category>
-
+        
         <category>business</category>
-
+        
       </item>
-
+    
       <item>
         <title>Job Openings at Rotati Consulting</title>
         <description>&lt;h3 id=&quot;current-available-job-openings-at-rotati-consulting&quot;&gt;Current Available Job Openings at Rotati Consulting&lt;/h3&gt;
@@ -90,22 +80,22 @@
         <pubDate>Mon, 30 Nov 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/11/job-openings/</link>
         <guid isPermaLink="true">http://rotati.com/2015/11/job-openings/</guid>
-
+        
         <category>rotati</category>
-
+        
         <category>ruby</category>
-
+        
         <category>rails</category>
-
+        
         <category>webdevelopment</category>
-
-
+        
+        
         <category>programming</category>
-
+        
         <category>business</category>
-
+        
       </item>
-
+    
       <item>
         <title>10 Essential AngularJS Interview Questions</title>
         <description>&lt;h3 id=&quot;what-are-the-ways-to-communicate-between-modules-of-your-application-using-core-angularjs-functionality-name-three-ways&quot;&gt;1. What are the ways to communicate between modules of your application using core AngularJS functionality? Name three ways.&lt;/h3&gt;
@@ -298,16 +288,16 @@
         <pubDate>Fri, 23 Oct 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/10/10-essential-angularJS-interview-questions/</link>
         <guid isPermaLink="true">http://rotati.com/2015/10/10-essential-angularJS-interview-questions/</guid>
-
+        
         <category>angularjs</category>
-
+        
         <category>javascript</category>
-
-
+        
+        
         <category>programming</category>
-
+        
       </item>
-
+    
       <item>
         <title>Deployment of Elasticsearch to Amazon</title>
         <description>&lt;h3 id=&quot;install-and-setup-elasticsearch&quot;&gt;INSTALL AND SETUP ELASTICSEARCH&lt;/h3&gt;
@@ -372,18 +362,18 @@
         <pubDate>Thu, 24 Sep 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</link>
         <guid isPermaLink="true">http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</guid>
-
+        
         <category>elasticsearch</category>
-
+        
         <category>deployment</category>
-
+        
         <category>aws</category>
-
-
+        
+        
         <category>programming</category>
-
+        
       </item>
-
+    
       <item>
         <title>Basic automated deployment from Travis CI to Heroku</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -462,24 +452,24 @@ travis setup heroku&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
         <pubDate>Mon, 26 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/</guid>
-
+        
         <category>heroku</category>
-
+        
         <category>travis-ci</category>
-
+        
         <category>rails</category>
-
+        
         <category>deployment</category>
-
+        
         <category>ci</category>
-
+        
         <category>continuous deployment</category>
-
-
+        
+        
         <category>programming</category>
-
+        
       </item>
-
+    
       <item>
         <title>Using the Benchmark Ruby Standard Library module</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -547,24 +537,24 @@ Sort Hash    0.000000   0.000000   0.000000 &lt;span class=&quot;o&quot;&gt;(&lt
         <pubDate>Wed, 14 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/</guid>
-
+        
         <category>ruby</category>
-
+        
         <category>custom</category>
-
+        
         <category>class</category>
-
+        
         <category>benchmark</category>
-
+        
         <category>modules</category>
-
+        
         <category>stdlib</category>
-
-
+        
+        
         <category>programming</category>
-
+        
       </item>
-
+    
       <item>
         <title>Using the OptionParser Ruby Standard Library module</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -681,24 +671,24 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Fri, 09 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/using-the-optionparser-ruby-standard-lib-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-optionparser-ruby-standard-lib-module/</guid>
-
+        
         <category>ruby</category>
-
+        
         <category>custom</category>
-
+        
         <category>class</category>
-
+        
         <category>optionparser</category>
-
+        
         <category>modules</category>
-
+        
         <category>stdlib</category>
-
-
+        
+        
         <category>programming</category>
-
+        
       </item>
-
+    
       <item>
         <title>Using the Observable Ruby Standard Library module</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -836,22 +826,22 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Thu, 08 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/using-the-observable-ruby-standard-lib-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-observable-ruby-standard-lib-module/</guid>
-
+        
         <category>ruby</category>
-
+        
         <category>custom</category>
-
+        
         <category>class</category>
-
+        
         <category>observable</category>
-
+        
         <category>modules</category>
-
-
+        
+        
         <category>programming</category>
-
+        
       </item>
-
+    
       <item>
         <title>Implement a custom Enumerable collection class in Ruby</title>
         <description>&lt;h3 id=&quot;background&quot;&gt;Background&lt;/h3&gt;
@@ -961,22 +951,22 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Wed, 07 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/implement-a-custom-enumerable-collection-class-in-ruby</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/implement-a-custom-enumerable-collection-class-in-ruby</guid>
-
+        
         <category>ruby</category>
-
+        
         <category>custom</category>
-
+        
         <category>class</category>
-
+        
         <category>enumerable</category>
-
+        
         <category>modules</category>
-
-
+        
+        
         <category>programming</category>
-
+        
       </item>
-
+    
       <item>
         <title>Rotati a modern web mobile cloud consultancy</title>
         <description>&lt;h3 id=&quot;welcome-to-rotati&quot;&gt;Welcome To Rotati&lt;/h3&gt;
@@ -994,37 +984,37 @@ hash we created earlier&lt;/li&gt;
         <pubDate>Sun, 04 Jan 2015 00:00:00 +0700</pubDate>
         <link>http://rotati.com/2015/01/rotati-a-modern-web-mobile-cloud-consultancy</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/rotati-a-modern-web-mobile-cloud-consultancy</guid>
-
+        
         <category>rotati</category>
-
+        
         <category>consulting</category>
-
+        
         <category>webdevelopment</category>
-
+        
         <category>mobiledevelopment</category>
-
+        
         <category>clouddevelopment</category>
-
+        
         <category>web</category>
-
+        
         <category>mobile</category>
-
+        
         <category>cloud</category>
-
+        
         <category>ruby</category>
-
+        
         <category>javascript</category>
-
+        
         <category>rails</category>
-
+        
         <category>angularjs</category>
-
-
+        
+        
         <category>business</category>
-
+        
         <category>consulting</category>
-
+        
       </item>
-
+    
   </channel>
 </rss>
