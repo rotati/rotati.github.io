@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "team page" do
   staff_data =[
     {name: 'Darren', image_filename: 'darren.jpg', link: 'https://linkedin.com/in/jensendarren1'},
-    {name: 'Vicheth', image_filename: 'vicheth.jpg', link: 'https://www.linkedin.com/profile/view?id=AAkAABTuUZoBgriBcAKb2VA34C-QXf6d3lzUEhc&authType=NAME_SEARCH&authToken=rPN2&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A351162778%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1442801788264%2Ctas%3Avicheth'},
     {name: 'Pirun', image_filename: 'pirun.png', link: 'https://www.linkedin.com/profile/edit?locale=en_US&trk=profile-preview'},
     {name: 'Siya', image_filename: 'siya.jpg', link: 'https://www.linkedin.com/profile/view?id=AAkAABR3sVcBGWv8URudmAujytZcJYSVwL5FWuE&authType=NAME_SEARCH&authToken=aOS8&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A343388503%2CauthType%3ANAME_SEARCH%2Cidx%3A1-1-1%2CtarId%3A1442802513294%2Ctas%3Asiya%20ny'},
     {name: 'Phanith', image_filename: 'phanith.jpg', link: 'https://twitter.com/Mphanith'},
