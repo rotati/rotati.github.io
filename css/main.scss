@@ -294,8 +294,10 @@
   font-weight: bold;
 }
 
-.event-icon-padding {
-  padding-left: 20px;
+#smewebsites {
+  .row {
+    padding-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: 414px){
