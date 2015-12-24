@@ -8,32 +8,28 @@ linkedin_username: siya-ny-24700097
 github_username: NySiya
 author_profile: http://tech.cambosearch.com/
 
-title: Rotati Tech & Business Social
-permalink: /2015/12/rotati-event/
+title: Software Testing&#58; Getting the Right Team and Tools
+permalink: /2015/12/software-testing-:-getting-the-right-team-and-tools/
 categories:
   - programming
   - Business
 tags:
-  - rotati
-  - ruby
-  - rails
+  - testing
   - webdevelopment
   - ci
 ---
 
-## **Software Testing: Getting the Right Team & Tools**
+At Rotati Consulting we take software testing very seriously. For all of our projects, whether they are web or mobile applications, we test, test and test! We provide many layers of testing and we test at many stages of the software development process.
 
-At Rotati Consulting we take software testing very seriously. For all of our projects, weather they are web or mobile applications, we test, test and test! We provide many layers of testing and we test at many stages of the software development process.
-
-If you want to learn more about software testing you maybe intested in attending our short presentation and open discussion event on Wednesday 20th January 2016, from 6pm at Rotati Villa. Check out the event on our [Facebook page](https://www.facebook.com/events/1167059606656122/) and please RSVP!
+If you want to learn more about software testing you maybe intested in attending our short presentation and open discussion event on Wednesday 20th January 2016, from 6pm at [Rotati Villa](/contact/). Check out the event on our [Facebook page](https://www.facebook.com/events/1167059606656122/) and please RSVP!
 
 ### **It all starts with the business!**
 
-The first thing that we generally will test for our clients is the business logic that underpins the clients requirements for their application. We will write automated tests for this level using a technology called RSpec. Since these tests are written in Ruby, developers can read the tests and understand the applications specifications. Developers can run these tests on their own development computers to ensure that the software is in stalled and running as expected.
+The first thing that we generally will test for our clients is the business logic that underpins the clients requirements for their application. We will write automated tests for this level using a technology called RSpec. Since these tests are written in Ruby, developers can read the tests and understand the applications specifications. Developers can run these tests on their own development computers to ensure that the software is installed and running as expected.
 
 ### **Enter the CI Server**
 
-Another testing component is something called the 'CI Server'. CI stands for Continuous Integration and at Rotati we use Codeship for this. What Codeship does for us is they run all the tests for all our projects _every time_ we make a change to the software! That means we continusouly know that the software is still working as expected. For every feature that we add to our projects we will include a corresponding test for that feature so that as complexity grows - the software testing never falls behind.
+Another testing component is something called the 'CI Server'. CI stands for Continuous Integration and at Rotati we use <a href="https://codeship.com/" target="_blank">Codeship</a> for this. What Codeship does for us is they run all the tests for all our projects _every time_ we make a change to the software! That means we continusouly know that the software is still working as expected. For every feature that we add to our projects we will include a corresponding test for that feature so that as complexity grows - the software testing never falls behind.
 
 ### **Human Team Testing**
 
