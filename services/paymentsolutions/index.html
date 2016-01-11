@@ -586,8 +586,13 @@
 </section>
 
 <section id="paymentsolutions" class="container">
+  <div id="alert-msg" class="alert alert-success alert-msg" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <p>Thank you for your submission. We will be in touch within the next business day!</p>
+  </div>
   <div class="center">
-    <h2>Rotati Payment Solutions is a new online payment gateway for Cambodia and the world! Rotati Payment Solutions is part of a group of payment companies handles more than $50 billion in transaction value a year so yours in good company. Our group members include Beanstream, Euroline, Keycorp, dSAFE, Samport, IP Payments, MPS, DK Online and ePay.</h2>
+    <h2>Rotati Payment Solutions is a new online payment gateway for Cambodia and the world!</h2>
+    <h2>Rotati Payment Solutions is part of a group of payment companies handles more than $50 billion in transaction value a year so yours in good company. Our group members include Beanstream, Euroline, Keycorp, dSAFE, Samport, IP Payments, MPS, DK Online and ePay.</h2>
     <a href="#" class="btn btn-success btn-large" data-toggle="modal" data-target="#paymentsolutionform">GET IN TOUCH</a>
   </div>
   <!-- Modal -->
@@ -599,9 +604,7 @@
           <h4 class="modal-title" id="mytitle"><strong>Payment Solutions Form</strong></h4>
         </div>
         <div class="modal-body">
-          <br>
-          <p id="alert-msg" class="alert-msg">Thank you for your submission. We will be in touch within the next business day!</p>
-          <form action="//formspree.io/darren@rotati.com" method="POST">
+          <form action="//formspree.io/darren@rotati.com" method="POST" class='close-payment-form'>
             <div class="row form-group">
               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                 <label for="Website" class="control-label text-box">Website Address * </label>

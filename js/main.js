@@ -53,4 +53,8 @@ $(document).ready(function () {
 		  'box-shadow':         '0 0 0 0 #777'
 		});
 	});
+
+	$('.close-payment-form').submit(function() {
+    $('#paymentsolutionform').modal('hide');
+	});
 });
