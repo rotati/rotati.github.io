@@ -300,6 +300,13 @@
   }
 }
 
+#paymentsolutions{
+  .modal input[type="text"], .modal input[type="password"], .modal input[type="url"]
+  {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 414px){
   .cambosearch-project{
     width: 100%;
@@ -313,7 +320,7 @@
 }
 
 #paymentsolutions {
-  .row {
+  .row.paymentsolution-services {
     padding: 10px;
     .center {
       img {
