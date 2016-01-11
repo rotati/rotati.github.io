@@ -430,10 +430,9 @@ header .dropdown-menu:before
 {
   padding: 20px;
 }
-.modal input[type="text"],.modal input[type="password"]
+.modal input[type="text"],.modal input[type="password"],.modal input[type="url"]
 {
   margin-right: 10px;
-  min-height: 30px;
   padding: 5px 10px;
   width: 130px;
 }

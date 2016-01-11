@@ -245,17 +245,20 @@
 #smewebsites .row {
   padding-bottom: 20px; }
 
+#paymentsolutions .modal input[type="text"], #paymentsolutions .modal input[type="password"], #paymentsolutions .modal input[type="url"] {
+  width: 100%; }
+
 @media screen and (max-width: 414px) {
   .cambosearch-project {
     width: 100%; } }
 @media screen and (max-width: 360px) {
   .project {
     height: 370px; } }
-#paymentsolutions .row {
+#paymentsolutions .row.paymentsolution-services {
   padding: 10px; }
-  #paymentsolutions .row .center img {
+  #paymentsolutions .row.paymentsolution-services .center img {
     margin: 0 auto; }
-  #paymentsolutions .row h3 {
+  #paymentsolutions .row.paymentsolution-services h3 {
     color: #5cb85c; }
 
 .clearfix {
@@ -606,9 +609,8 @@ header .dropdown-menu:before {
 .modal .modal-body {
   padding: 20px; }
 
-.modal input[type="text"], .modal input[type="password"] {
+.modal input[type="text"], .modal input[type="password"], .modal input[type="url"] {
   margin-right: 10px;
-  min-height: 30px;
   padding: 5px 10px;
   width: 130px; }
 
