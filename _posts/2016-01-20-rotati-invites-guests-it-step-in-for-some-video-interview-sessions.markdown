@@ -18,23 +18,23 @@ tags:
 
 Here are some pictures of our video interview session with IT Step, behind the scenes footage so to speak. Enjoy!
 
-<div class="row" markdown='1'>
-  <div class="col-sm-4 col-md-4 col-xs-12 thumbnail">
-    <img src="/images/blog/darren_interview_itstepI.JPG" alt="Siya interview with IT Step" class="img-responsive">
+<div class="row">
+  <div class="col-sm-4 col-xs-12 thumbnail">
+    <img src="/images/blog/darren_interview_itstepI.JPG" alt="Siya interview with IT Step" class="img-responsive" />
   </div>
-  <div class="col-sm-4 col-md-4 col-xs-12 thumbnail">
-    <img src="/images/blog/darren_interview_itstepII.JPG" alt="Siya interview with IT Step" class="img-responsive">
+  <div class="col-sm-4 col-xs-12 thumbnail">
+    <img src="/images/blog/darren_interview_itstepII.JPG" alt="Siya interview with IT Step" class="img-responsive" />
   </div>
-  <div class="col-sm-4 col-md-4 col-xs-12 thumbnail">
-    <img src="/images/blog/darren_interview_itstepIII.JPG" alt="Siya interview with IT Step" class="img-responsive">
+  <div class="col-sm-4 col-xs-12 thumbnail">
+    <img src="/images/blog/darren_interview_itstepIII.JPG" alt="Siya interview with IT Step" class="img-responsive" />
   </div>
-  <div class="col-sm-4 col-md-4 col-xs-12 thumbnail">
-    <img src="/images/blog/siya_interview_itstepI.JPG" alt="Siya interview with IT Step" class="img-responsive">
+  <div class="col-sm-4 col-xs-12 thumbnail">
+    <img src="/images/blog/siya_interview_itstepI.JPG" alt="Siya interview with IT Step" class="img-responsive" />
   </div>
-  <div class="col-sm-4 col-md-4 col-xs-12 thumbnail">
-    <img src="/images/blog/siya_interview_itstepII.JPG" alt="Siya interview with IT Step" class="img-responsive">
+  <div class="col-sm-4 col-xs-12 thumbnail">
+    <img src="/images/blog/siya_interview_itstepII.JPG" alt="Siya interview with IT Step" class="img-responsive" />
   </div>
-  <div class="col-sm-4 col-md-4 col-xs-12 thumbnail">
-    <img src="/images/blog/siya_interview_itstepIII.JPG" alt="Siya interview with IT Step" class="img-responsive">
+  <div class="col-sm-4 col-xs-12 thumbnail">
+    <img src="/images/blog/siya_interview_itstepIII.JPG" alt="Siya interview with IT Step" class="img-responsive" />
   </div>
 </div>
