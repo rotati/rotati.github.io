@@ -58,3 +58,25 @@ $(document).ready(function () {
     $('#paymentsolutionform').modal('hide');
 	});
 });
+
+$(document).ready(function () {
+	var website = document.getElementById('website');
+    $('#website').keyup(function() {
+        var $th = $(this);
+        if (isValidUrl($th.val())==-1){
+        	website.setCustomValidity("Please enter a valid URL. Ex: example.com")
+        } else {
+        	website.setCustomValidity('')
+        }
+
+    });
+});
+
+function isValidUrl(url){
+  var myVariable = url;
+  if(/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test(myVariable)) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
