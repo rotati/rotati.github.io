@@ -1,0 +1,58 @@
+# Site settings
+title: Rotati
+slogan: Crafting Beautiful Applications
+slogan_page: We build elegant, thoroughly tested applications
+email: info@rotati.com
+website: www.rotati.com
+mobile: +855 12 22 33 48
+description: > # this means to ignore newlines until "baseurl:"
+  Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://rotati.com" # the base hostname & protocol for your site
+twitter_username: rotati
+github_username:  rotati
+
+author:
+  name: Darren
+  bio: Founder of Rotati and DevBootstrap. A software developer at heart who also loves spending time with his family - enjoying cycling, piano, reading and playing games with his daughter Sophia.
+  twitter_username: jensendarren
+  facebook_username: jensendarren
+  linkedin_username: jensendarren1
+  github_username: jensendarren
+
+# Address
+address_lines_canada:
+  - Rotati Consulting (Canada)
+  - 2948 Meyers road south,
+  - Baltimore,
+  - Ontario,
+  - K0k 1c0,
+  - Canada
+address_lines_cambodia:
+  - Rotati Consulting (Cambodia)
+  - Rotati Villa
+  - Villa No 11,
+  - Street 496,
+  - Sangkat Phsar Deum Thkov,
+  - Khan Cham Kamorn,
+  - Phnom Penh,
+  - Cambodia
+address_lines_philippines:
+  - Rotati Consulting (Philippines)
+  - Taguihon Internet Research Services,
+  - National Highway,
+  - Taguihon,
+  - Baclayon,
+  - Bohol,
+  - Philippines
+
+# Build settings
+markdown: kramdown
+
+permalink: pretty
+
+# gems: [pry]
+
+schedule:
+  - Please <a href="/contact">call Rotati Training</a> to request a convenient date and location for delivering this course. Rotati Training teachers are available any time (weekdays and weekends) and we can conduct the training at our Training Center (in Phnom Penh) or at a location of your choice. We are quite flexible!<br>
+  - Note if the training location is outside of Phnom Penh we will need to request transport and accomodation costs as appropriate.<br>

@@ -1,0 +1,339 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom:0;
+}
+
+.nav-right {
+  float: right;
+}
+
+@media (max-width: 765px){
+  .nav-right {
+    float: none;
+  }
+  .box p {
+    font-size: 0.6em;
+  }
+  .media-body {
+    font-size: 0.7em;
+  }
+}
+
+@media (min-width: 978px) {
+  .title {
+    margin-top: -15px;
+  }
+}
+
+.nav-sidebar {
+  width: 100%;
+  padding: 8px 0;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+.nav-sidebar .course-active a {
+    cursor: default;
+    background-color: #428bca;
+    color: #fff;
+    text-shadow: 1px 1px 1px #666;
+}
+.nav-sidebar .course-active a:hover {
+    background-color: #428bca;
+}
+
+.course-active {
+  background: #34ACE2;
+  border-radius: 4px 0 0 4px;
+}
+
+.course-outline {
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 0px;
+  -moz-padding-start: 40px;
+  text-decoration: none;
+}
+.course-outline ul {
+  list-style-type: circle;
+}
+
+@media (min-width: 768px) {
+  h5#contact-number {
+    font-size: 20px;
+  }
+}
+
+.alert-msg {
+  color: green;
+  display: none;
+}
+
+#ionic-logo {
+  margin-top: 150px;
+}
+
+#rubymotion-logo {
+  width: 530px;
+}
+
+#office {
+  padding-top: 20px;
+  border-top: 1px solid #e3e3e3;
+}
+
+.img-full-width {
+  width: 100%;
+}
+
+.text-box {
+  border-radius: 30px !important;
+}
+
+#textarea-box {
+  border-radius: 10px !important;
+}
+
+#btn-submit {
+  border-radius: 5px !important;
+}
+
+.team {
+  max-width: 90em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.team::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.team ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.team ul::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.team ul li {
+  padding: 2.35765%;
+  list-style: none;
+  line-height: 30px;
+}
+.team ul li a {
+  width: 33px;
+  height: 33px;
+}
+@media screen and (min-width: 768px) {
+  .team ul li {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+  }
+  .team ul li:last-child {
+    margin-right: 0;
+  }
+  .team ul li:nth-child(4n) {
+    margin-right: 0;
+  }
+  .team ul li:nth-child(4n+1) {
+    clear: left;
+  }
+}
+.team ul li {
+  display: block;
+}
+.team ul li:hover img {
+  opacity: .75;
+}
+.team ul li img {
+  border-radius: 100%;
+  display: block;
+  vertical-align: middle;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  width: 65%;
+  margin: 0 auto 15px;
+}
+.team ul li strong {
+  color: #468847;
+}
+.team ul li strong,
+.team ul li span {
+  display: block;
+}
+.team ul li span {
+  color: #8e9fa1;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.mobile-apps-type {
+  color: #37ACE2;
+}
+
+.ionic-logo-container {
+  padding-bottom: 10px;
+}
+
+.teacher img {
+  width: 70%;
+}
+
+@media (min-width: 768px) {
+  #teacher-vicheth {
+    clear: left;
+  }
+}
+@media (min-width: 992px) {
+  #teacher-arky {
+    clear: left;
+  }
+  #teacher-vicheth {
+    clear: right;
+  }
+}
+
+#training-center-q {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#location-icon {
+  margin-bottom: 15px;
+}
+
+#map-training-center-section {
+  margin-top: 10px;
+}
+
+#map-training-center {
+  margin-top: 30px;
+}
+
+#get-in-touch-top-menu {
+  color: #fff;
+  background: #5cb85c;
+  height: 30px;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+#get-in-touch-at-home {
+  margin-top: 7px;
+}
+
+.about-section-header {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #000;
+   line-height: 0.1em;
+   margin: 30px 0 20px;
+}
+
+.about-section-header span {
+    background: #f5f5f5;
+    padding:0 10px;
+}
+
+#essential-answers ul li, #essential-answers p {
+  font-size: 16px;
+}
+
+#essential-answers{
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.project{
+  height: 360px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.cambosearch-project{
+  width: 50%;
+  margin: 0 auto;
+}
+
+#project-content h4{
+  color: #5cb85c;
+  font-weight: bold;
+}
+
+#smewebsites {
+  .row {
+    padding-bottom: 20px;
+  }
+}
+
+#paymentsolutions{
+  .modal input[type="text"], .modal input[type="password"], .modal input[type="url"]
+  {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px){
+  .cambosearch-project{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px){
+  .project{
+    height: 370px;
+  }
+}
+
+#paymentsolutions {
+  .row.paymentsolution-services {
+    padding: 10px;
+    .center {
+      img {
+        margin: 0 auto;
+      }
+    }
+    h3 {
+      color: #5cb85c;
+    }
+  }
+}
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+"nova-theme"
+;
+
