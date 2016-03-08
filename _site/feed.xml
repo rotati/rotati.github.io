@@ -6,8 +6,8 @@
 </description>
     <link>http://rotati.com/</link>
     <atom:link href="http://rotati.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 22 Jan 2016 16:56:57 +0700</pubDate>
-    <lastBuildDate>Fri, 22 Jan 2016 16:56:57 +0700</lastBuildDate>
+    <pubDate>Tue, 08 Mar 2016 12:12:29 -0800</pubDate>
+    <lastBuildDate>Tue, 08 Mar 2016 12:12:29 -0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -35,7 +35,7 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Wed, 20 Jan 2016 00:00:00 +0700</pubDate>
+        <pubDate>Wed, 20 Jan 2016 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2016/01/rotati-invites-guests-it-step-in-for-some-video-interview-sessions/</link>
         <guid isPermaLink="true">http://rotati.com/2016/01/rotati-invites-guests-it-step-in-for-some-video-interview-sessions/</guid>
         
@@ -80,7 +80,7 @@
 
 &lt;p&gt;Rotati Consulting sincerely look forward to meeting you at our event. If you are interested to join, please register via our &lt;a href=&quot;https://www.facebook.com/events/1167059606656122/&quot;&gt;Facebook page&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Tue, 22 Dec 2015 00:00:00 +0700</pubDate>
+        <pubDate>Tue, 22 Dec 2015 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2015/12/software-testing-:-getting-the-right-team-and-tools/</link>
         <guid isPermaLink="true">http://rotati.com/2015/12/software-testing-:-getting-the-right-team-and-tools/</guid>
         
@@ -113,7 +113,7 @@
   &lt;li&gt;&lt;a href=&quot;https://docs.google.com/document/d/1f8K8bWeL2XZ89fZc751ZZWces1QVibILu3qrCth39J4/edit#heading=h.29i2agmv2o9z&quot;&gt;Software Tester&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 30 Nov 2015 00:00:00 +0700</pubDate>
+        <pubDate>Mon, 30 Nov 2015 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2015/11/job-openings/</link>
         <guid isPermaLink="true">http://rotati.com/2015/11/job-openings/</guid>
         
@@ -321,7 +321,7 @@
   &lt;p&gt;… which executes nearby digest calls just once, using a zero timeout.&lt;/p&gt;
 &lt;/div&gt;
 </description>
-        <pubDate>Fri, 23 Oct 2015 00:00:00 +0700</pubDate>
+        <pubDate>Fri, 23 Oct 2015 00:00:00 -0700</pubDate>
         <link>http://rotati.com/2015/10/10-essential-angularJS-interview-questions/</link>
         <guid isPermaLink="true">http://rotati.com/2015/10/10-essential-angularJS-interview-questions/</guid>
         
@@ -395,7 +395,7 @@
 
 &lt;p&gt;Configure ElasticSearch on a single shared host by deactivating replication and limiting memory usage&lt;/p&gt;
 </description>
-        <pubDate>Thu, 24 Sep 2015 00:00:00 +0700</pubDate>
+        <pubDate>Thu, 24 Sep 2015 00:00:00 -0700</pubDate>
         <link>http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</link>
         <guid isPermaLink="true">http://rotati.com/2015/09/deployment-of-elasticsearch-to-amazon/</guid>
         
@@ -485,7 +485,7 @@ travis setup heroku&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;For more details on configuation of Travis, check out the &lt;a href=&quot;http://docs.travis-ci.com/&quot;&gt;Travis CI Documentation&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 26 Jan 2015 00:00:00 +0700</pubDate>
+        <pubDate>Mon, 26 Jan 2015 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/basic-automated-deployment-from-travis-ci-to-heroku/</guid>
         
@@ -570,7 +570,7 @@ Sort Hash    0.000000   0.000000   0.000000 &lt;span class=&quot;o&quot;&gt;(&lt
 
 &lt;p&gt; &lt;/p&gt;
 </description>
-        <pubDate>Wed, 14 Jan 2015 00:00:00 +0700</pubDate>
+        <pubDate>Wed, 14 Jan 2015 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/</guid>
         
@@ -704,7 +704,7 @@ hash we created earlier&lt;/li&gt;
 &lt;p&gt;Here is &lt;a href=&quot;https://gist.github.com/jensendarren/0311418311ae18149081&quot;&gt;Gist&lt;/a&gt; with the full example code.&lt;/p&gt;
 
 </description>
-        <pubDate>Fri, 09 Jan 2015 00:00:00 +0700</pubDate>
+        <pubDate>Fri, 09 Jan 2015 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2015/01/using-the-optionparser-ruby-standard-lib-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-optionparser-ruby-standard-lib-module/</guid>
         
@@ -859,7 +859,7 @@ hash we created earlier&lt;/li&gt;
 
 &lt;p&gt;Here is a &lt;a href=&quot;https://gist.github.com/jensendarren/e49c60596b7c7268e605&quot;&gt;Gist&lt;/a&gt; containing the full source code with some extra stuff for randomly generating customers to come and go as they please thus producing a typical ebb and flow of activity in our cool coffee shop!&lt;/p&gt;
 </description>
-        <pubDate>Thu, 08 Jan 2015 00:00:00 +0700</pubDate>
+        <pubDate>Thu, 08 Jan 2015 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2015/01/using-the-observable-ruby-standard-lib-module/</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/using-the-observable-ruby-standard-lib-module/</guid>
         
@@ -984,7 +984,7 @@ hash we created earlier&lt;/li&gt;
 
 &lt;p&gt;So that is the basics of implementing Enumerable in Ruby. Here is a &lt;a href=&quot;https://gist.github.com/jensendarren/ee1136dd046a916c7da4&quot;&gt;Gist&lt;/a&gt; that contains the full source code.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 07 Jan 2015 00:00:00 +0700</pubDate>
+        <pubDate>Wed, 07 Jan 2015 00:00:00 -0800</pubDate>
         <link>http://rotati.com/2015/01/implement-a-custom-enumerable-collection-class-in-ruby</link>
         <guid isPermaLink="true">http://rotati.com/2015/01/implement-a-custom-enumerable-collection-class-in-ruby</guid>
         
