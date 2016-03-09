@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<section class="title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Tags: {{page.tag | capitalize}}</h1>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="/">Home</a> <span class="divider"></span></li>
+                    <li><a href="/blog/">Blog</a><span class="divider"></span></li>
+                    <li>Tags <span class="divider">/</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="container main">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="blog">
+
+                {% for post in site.posts %}
+
+                    {% for tag in post.tags %}
+                        {% if tag == page.tag %}
+                        <div class="blog-item well">
+                            {% include post-top.html post=post %}
+                              <article>{{ post.content | markdownify | truncatewords: 50}}</article>
+                            {% include post-bottom.html post=post %}
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+
+                {% endfor %}
+
+            </div> <!-- blog -->
+
+          <div class="gap"></div>
+
+     </div> <!-- span8 -->
+     {% include blog-aside.html %}
+    </div> <!-- row -->
+</section>

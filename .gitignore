@@ -1,0 +1,7 @@
+.sass-cache
+_site/spec/*
+_site/task/*
+_site/Gemfile
+_site/Gemfile.lock
+_site/Rakefile
+_site/README.md
