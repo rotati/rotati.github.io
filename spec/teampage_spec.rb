@@ -6,7 +6,7 @@ describe "team page" do
     {name: 'Pirun', image_filename: 'pirun.JPG', link: 'https://www.linkedin.com/in/seng-pirun-87417097'},
     {name: 'Siya', image_filename: 'siya.JPG', link: 'https://www.linkedin.com/in/siya-ny-24700097'},
     {name: 'Phanith', image_filename: 'phanith.JPG', link: 'https://twitter.com/Mphanith'},
-    {name: 'Victory', image_filename: 'victory.JPG', link: 'https://www.linkedin.com/in/somethvictory'},
+    {name: 'Victory', image_filename: 'victor.jpeg', link: 'https://www.linkedin.com/in/somethvictory'},
     {name: 'Samnang', image_filename: 'samnang.jpg', link: 'https://www.linkedin.com/profile/view?id=AAkAAAG77P8B1DnkRG5HCXcZo7f5ZAR36ereH1U&authType=NAME_SEARCH&authToken=8Ffo&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A29093119%2CauthType%3ANAME_SEARCH%2Cidx%3A1-4-4%2CtarId%3A1442216698377%2Ctas%3Asamnang'},
 
 
