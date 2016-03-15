@@ -1,0 +1,263 @@
+---
+layout: default
+title: About Rotati Consulting
+menu_title: About
+weight: 2
+---
+
+<section class="title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Learn more about Rotati Consulting</h1>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="/">Home</a> <span class="divider"></span></li>
+                    <li class="active">About Us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / .title -->
+
+<section id="about-us" class="container main">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h4>Rotati is a Web and Mobile consultancy firm. We craft solutions for startups, entrepreneurs and agencies. We are dedicated teams who turn your ideas into working software and we work tirelessly with real passion. Checkout the technologies that we use below and the team who use them! </h4>
+    </div>
+  </div>
+
+    <div class="center">
+      <h5 class="uppercased">Technologies</h5>
+    </div>
+
+    <div class="row logos center">
+      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+        <p>
+          <img class="img-responsive" alt="Ruby" src="/images/ruby-logo.png">
+        </p>
+      </div>
+       <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+        <p>
+          <img class="img-responsive img-align" alt="Rails" src="/images/rails-logo.png">
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+        <p>
+          <img class="img-responsive" alt="JavaScript" src="/images/javascript-logo.png">
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6" alt="Angular JS">
+        <p>
+          <img class="img-responsive" alt="Angular" src="/images/angularjs-logo.png">
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+        <p>
+          <img class="img-responsive" alt="Famous" src="/images/famous-logo.png">
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+        <p>
+          <img class="img-responsive" alt="Html5" src="/images/html5-logo.png">
+        </p>
+      </div>
+   </div>
+
+
+      <!-- Meet the team -->
+      <div class="center">
+        <h5 class="uppercased">The Team</h5>
+      </div>
+
+
+      <div id="team">
+        <!-- Row 1 -->
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="box">
+            <p align="center"><img class="img-responsive" src="/images/staff/darren.jpg" alt="Darren"></img></p>
+            <h5>Darren</h5>
+            <p>Project Manager</p>
+            <a class="btn btn-social btn-linkedin" href="https://linkedin.com/in/{{site.author.linkedin_username}}" target="_blank"><i class="icon-linkedin"></i></a>
+           </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="box">
+            <p align="center"><img class="img-responsive" src="/images/staff/reaksmey.jpg" alt="Reaksmey"></img></p>
+            <h5>Reaksmey</h5>
+            <p>JavaScript Developer</p>
+            <a class="btn btn-social btn-facebook" href="https://www.facebook.com/ymingliang" target="_blank"><i class="icon-facebook"></i></a>
+            </div>
+        </div>
+
+        <div class="clearfix visible-xs-block"></div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="box">
+            <p align="center"><img class="img-responsive" src="/images/staff/seyha.jpg" alt="Seyha"></img></p>
+            <h5>Seyha</h5>
+            <p>Mobile App Developer</p>
+            <a class="btn btn-social btn-facebook" href="https://www.facebook.com/sino.chef7" target="_blank"><i class="icon-facebook"></i></a>
+          </div>
+        </div>
+
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="box">
+            <p align="center"><img class="img-responsive" src="/images/staff/vicheth.jpg" alt="Vicheth"></img></p>
+            <h5>Vicheth</h5>
+            <p>DevOps Master</p>
+            <a class="btn btn-social btn-facebook" href="https://www.facebook.com/vicheth.info" target="_blank"><i class="icon-facebook"></i></a>
+          </div>
+        </div>
+
+        <!-- Row 2-->
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <div class="box">
+                <p align="center"><img class="img-responsive" src="/images/staff/penh.jpg" alt="Penh"></img></p>
+                <h5>Penh</h5>
+                <p>Ruby on Rails developer</p>
+                <a class="btn btn-social btn-facebook" href="https://www.facebook.com/penhlenh" target="_blank"><i class="icon-facebook"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <div class="box">
+                <p align="center"><img class="img-responsive" src="/images/staff/bunhout.jpg" alt="Bunhout"></img></p>
+                <h5>Bunhout</h5>
+                <p>JavaScript master</p>
+                <a class="btn btn-social btn-facebook" href="https://www.facebook.com/bun.houth.7" target="_blank"><i class="icon-facebook"></i></a>
+            </div>
+         </div>
+
+         <div class="clearfix visible-sm-block visible-xs-block"></div>
+
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+            <div class="box">
+                <p align="center"><img class="img-responsive" src="/images/staff/sim.jpg" alt="Sim"></img></p>
+                <h5>Sim</h5>
+                <p>Mobile App Developer</p>
+                <a class="btn btn-social btn-facebook" href="https://www.facebook.com/uysim" target="_blank"><i class="icon-facebook"></i></a>
+            </div>
+          </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
+          <div class="box">
+              <p align="center"><img class="img-responsive" src="/images/staff/some.jpg" alt="Some"></img></p>
+              <h5>Some</h5>
+              <p>Ruby on Rails developer</p>
+              <a class="btn btn-social btn-facebook" href="https://www.facebook.com/ho.sysome" target="_blank"><i class="icon-facebook"></i></a>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block">
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            <div class="box">
+                <p align="center"><img class="img-responsive" src="/images/anonuser.jpg" alt="Anon"></img></p>
+                <h5>Channa</h5>
+                <p>Admin & Support</p>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            <div class="box">
+                <p align="center"><img class="img-responsive" src="/images/anonuser.jpg" alt="Anon"></img></p>
+                <h5>You?</h5>
+                <p>Super Cool Developer!</p>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 visible-lg-block visible-md-block">
+        </div>
+    </div>
+    <p>&nbsp;</p>
+    <!-- <hr> -->
+  <div class="row clearfix">
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <h3>Why Choose Us?</h3>
+        <h4>When you hire us, you'll work directly with our project manager and team of developers and designers who are passionate about building products that people love. We understand that the details matter and we take the time to understand you and your business. Our carefully chosen tools and refined processes ensure that your project progresses smoothly and launches successfully. Through iterative development, continuously tested deployments and a tight customer feedback loop, no time is wasted.</h4>
+        <p>&nbsp;</p>
+    </div>
+
+   <div class="col-lg-36 col-md-6 col-sm-6 col-xs-12">
+      <h3>Our Services</h3>
+      <div class="panel-group" id="accordion2">
+        <div class="panel">
+          <div class="panel-heading">
+            <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                Mobile Apps
+            </a>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse collapse">
+            <div class="panel-body">
+            We make professional Mobile Apps that can be HTML5 (web browser based) or Hybrid (installed from the app store). We can work with you to determine the best approach for your project.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                Web Apps
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              We make superb Web Apps using Ruby on Rails and Angular JS - both proven and modern technology used by millions of companies.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+              Data Visualization
+          </a>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              We can create beautiful, dynamic data visualizations from any dataset whatever the size. We love to make data beautiful!
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+              API Integration
+            </a>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+              Need to integrate an app with a 3rd party API? Let Rotati do this for you! We have a ton of experience integration with Google, Yahoo, Amazon and other API providers.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <a class="panel-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">
+              GIS Apps
+            </a>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+              We have experience of making GIS based applications too. If you need to use geolocation services, address lookup, POI mapping solutions or fully customized mapping solutions then we can help.
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
+</section>

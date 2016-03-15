@@ -1,0 +1,47 @@
+<aside class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+  <div class="widget">
+      <h3>Blog Categories</h3>
+      <div>
+          <div class="row">
+
+              <div class="col-md-6">
+                  <ul class="list-unstyled">
+                  {% for category in site.categories %}
+                    <li><a href="/categories/{{ category | first }}" name="{{ category | first | capitalize }}">{{ category | first | capitalize }}</a></li>
+                  {% endfor %}
+                  </ul>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+  <!-- End Category Widget -->
+
+  <div class="widget">
+      <h3>Tag Cloud</h3>
+      <ul class="tag-cloud list-unstyled">
+        {% for tag in site.tags %}
+          <li><a href="/tags/{{ tag | first }}"><span class="label label-success">{{ tag | first }}</span></a></li>
+        {% endfor %}
+      </ul>
+  </div>
+  <!-- End Tag Cloud Widget -->
+
+  <div class="widget">
+      <h3>Archive</h3>
+      <ul class="archive arrow">
+        {% for post in site.posts %}
+        {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
+        {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
+          {% if month != nmonth %}
+            <!-- {% if forloop.index != 1 %}</ul>{% endif %} -->
+            <li><a href="#">{{ post.date | date: '%B %Y' }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+  </div>
+  <!-- End Archive Widget -->
+
+</aside>

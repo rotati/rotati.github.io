@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="P1trWWBECm4uIvLtkYRRM-JEaUdtXNIasgkPXIqTXh8" />
+
+    <title>Using the Benchmark Ruby Standard Library module - Crafting Beautiful Applications</title>
+    <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://rotati.com/2015/01/using-the-benchmark-ruby-standard-library-module/">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional bootstrap theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sl-slide.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-69346558-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+
+
+  <body>
+
+    <section id="nav">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand pull-left" href="/"></a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse nav-right">
+          <ul class="nav navbar-nav">
+              
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li >
+        <a class="page-link" href="/about/">About</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/portfolio/">Portfolio</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/team/">Team</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/blog/">Blog</a>
+    </li>
+  
+
+
+
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Training <i class="icon-angle-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="/training/rotati-training-center/">Rotati Training Center</a></li>
+      <li role="separator" class="divider"></li>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/angular-js-courses/">Angular JS Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/enterprise-architect-boot-camp-courses/">Enterprise Architect Boot Camp Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/hybrid-mobile-courses/">Hybrid Mobile Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/java-frameworks-courses/">Java Frameworks Courses</a>
+          </li>
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/java-short-courses/">Java Short Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="icon-angle-down"></i></a>
+    <ul class="dropdown-menu">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/hybridmobileapps/">Hybrid Mobile Apps</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/nativemobileapps/">Native Mobile Apps</a>
+          </li>
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/paymentsolutions/">Payment Solutions</a>
+          </li>
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/smesolutions/">SME Websites</a>
+          </li>
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/webapps/">Web Apps</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </li>
+  <li class="login"><a id="get-in-touch-top-menu" class="page-link" href="/contact">Get In Touch</a></li>
+
+
+
+          </ul>
+        </div>
+    </div>
+  </nav>
+</section>
+
+
+      <section class="title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Using the Benchmark Ruby Standard Library module</h1>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="/">Home</a> <span class="divider"></span></li>
+                    <li><a href="/blog/">Blog <span class="divider"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="well blog">
+            <a href="/2015/01/using-the-benchmark-ruby-standard-library-module/"><h2>Using the Benchmark Ruby Standard Library module</h2></a>
+<div class="blog-meta clearfix">
+    <p class="pull-left">
+      <i class="icon-user"></i> by <a href="http://www.tweetegy.com" target="_blank">Darren</a> |
+      <i class="icon-folder-open"></i> Category:
+      
+        <a href="/categories/programming">Programming</a> |
+      
+      <i class="icon-calendar"></i> January 2015
+    </p>
+</div>
+
+              <article><h3 id="background">Background</h3>
+
+<p>When an application grows in size it’s common that it may slow down considerably in the face of heavy usage. Rather than looking at the larger picture its often best to take a microscope and look closely at the performance of the code, method by method, line by line. One tool that the Ruby Standard Library provides to assist with this is <a href="http://ruby-doc.org/stdlib-2.0/libdoc/benchmark/rdoc/Benchmark.html">Benchmark</a>. Lets take a quick dive into the features of the Ruby Benchmarking tool!</p>
+
+<h3 id="contrived-example-compare-array-sort-with-hash-sort">Contrived Example: Compare Array Sort with Hash Sort</h3>
+
+<p>I say this is contrived becuase we are going to compare two methods that are essentially quite different in their implemntation. However the main point of this exercise is to get up and running with the Benchmark tool. Probably most importantly to note, is that it’s not possible to directly sort a Hash and therefore <code>Hash#sort_by</code> returns a sorted Array of Arrays. Anyway, we expect to see <code>Hash#sort_by</code> on Hash to be <em>slower</em> than <code>Array#sort</code>.</p>
+
+<p>What we will do in this example is create an <code>Array</code> of 10,000 random characters and sort that. Then we will create a <code>Hash</code> with the <em>values</em> of the <code>Hash</code> set the to exactly the same random characters. The reason we set the values to the random characters is becuase <code>Hash</code> keys must be unique and we are only using the ASCII character set and therefore we only have 255 characters to play with.</p>
+
+<p>Below is the code to create our <code>Array</code> and <code>Hash</code> object:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">10_000</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">with_index</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="n">ascii_code</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+  <span class="n">random_char</span> <span class="o">=</span> <span class="n">ascii_code</span><span class="o">.</span><span class="n">chr</span>
+  <span class="n">arr</span> <span class="o">&lt;&lt;</span> <span class="n">random_char</span>
+  <span class="nb">hash</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">random_char</span>
+<span class="k">end</span></code></pre></div>
+
+<p>Now we have an <code>Array</code> size 10,000 (all ASCII chars, randomly inserted) and we have a <code>Hash</code> size 10,000 (with values of the same randomly generated char).</p>
+
+<p>Below is a sneak peak at the new array object containing the random characters:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># puts arr.take(10)</span>
+<span class="o">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xC5</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xE1</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xF4</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\x16</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\x81</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\x03</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\xA1</span><span class="s2">&quot;</span><span class="o">]</span>
+
+<span class="c1"># puts hash.first(10).to_h</span>
+<span class="p">{</span><span class="mi">0</span><span class="o">=&gt;</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">=&gt;</span><span class="s2">&quot;%&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\xC5</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\xE1</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="o">=&gt;</span><span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\xF4</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\x16</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\x81</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="o">=&gt;</span><span class="s2">&quot;</span><span class="se">\x03</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">9</span><span class="o">=&gt;</span><span class="s2">&quot;+&quot;</span><span class="p">}</span></code></pre></div>
+
+<p>Note that the characters, altough random, are in the same order in both the <code>Array</code> and the <code>Hash</code>.</p>
+
+<h3 id="setting-up-our-benchmark-harness">Setting up our Benchmark harness</h3>
+
+<p>In order to use the <code>Benchmark</code> class we need to call the <code>bm</code> method on it passing in a block of code that we want to report on. We can run several reports in one iteration of a benchark.</p>
+
+<p>As shown below we pass into the <code>bm</code> method a ‘tabbed output formatting’ value of 7, followed by setting up two reports with titles ‘Sort Array’ and ‘Sort Hash’. The titles allow the developer to easily read the result once the benchmark has run.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Benchmark</span><span class="o">.</span><span class="n">bm</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span> <span class="s1">&#39;Sort Array&#39;</span> <span class="k">do</span>
+    <span class="n">arr</span><span class="o">.</span><span class="n">sort!</span>
+  <span class="k">end</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span> <span class="s1">&#39;Sort Hash&#39;</span> <span class="k">do</span>
+    <span class="nb">hash</span><span class="o">.</span><span class="n">sort_by</span><span class="p">{</span><span class="o">|</span><span class="n">_key</span><span class="p">,</span> <span class="n">value</span><span class="o">|</span> <span class="n">value</span><span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+
+<p>The result is as expected that the <code>Hash#sort_by</code> method call is far slower than the <code>Array#sort</code> method call. This is due to the implentation of the <code>Hash#sort_by</code> being different to the <code>Array#sort</code> method.</p>
+
+<p>The output from running this Benchmark on my machine is as follows:</p>
+
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">user     system      total        real
+Sort Array   0.010000   0.000000   0.010000 <span class="o">(</span>  0.001907<span class="o">)</span>
+Sort Hash    0.000000   0.000000   0.000000 <span class="o">(</span>  0.007687<span class="o">)</span></code></pre></div>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In a real application, its unlikely that developers will be testing the Ruby API directly like this. Instead developers may wish to test how their code performs before after refactoring. For Rails applications, it’s commen to use <a href="http://newrelic.com/">NewRelic</a> as a tool to monitor performance in Production. NewRelic can help developers quickly identify areas of the codebase that are slow to run. In development the developer can isolate and performance test this code using the Ruby Benchmark tool.</p>
+
+<p>As always, here is a <a href="https://gist.github.com/jensendarren/bc605c714f71f549180a">Gist for this Benchmark</a></p>
+
+<p> </p>
+</article>
+            
+<div class="tag">
+  Tags :
+  
+    <a href="/tags/ruby"><span class="label label-success">ruby</span></a>
+  
+    <a href="/tags/custom"><span class="label label-success">custom</span></a>
+  
+    <a href="/tags/class"><span class="label label-success">class</span></a>
+  
+    <a href="/tags/benchmark"><span class="label label-success">benchmark</span></a>
+  
+    <a href="/tags/modules"><span class="label label-success">modules</span></a>
+  
+    <a href="/tags/stdlib"><span class="label label-success">stdlib</span></a>
+  
+</div>
+
+            <div class="gap"></div>
+            <div class="user-info media box">
+              <div class="pull-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <img src="/images/author/Darren.jpg" alt="Darren" />
+              </div>
+              <!-- <div class="clearfix visible-xs-block"></div> -->
+              <div class="media-body col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="http://www.tweetegy.com" target="_blank"><h3>Darren</h3></a>
+                  <p>Founder of Rotati and DevBootstrap. A software developer at heart who also loves spending time with his family - enjoying cycling, piano, reading and playing games with his daughter Sophia.</p>
+                  <div class="author-meta">
+                      <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/jensendarren"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/jensendarren"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/jensendarren1"><i class="icon-linkedin"></i></a>
+                  </div>
+             </div>
+          </div>
+        </div>
+    </div>
+
+    <aside class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+  <div class="widget">
+      <h3>Blog Categories</h3>
+      <div>
+          <div class="row">
+
+              <div class="col-md-6">
+                  <ul class="list-unstyled">
+                  
+                    <li><a href="/categories/business" name="Business">Business</a></li>
+                  
+                    <li><a href="/categories/consulting" name="Consulting">Consulting</a></li>
+                  
+                    <li><a href="/categories/programming" name="Programming">Programming</a></li>
+                  
+                  </ul>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+  <!-- End Category Widget -->
+
+  <div class="widget">
+      <h3>Tag Cloud</h3>
+      <ul class="tag-cloud list-unstyled">
+        
+          <li><a href="/tags/rotati"><span class="label label-success">rotati</span></a></li>
+        
+          <li><a href="/tags/consulting"><span class="label label-success">consulting</span></a></li>
+        
+          <li><a href="/tags/webdevelopment"><span class="label label-success">webdevelopment</span></a></li>
+        
+          <li><a href="/tags/mobiledevelopment"><span class="label label-success">mobiledevelopment</span></a></li>
+        
+          <li><a href="/tags/clouddevelopment"><span class="label label-success">clouddevelopment</span></a></li>
+        
+          <li><a href="/tags/web"><span class="label label-success">web</span></a></li>
+        
+          <li><a href="/tags/mobile"><span class="label label-success">mobile</span></a></li>
+        
+          <li><a href="/tags/cloud"><span class="label label-success">cloud</span></a></li>
+        
+          <li><a href="/tags/ruby"><span class="label label-success">ruby</span></a></li>
+        
+          <li><a href="/tags/javascript"><span class="label label-success">javascript</span></a></li>
+        
+          <li><a href="/tags/rails"><span class="label label-success">rails</span></a></li>
+        
+          <li><a href="/tags/angularjs"><span class="label label-success">angularjs</span></a></li>
+        
+          <li><a href="/tags/custom"><span class="label label-success">custom</span></a></li>
+        
+          <li><a href="/tags/class"><span class="label label-success">class</span></a></li>
+        
+          <li><a href="/tags/enumerable"><span class="label label-success">enumerable</span></a></li>
+        
+          <li><a href="/tags/modules"><span class="label label-success">modules</span></a></li>
+        
+          <li><a href="/tags/observable"><span class="label label-success">observable</span></a></li>
+        
+          <li><a href="/tags/optionparser"><span class="label label-success">optionparser</span></a></li>
+        
+          <li><a href="/tags/stdlib"><span class="label label-success">stdlib</span></a></li>
+        
+          <li><a href="/tags/benchmark"><span class="label label-success">benchmark</span></a></li>
+        
+          <li><a href="/tags/heroku"><span class="label label-success">heroku</span></a></li>
+        
+          <li><a href="/tags/travis-ci"><span class="label label-success">travis-ci</span></a></li>
+        
+          <li><a href="/tags/deployment"><span class="label label-success">deployment</span></a></li>
+        
+          <li><a href="/tags/ci"><span class="label label-success">ci</span></a></li>
+        
+          <li><a href="/tags/continuous deployment"><span class="label label-success">continuous deployment</span></a></li>
+        
+          <li><a href="/tags/elasticsearch"><span class="label label-success">elasticsearch</span></a></li>
+        
+          <li><a href="/tags/aws"><span class="label label-success">aws</span></a></li>
+        
+          <li><a href="/tags/testing"><span class="label label-success">testing</span></a></li>
+        
+      </ul>
+  </div>
+  <!-- End Tag Cloud Widget -->
+
+  <div class="widget">
+      <h3>Archive</h3>
+      <ul class="archive arrow">
+        
+        
+        
+          
+            <!--  -->
+            <li><a href="#">January 2016</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">December 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">November 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">October 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">September 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">January 2015</a></li>
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+      </ul>
+  </div>
+  <!-- End Archive Widget -->
+
+</aside>
+
+  </div>
+</section>
+
+
+    <!--Bottom-->
+<section id="bottom" class="main">
+    <!--Container-->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>CONTACT</h4>
+                <ul class="list-unstyled address">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a href="/contact">Get In Touch</a>
+                    </li>
+                    <li>
+                        <i class="icon-envelope"></i>
+                        info(at)rotati.com
+                    </li>
+                    <li>
+                        <i class="icon-globe"></i>
+                        www.rotati.com
+                    </li>
+                    <li>
+                        <i class="icon-phone"></i>
+                        +855 12 22 33 48
+                    </li>
+                </ul>
+                <p>&nbsp;</p>
+            </div>
+
+            <!--Training -->
+            <div id="training" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>TRAINING</h4>
+                <div>
+                    <ul class="arrow">
+                        <li><a href="/training/angular-js-courses/">Angular JS Courses</a></li>
+                        <li><a href="/training/enterprise-architect-boot-camp-courses">Enterprise Architect Boot Camp Courses</a></li>
+                        <li><a href="/training/hybrid-mobile-courses">Hybrid Mobile Courses</a></li>
+                        <li><a href="/training/java-frameworks-courses/">Java Frameworks Courses</a></li>
+                        <li><a href="/training/java-short-courses/">Java Short Courses</a></li>
+                    </ul>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+
+            <!--Services -->
+            <div id="services" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>SERVICES</h4>
+                <div>
+                    <ul class="arrow">
+                        <li><a href="/services/hybridmobileapps/">Hybrid Mobile Apps</a></li>
+                        <li><a href="/services/nativemobileapps/">Native Mobile Apps</a></li>
+                        <li><a href="/services/paymentsolutions/">Payment Solutions</a></li>
+                        <li><a href="/services/smesolutions/">SME Websites</a></li>
+                        <li><a href="/services/webapps/">Web Apps</a></li>
+<!--                         <li>Ruby Gems</li> -->
+                        <!-- <li>Web Scrapers</li> -->
+                    </ul>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+            <!--End Archives-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <h4>ABOUT ROTATI</h4>
+                <p>Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+</p>
+            </div>
+        </div>
+
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+</section>
+<!--/bottom-->
+<!--Footer-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 cp">
+                &copy; 2016 Rotati. All rights reserved.
+            </div>
+            <!--/Copyright-->
+
+            <div class="col-md-6">
+                <ul class="social pull-right">
+<!--    <li><a href="http://linkedin.com/in/rotati" target="_blank"><i class="icon-linkedin"></i></a></li> -->
+                    <li><a href="http://github.com/rotati" target="_blank"><i class="icon-github-alt"></i></a></li>
+                    <li><a href="http://twitter.com/rotaticonsult" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://fb.com/rotaticonsulting" target="_blank"><i class="icon-facebook"></i></a></li>
+                    <li><a href="/feed.xml" target="_blank"><i class="icon-rss"></i></a></li>
+                    <li><a href="https://github.com/rotati/wiki/wiki" target="_blank"><i class="icon-book"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-1">
+                <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+            </div>
+            <!--/Goto Top-->
+        </div>
+    </div>
+</footer>
+<!--/Footer-->
+
+<script src="/js/vendor/jquery-1.9.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Required javascript files for Slider -->
+<script src="/js/vendor/jquery.ba-cond.min.js"></script>
+<script src="/js/vendor/jquery.slitslider.js"></script>
+<!-- /Required javascript files for Slider -->
+
+<!-- SL Slider -->
+<script type="text/javascript">
+$(function() {
+    var Page = (function() {
+
+        var $navArrows = $( '#nav-arrows' ),
+        slitslider = $( '#slider' ).slitslider( {
+            autoplay : true
+        } ),
+
+        init = function() {
+            initEvents();
+        },
+        initEvents = function() {
+            $navArrows.children( ':last' ).on( 'click', function() {
+                slitslider.next();
+                return false;
+            });
+
+            $navArrows.children( ':first' ).on( 'click', function() {
+                slitslider.previous();
+                return false;
+            });
+        };
+
+        return { init : init };
+
+    })();
+
+    Page.init();
+});
+</script>
+<!-- /SL Slider -->
+
+
+  </body>
+
+</html>

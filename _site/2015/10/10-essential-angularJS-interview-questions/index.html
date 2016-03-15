@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="P1trWWBECm4uIvLtkYRRM-JEaUdtXNIasgkPXIqTXh8" />
+
+    <title>10 Essential AngularJS Interview Questions - Crafting Beautiful Applications</title>
+    <meta name="description" content="Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://rotati.com/2015/10/10-essential-angularJS-interview-questions/">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional bootstrap theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/sl-slide.css">
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-69346558-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+
+
+  <body>
+
+    <section id="nav">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand pull-left" href="/"></a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse nav-right">
+          <ul class="nav navbar-nav">
+              
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <li >
+        <a class="page-link" href="/about/">About</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/portfolio/">Portfolio</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/team/">Team</a>
+    </li>
+  
+
+  
+    <li >
+        <a class="page-link" href="/blog/">Blog</a>
+    </li>
+  
+
+
+
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Training <i class="icon-angle-down"></i></a>
+    <ul class="dropdown-menu">
+      <li><a href="/training/rotati-training-center/">Rotati Training Center</a></li>
+      <li role="separator" class="divider"></li>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/angular-js-courses/">Angular JS Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/enterprise-architect-boot-camp-courses/">Enterprise Architect Boot Camp Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/hybrid-mobile-courses/">Hybrid Mobile Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/java-frameworks-courses/">Java Frameworks Courses</a>
+          </li>
+        
+      
+        
+          <li>
+              <a class="page-link" href="/training/java-short-courses/">Java Short Courses</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <i class="icon-angle-down"></i></a>
+    <ul class="dropdown-menu">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/hybridmobileapps/">Hybrid Mobile Apps</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/nativemobileapps/">Native Mobile Apps</a>
+          </li>
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/paymentsolutions/">Payment Solutions</a>
+          </li>
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/smesolutions/">SME Websites</a>
+          </li>
+        
+      
+        
+      
+        
+          <li>
+              <a class="page-link" href="/services/webapps/">Web Apps</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </li>
+  <li class="login"><a id="get-in-touch-top-menu" class="page-link" href="/contact">Get In Touch</a></li>
+
+
+
+          </ul>
+        </div>
+    </div>
+  </nav>
+</section>
+
+
+      <section class="title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>10 Essential AngularJS Interview Questions</h1>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="/">Home</a> <span class="divider"></span></li>
+                    <li><a href="/blog/">Blog <span class="divider"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="well blog">
+            <a href="/2015/10/10-essential-angularJS-interview-questions/"><h2>10 Essential AngularJS Interview Questions</h2></a>
+<div class="blog-meta clearfix">
+    <p class="pull-left">
+      <i class="icon-user"></i> by <a href="http://www.toptal.com/resume/demir-selmanovic" target="_blank">Demir Selmanovic</a> |
+      <i class="icon-folder-open"></i> Category:
+      
+        <a href="/categories/programming">Programming</a> |
+      
+      <i class="icon-calendar"></i> October 2015
+    </p>
+</div>
+
+              <article><h3 id="what-are-the-ways-to-communicate-between-modules-of-your-application-using-core-angularjs-functionality-name-three-ways">1. What are the ways to communicate between modules of your application using core AngularJS functionality? Name three ways.</h3>
+
+<h3 id="answer">Answer:</h3>
+
+<div id="essential-answers">
+  <p>Communication can happen:</p>
+
+  <ul>
+    <li>Using services</li>
+    <li>Using events</li>
+    <li>By assigning models on $rootScope</li>
+    <li>Directly between controllers, using $parent, nextSibling, etc</li>
+    <li>Directly between controllers, using ControllerAs, or other forms of inheritence</li>
+  </ul>
+
+  <p>In the community, there are also mentions of less popular methods such as using watches or the URL.</p>
+</div>
+
+<h3 id="which-means-of-communication-between-modules-of-your-application-are-easily-testable">2. Which means of communication between modules of your application are easily testable?</h3>
+
+<h3 id="answer-1">Answer:</h3>
+
+<div id="essential-answers">
+  <p>Using a service is definitely easy to test. Services are injected, and in a test either a real service can be used or it can be mocked.</p>
+
+  <p>In the community, there are also mentions of less popular methods such as using watches or the URL.</p>
+
+  <p>Testing $rootScope against the existence of some arbitrary models is testable, but sharing data through $rootScope is not considered a good practice.</p>
+
+  <p>For testing direct communication between controllers, the expected results should probably be mocked. Otherwise, controllers would need to be manually instantiated to have the right context.</p>
+</div>
+
+<h3 id="the-most-popular-e2e-testing-tool-for-angularjs-is-protractor-there-are-also-others-which-rely-on-similar-mechanisms-describe-how-e2e-testing-of-angularjs-applications-work">3. The most popular e2e testing tool for AngularJS is Protractor. There are also others which rely on similar mechanisms. Describe how e2e testing of AngularJS applications work.</h3>
+
+<h3 id="answer-2">Answer:</h3>
+
+<div id="essential-answers">
+  <p>The e2e tests are executed against a running app, that is a fully initialized system. They most often spawn a browser instance and involve the actual input of commands through the user interface. The written code is evaluated by an automation program, such as a Selenium server (webdriver). That program sends commands to a browser instance, then evaluates the visible results and reports back to the user.</p>
+
+  <p>The assertions are handled by another library, for Protractor the default is Jasmine. Before Protractor, there was a module called Angular Scenarios, which usually was executed through Karma, and is now deprecated. Should you want to e2e test hybrid apps, you could use another Selenium server, called Appium.</p>
+
+  <p>Testing can be handled manually, or it can be delegated to continuous integration servers, either custom or ones provided by Travis, SauceLabs, and Codeship.</p>
+</div>
+
+<h3 id="this-is-a-simple-test-written-for-protractor-a-slightly-modified-example-from-protractor-docs">4. This is a simple test written for Protractor, a slightly modified example from Protractor docs:</h3>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should find an element by text input model&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">browser</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/some-url&#39;</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">login</span> <span class="o">=</span> <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">));</span>
+      <span class="nx">login</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+      <span class="nx">login</span><span class="p">.</span><span class="nx">sendKeys</span><span class="p">(</span><span class="s1">&#39;Jane Doe&#39;</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">element</span><span class="p">(</span><span class="nx">by</span><span class="p">.</span><span class="nx">binding</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">));</span>
+      <span class="nx">expect</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">getText</span><span class="p">()).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;Jane Doe&#39;</span><span class="p">);</span>
+      <span class="c1">// Point A</span>
+    <span class="p">});</span></code></pre></div>
+
+<p>Explain if the code is synchronous or asynchronous and how it works.</p>
+
+<h3 id="answer-3">Answer:</h3>
+
+<div id="essential-answers">
+  <p>The code is asynchronous, although it is written in a synchronous manner. What happens under the hood is that all those functions return promises on the control flow. There is even direct access, using “protractor.promise.controlFlow()”, and the two methods of the returned object, “.execute()” and “.await()”.</p>
+
+  <p>Other webdriver libraries, such as wd https://github.com/admc/wd, require the direct use of callbacks or promise chains.</p>
+</div>
+
+<h3 id="when-a-scope-is-terminated-two-similar-destroy-events-are-fired-what-are-they-used-for-and-why-are-there-two">5. When a scope is terminated, two similar “destroy” events are fired. What are they used for, and why are there two?</h3>
+
+<h3 id="answer-4">Answer:</h3>
+
+<div id="essential-answers">
+  <p>The first one is an AngularJS event, “$destroy”, and the second one is a jqLite / jQuery event “$destroy”. The first one can be used by AngularJS scopes where they are accessible, such as in controllers or link functions.</p>
+
+  <p>Consider the two below happening in a directive’s postLink function. The AngularJS event:</p>
+
+  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">scope</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="s2">&quot;$destroy&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// handle the destroy, i.e. clean up.</span>
+      <span class="p">});</span></code></pre></div>
+
+  <p>And</p>
+
+  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">element</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;$destroy&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// respectful jQuery plugins already have this handler.</span>
+        <span class="c1">// angular.element(document.body).off(‘someCustomEvent’);</span>
+      <span class="p">});</span></code></pre></div>
+
+  <p>The jqLite / jQuery event is called whenever a node is removed, which may just happen without scope teardown.</p>
+</div>
+
+<h3 id="how-do-you-reset-a-timeout-and-disable-a-watch">6. How do you reset a “$timeout”, and disable a “$watch()”?</h3>
+
+<h3 id="answer-5">Answer:</h3>
+
+<div id="essential-answers">
+  <p>The key to both is assigning the result of the function to a variable.</p>
+
+  <p>To cleanup the timeout, just “.cancel()” it:</p>
+
+  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">customTimeout</span> <span class="o">=</span> <span class="nx">$timeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// arbitrary code</span>
+      <span class="p">},</span> <span class="mi">55</span><span class="p">);</span>
+      <span class="nx">$timeout</span><span class="p">.</span><span class="nx">cancel</span><span class="p">(</span><span class="nx">customTimeout</span><span class="p">);</span></code></pre></div>
+
+  <p>The same applies to “$interval()”.</p>
+
+  <p>To disable a watch, just call it.</p>
+
+  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// .$watch() returns a deregistration function that we store to a variable</span>
+      <span class="kd">var</span> <span class="nx">deregisterWatchFn</span> <span class="o">=</span> <span class="nx">$rootScope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">&#39;someGloballyAvailableProperty&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">newVal</span><span class="p">)</span> <span class="p">{</span>
+          <span class="c1">// we invoke that deregistration function, to disable the watch</span>
+          <span class="nx">deregisterWatchFn</span><span class="p">();</span>
+          <span class="p">...</span>
+        <span class="p">}</span>
+      <span class="p">});</span></code></pre></div>
+
+</div>
+
+<h3 id="name-and-describe-the-phases-of-a-directive-definition-function-execution-or-describe-how-directives-are-instantiated">7. Name and describe the phases of a directive definition function execution, or describe how directives are instantiated.</h3>
+
+<h3 id="answer-6">Answer:</h3>
+
+<div id="essential-answers">
+  <p>The flow is as follows:</p>
+
+  <p>First, the “$compile()” function is executed which returns two link functions, preLink and postLink. That function is executed for every directive, starting from parent, then child, then grandchild.</p>
+
+  <p>Secondly, two functions are executed for every directive: the controller and the prelink function. The order of execution again starts with the parent element, then child, then grandchild, etc.</p>
+
+  <p>The last function postLink is executed in the inverse order. That is, it is first executed for grandchild, then child, then parent.</p>
+
+  <p>A great explanation of how directives are handled in AngularJS is available in the <a href="http://www.toptal.com/angular-js/angular-js-demystifying-directives">AngularJS Tutorial: Demystifying Custom Directives</a> post on the Toptal blog.</p>
+</div>
+
+<h3 id="how-does-interpolation-eg--somemodel--actually-work">8. How does interpolation, e.g. “{{ someModel }}”, actually work?</h3>
+
+<h3 id="answer-7">Answer:</h3>
+
+<div id="essential-answers">
+  <p>It relies on $interpolation, a service which is called by the compiler. It evaluates text and markup which may contain AngularJS expressions. For every interpolated expression, a “watch()” is set. $interpolation returns a function, which has a single argument, “context”. By calling that function and providing a scope as context, the expressions are “$parse()”d against that scope.</p>
+</div>
+
+<h3 id="how-does-the-digest-phase-work">9. How does the digest phase work?</h3>
+
+<h3 id="answer-8">Answer:</h3>
+
+<div id="essential-answers">
+  <p>In a nutshell, on every digest cycle all scope models are compared against their previous values. That is dirty checking. If change is detected, the watches set on that model are fired. Then another digest cycle executes, and so on until all models are stable.</p>
+
+  <p>It is probably important to mention that there is no “.$digest()” polling. That means that every time it is being called deliberately. As long as core directives are used, we don’t need to worry, but when external code changes models the digest cycle needs to be called manually. Usually to do that, “.$apply()” or similar is used, and not “.$digest()” directly.</p>
+</div>
+
+<h3 id="list-a-few-ways-to-improve-performance-in-an-angularjs-app">10. List a few ways to improve performance in an AngularJS app.</h3>
+
+<h3 id="answer-9">Answer:</h3>
+
+<div id="essential-answers">
+  <p>The two officially recommended methods for production are disabling debug data and enabling strict DI mode.</p>
+
+  <p>The first one can be enabled through the $compileProvider:</p>
+
+  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myApp</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$compileProvider</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$compileProvider</span><span class="p">.</span><span class="nx">debugInfoEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+      <span class="p">});</span></code></pre></div>
+
+  <p>That tweak disables appending scope to elements, making scopes inaccessible from the console. The second one can be set as a directive:</p>
+
+  <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html</span> <span class="na">ng-app=</span><span class="s">&quot;myApp&quot;</span> <span class="na">ng-strict-di</span><span class="nt">&gt;</span></code></pre></div>
+
+  <p>The performance gain lies in the fact that the injected modules are annotated explicitly, hence they don’t need to be discovered dynamically.</p>
+
+  <p>You don’t need to annotate yourself, just use some automated build tool and library for that.</p>
+
+  <p>Two other popular ways are:</p>
+
+  <ul>
+    <li>Using one-time binding where possible. Those bindings are set, e.g. in “{{ ::someModel }}” interpolations by prefixing the model with two colons. In such a case, no watch is set and the model is ignored during digest.</li>
+    <li>Making $httpProvider use applyAsync:</li>
+  </ul>
+
+  <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">myApp</span><span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$httpProvider</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">$httpProvider</span><span class="p">.</span><span class="nx">useApplyAsync</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="p">});</span></code></pre></div>
+
+  <p>… which executes nearby digest calls just once, using a zero timeout.</p>
+</div>
+</article>
+            
+<div class="tag">
+  Tags :
+  
+    <a href="/tags/angularjs"><span class="label label-success">angularjs</span></a>
+  
+    <a href="/tags/javascript"><span class="label label-success">javascript</span></a>
+  
+</div>
+
+            <div class="gap"></div>
+            <div class="user-info media box">
+              <div class="pull-left col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <img src="/images/author/Demir Selmanovic.jpg" alt="Demir Selmanovic" />
+              </div>
+              <!-- <div class="clearfix visible-xs-block"></div> -->
+              <div class="media-body col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <a href="http://www.toptal.com/resume/demir-selmanovic" target="_blank"><h3>Demir Selmanovic</h3></a>
+                  <p>Demir is a developer and project manager with over 15 years of professional experience in a wide range of software development roles. He excels as a solo developer, team member, team leader, or manager of multiple distributed teams. He works closely with clients to define ideas and deliver products.</p>
+                  <div class="author-meta">
+                      <a class="btn btn-social btn-facebook" target="_blank" href="https://fb.com/demir.selmanovic"><i class="icon-facebook"></i></a> <a class="btn btn-social btn-twitter" target="_blank" href="https://twitter.com/mantrakbeg"><i class="icon-twitter"></i></a> <a class="btn btn-social btn-linkedin" target="_blank" href="https://linkedin.com/in/demirselmanovic"><i class="icon-linkedin"></i></a>
+                  </div>
+             </div>
+          </div>
+        </div>
+    </div>
+
+    <aside class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+
+  <div class="widget">
+      <h3>Blog Categories</h3>
+      <div>
+          <div class="row">
+
+              <div class="col-md-6">
+                  <ul class="list-unstyled">
+                  
+                    <li><a href="/categories/business" name="Business">Business</a></li>
+                  
+                    <li><a href="/categories/consulting" name="Consulting">Consulting</a></li>
+                  
+                    <li><a href="/categories/programming" name="Programming">Programming</a></li>
+                  
+                  </ul>
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+  <!-- End Category Widget -->
+
+  <div class="widget">
+      <h3>Tag Cloud</h3>
+      <ul class="tag-cloud list-unstyled">
+        
+          <li><a href="/tags/rotati"><span class="label label-success">rotati</span></a></li>
+        
+          <li><a href="/tags/consulting"><span class="label label-success">consulting</span></a></li>
+        
+          <li><a href="/tags/webdevelopment"><span class="label label-success">webdevelopment</span></a></li>
+        
+          <li><a href="/tags/mobiledevelopment"><span class="label label-success">mobiledevelopment</span></a></li>
+        
+          <li><a href="/tags/clouddevelopment"><span class="label label-success">clouddevelopment</span></a></li>
+        
+          <li><a href="/tags/web"><span class="label label-success">web</span></a></li>
+        
+          <li><a href="/tags/mobile"><span class="label label-success">mobile</span></a></li>
+        
+          <li><a href="/tags/cloud"><span class="label label-success">cloud</span></a></li>
+        
+          <li><a href="/tags/ruby"><span class="label label-success">ruby</span></a></li>
+        
+          <li><a href="/tags/javascript"><span class="label label-success">javascript</span></a></li>
+        
+          <li><a href="/tags/rails"><span class="label label-success">rails</span></a></li>
+        
+          <li><a href="/tags/angularjs"><span class="label label-success">angularjs</span></a></li>
+        
+          <li><a href="/tags/custom"><span class="label label-success">custom</span></a></li>
+        
+          <li><a href="/tags/class"><span class="label label-success">class</span></a></li>
+        
+          <li><a href="/tags/enumerable"><span class="label label-success">enumerable</span></a></li>
+        
+          <li><a href="/tags/modules"><span class="label label-success">modules</span></a></li>
+        
+          <li><a href="/tags/observable"><span class="label label-success">observable</span></a></li>
+        
+          <li><a href="/tags/optionparser"><span class="label label-success">optionparser</span></a></li>
+        
+          <li><a href="/tags/stdlib"><span class="label label-success">stdlib</span></a></li>
+        
+          <li><a href="/tags/benchmark"><span class="label label-success">benchmark</span></a></li>
+        
+          <li><a href="/tags/heroku"><span class="label label-success">heroku</span></a></li>
+        
+          <li><a href="/tags/travis-ci"><span class="label label-success">travis-ci</span></a></li>
+        
+          <li><a href="/tags/deployment"><span class="label label-success">deployment</span></a></li>
+        
+          <li><a href="/tags/ci"><span class="label label-success">ci</span></a></li>
+        
+          <li><a href="/tags/continuous deployment"><span class="label label-success">continuous deployment</span></a></li>
+        
+          <li><a href="/tags/elasticsearch"><span class="label label-success">elasticsearch</span></a></li>
+        
+          <li><a href="/tags/aws"><span class="label label-success">aws</span></a></li>
+        
+          <li><a href="/tags/testing"><span class="label label-success">testing</span></a></li>
+        
+      </ul>
+  </div>
+  <!-- End Tag Cloud Widget -->
+
+  <div class="widget">
+      <h3>Archive</h3>
+      <ul class="archive arrow">
+        
+        
+        
+          
+            <!--  -->
+            <li><a href="#">January 2016</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">December 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">November 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">October 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">September 2015</a></li>
+          
+        
+        
+        
+          
+            <!-- </ul> -->
+            <li><a href="#">January 2015</a></li>
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+        
+        
+          
+        
+      </ul>
+  </div>
+  <!-- End Archive Widget -->
+
+</aside>
+
+  </div>
+</section>
+
+
+    <!--Bottom-->
+<section id="bottom" class="main">
+    <!--Container-->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>CONTACT</h4>
+                <ul class="list-unstyled address">
+                    <li>
+                        <i class="icon-home"></i>
+                        <a href="/contact">Get In Touch</a>
+                    </li>
+                    <li>
+                        <i class="icon-envelope"></i>
+                        info(at)rotati.com
+                    </li>
+                    <li>
+                        <i class="icon-globe"></i>
+                        www.rotati.com
+                    </li>
+                    <li>
+                        <i class="icon-phone"></i>
+                        +855 12 22 33 48
+                    </li>
+                </ul>
+                <p>&nbsp;</p>
+            </div>
+
+            <!--Training -->
+            <div id="training" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>TRAINING</h4>
+                <div>
+                    <ul class="arrow">
+                        <li><a href="/training/angular-js-courses/">Angular JS Courses</a></li>
+                        <li><a href="/training/enterprise-architect-boot-camp-courses">Enterprise Architect Boot Camp Courses</a></li>
+                        <li><a href="/training/hybrid-mobile-courses">Hybrid Mobile Courses</a></li>
+                        <li><a href="/training/java-frameworks-courses/">Java Frameworks Courses</a></li>
+                        <li><a href="/training/java-short-courses/">Java Short Courses</a></li>
+                    </ul>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+
+            <!--Services -->
+            <div id="services" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <h4>SERVICES</h4>
+                <div>
+                    <ul class="arrow">
+                        <li><a href="/services/hybridmobileapps/">Hybrid Mobile Apps</a></li>
+                        <li><a href="/services/nativemobileapps/">Native Mobile Apps</a></li>
+                        <li><a href="/services/paymentsolutions/">Payment Solutions</a></li>
+                        <li><a href="/services/smesolutions/">SME Websites</a></li>
+                        <li><a href="/services/webapps/">Web Apps</a></li>
+<!--                         <li>Ruby Gems</li> -->
+                        <!-- <li>Web Scrapers</li> -->
+                    </ul>
+                </div>
+                <p>&nbsp;</p>
+            </div>
+            <!--End Archives-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <h4>ABOUT ROTATI</h4>
+                <p>Rotati is a full service Web and Mobile application consultancy. We use Ruby and JavaScript as our tools of choice.
+</p>
+            </div>
+        </div>
+
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+</section>
+<!--/bottom-->
+<!--Footer-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 cp">
+                &copy; 2016 Rotati. All rights reserved.
+            </div>
+            <!--/Copyright-->
+
+            <div class="col-md-6">
+                <ul class="social pull-right">
+<!--    <li><a href="http://linkedin.com/in/rotati" target="_blank"><i class="icon-linkedin"></i></a></li> -->
+                    <li><a href="http://github.com/rotati" target="_blank"><i class="icon-github-alt"></i></a></li>
+                    <li><a href="http://twitter.com/rotaticonsult" target="_blank"><i class="icon-twitter"></i></a></li>
+                    <li><a href="http://fb.com/rotaticonsulting" target="_blank"><i class="icon-facebook"></i></a></li>
+                    <li><a href="/feed.xml" target="_blank"><i class="icon-rss"></i></a></li>
+                    <li><a href="https://github.com/rotati/wiki/wiki" target="_blank"><i class="icon-book"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-1">
+                <a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
+            </div>
+            <!--/Goto Top-->
+        </div>
+    </div>
+</footer>
+<!--/Footer-->
+
+<script src="/js/vendor/jquery-1.9.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Required javascript files for Slider -->
+<script src="/js/vendor/jquery.ba-cond.min.js"></script>
+<script src="/js/vendor/jquery.slitslider.js"></script>
+<!-- /Required javascript files for Slider -->
+
+<!-- SL Slider -->
+<script type="text/javascript">
+$(function() {
+    var Page = (function() {
+
+        var $navArrows = $( '#nav-arrows' ),
+        slitslider = $( '#slider' ).slitslider( {
+            autoplay : true
+        } ),
+
+        init = function() {
+            initEvents();
+        },
+        initEvents = function() {
+            $navArrows.children( ':last' ).on( 'click', function() {
+                slitslider.next();
+                return false;
+            });
+
+            $navArrows.children( ':first' ).on( 'click', function() {
+                slitslider.previous();
+                return false;
+            });
+        };
+
+        return { init : init };
+
+    })();
+
+    Page.init();
+});
+</script>
+<!-- /SL Slider -->
+
+
+  </body>
+
+</html>
